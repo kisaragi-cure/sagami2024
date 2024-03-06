@@ -323,24 +323,19 @@ background-color: #ffffff;
 <div id="so10-4b" style="position: absolute; top: 636px; left:1686px; font-size:13pt"></div>
 <div id="so10-4c" style="position: absolute; top: 636px; left:1786px; font-size:13pt; color:#FF0000;"></div>
 
-<!新丸子-武蔵小杉>
-<div id="ty10-11d" style="position: absolute; top: -100px; left:-100px;"><input type="text"  id = "ty10-11" disabled / name="address" size="14" value=""　></div>
-<div id="ty10-11e" style="position: absolute; top: 903px; left:36px; font-size:13pt; "></div>
-<div id="ty10-11b" style="position: absolute; top: 903px; left:56px; font-size:13pt"></div>
-<div id="ty10-11c" style="position: absolute; top: 903px; left:156px; font-size:13pt; color:#FF0000;"></div>
-<div id="mg10-11d" style="position: absolute; top: -100px; left:-100px;"><input type="text"  id = "mg10-11" disabled / name="address" size="14" value=""　></div>
-<div id="mg10-11e" style="position: absolute; top: 958px; left:36px; font-size:13pt; "></div>
-<div id="mg10-11b" style="position: absolute; top: 958px; left:56px; font-size:13pt"></div>
-<div id="mg10-11c" style="position: absolute; top: 958px; left:156px; font-size:13pt; color:#FF0000;"></div>
-<div id="mg11-10d" style="position: absolute; top: -100px; left:-100px;"><input type="text"  id = "mg11-10" disabled / name="address" size="14" value=""　></div>
-<div id="mg11-10e" style="position: absolute; top: 998px; left:36px; font-size:13pt; "></div>
-<div id="mg11-10b" style="position: absolute; top: 998px; left:56px; font-size:13pt"></div>
-<div id="mg11-10c" style="position: absolute; top: 998px; left:156px; font-size:13pt; color:#FF0000;"></div>
-<div id="ty11-10d" style="position: absolute; top: -100px; left:-100px;"><input type="text"  id = "ty11-10" disabled / name="address" size="14" value=""　></div>
-<div id="ty11-10e" style="position: absolute; top: 1058px; left:36px; font-size:13pt; "></div>
-<div id="ty11-10b" style="position: absolute; top: 1058px; left:56px; font-size:13pt"></div>
-<div id="ty11-10c" style="position: absolute; top: 1058px; left:156px; font-size:13pt; color:#FF0000;"></div>
+<!二俣川-南万騎が原>
+<div id="so10-31d" style="position: absolute; top: -100px; left:-100px;"><input type="text"  id = "so10-31" disabled / name="address" size="14" value=""　></div>
+<div id="so10-31e" style="position: absolute; top: 541px; left:1890px; font-size:13pt; "></div>
+<div id="so10-31b" style="position: absolute; top: 541px; left:1910px; font-size:13pt"></div>
+<div id="so10-31c" style="position: absolute; top: 541px; left:2010px; font-size:13pt; color:#FF0000;"></div>
+<div id="so31-10d" style="position: absolute; top: -100px; left:-100px;"><input type="text"  id = "so31-10" disabled / name="address" size="14" value=""　></div>
+<div id="so31-10e" style="position: absolute; top: 581px; left:1890px; font-size:13pt; "></div>
+<div id="so31-10b" style="position: absolute; top: 581px; left:1910px; font-size:13pt"></div>
+<div id="so31-10c" style="position: absolute; top: 581px; left:2010px; font-size:13pt; color:#FF0000;"></div>
 
+<div style="position: absolute; top: 1150px; left:220px; font-size:18pt"><p>希望が丘</p></div>
+<div style="position: absolute; top: 1150px; left:570px; font-size:18pt"><p>三ツ境</p></div>
+<div style="position: absolute; top: 1150px; left:970px; font-size:18pt"><p>瀬　谷</p></div>
 
 
 
@@ -952,7 +947,7 @@ if ( retsuban > 6699) {
 	}
 }
 if ( retsuban > 7399) {
-	if ( retsuban < 7599 ){
+	if ( retsuban < 7899 ){
 	izu = 1;
 	}
 }
@@ -992,58 +987,6 @@ case 'null':
 //行先設定
       des= JSON.stringify(data.trains[n].destination_station_code) ;
 	switch (des) {
-case '33':
-	des = "副";
-	break;
-case '67':
-	des = "南";
-	break;
-case '54':
-	des = "三";
-	break;
-case '42':
-	des = "比";
-	break;
-case '71':
-	des = "目";
-	break;
-case '73':
-	des = "小";
-	break;
-case '76':
-	des = "岡";
-	break;
-case '77':
-	des = "奥";
-	break;
-case '78':
-case '3074':
-	des = "渋";
-	break;
-case '80':
-	des = "中";
-	break;
-case '81':
-	des = "祐";
-	break;
-case '84':
-	des = "自";
-	break;
-case '88':
-	des = "武";
-	break;
-case '89':
-	des = "住";
-	break;
-case '90':
-	des = "日";
-	break;
-case '93':
-	des = "菊";
-	break;
-case '98':
-	des = "横";
-	break;
 case '103':
 	des = "元";
 	break;
@@ -1079,6 +1022,30 @@ case '3028':
 	break;
 case '3042':
 	des = "宿";
+	break;
+case '3043':
+	des = "池";
+	break;
+case '3044':
+	des = "赤";
+	break;
+case '3045':
+	des = "蔵";
+	break;
+case '3046':
+	des = "大";
+	break;
+case '3047':
+	des = "指";
+	break;
+case '3048':
+	des = "越";
+	break;
+case '3074':
+	des = "渋";
+	break;
+case '3075':
+	des = "三";
 	break;
 case '3076':
 	des = "袋";
@@ -1582,12 +1549,22 @@ case ('3010'):
 if ( up == "true" ){
 	if ( izu == 1 ) {
 	nameText = document.getElementById('so10-3a');
+if ( nameText.value == "" ){
 	target = document.getElementById('so10-3ad');
 	target.style.left = '1660px' ;
 	target.style.top = '578px' ;
 	doc2= document.getElementById("so10-3"); 
 	doc0= document.getElementById("so10-3b");  
 	doc1= document.getElementById("so10-3c");  
+｝else {
+	nameText = document.getElementById('so10-4a');
+	target = document.getElementById('so10-4ad');
+	target.style.left = '1660px' ;
+	target.style.top = '633px' ;
+	doc2= document.getElementById("so10-4");  
+	doc0= document.getElementById("so10-4b");  
+	doc1= document.getElementById("so10-4c");  
+}
 	break ;
 	} else {
 	nameText = document.getElementById('so10-4a');
@@ -1902,6 +1879,15 @@ if ( up == "true" ){
 
 case ('3010'):
 if ( up == "true" ){
+	if ( izu == 1 ){
+	nameText = document.getElementById('so31-10');
+	target = document.getElementById('so31-10d');
+	target.style.left = '1884px' ;
+	target.style.top = '538px' ;
+	doc2= document.getElementById("so31-10e");  
+	doc0= document.getElementById("so31-10b");
+	doc1= document.getElementById("so31-10c"); 
+	}
 	break ;
 } else {
 	nameText = document.getElementById('so09-10');
