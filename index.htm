@@ -385,8 +385,11 @@ var data2 = JSON.parse(request2.responseText);
 	localStorage.setItem('shinyoko2k', '' );
 
 
+
 for ( n = 0; n < len; n++) {
 
+1709753104541
+1709753119612
 
 
 dai = 0;
@@ -700,7 +703,8 @@ if ( delay == "0"){
 	var doc1= document.getElementById("ty99");
 	var doc2= document.getElementById("ty99");
 
-	let now = new Date().getHours() ;
+
+	let now = Math.floor(Date.now() / 60000) ;
 
 switch (stid){
 
@@ -1185,9 +1189,9 @@ if ( delay == "0"){
       info =  des + unban + '　　　';
 
 
-	let now = new Date().getHours() ;
+	let now = Math.floor(Date.now() / 60000) ;
 	if ( localStorage.getItem( unban + 'time' ) != null ){
-	 if( localStorage.getItem( unban + 'time' ) -(- 2) <= now ){
+	 if( localStorage.getItem( unban + 'time' ) -(- 90) <= now ){
 		
 		localStorage.removeItem( unban );
 		localStorage.removeItem( unban + 'time' );
