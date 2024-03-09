@@ -205,10 +205,32 @@ background-color: #ffffff;
 
 
 <!1鶴見-羽沢国大>
+<div style="position: absolute; top: 785px; left:650px; font-size:12pt"><p>東海道貨物進入予告[鶴見通過]</p></div>
 <div id="so53-51d" style="position: absolute; top: -100px; left:-100px;"><input type="text"  id = "so53-51" disabled / name="address" size="14" value=""　></div>
 <div id="so53-51e" style="position: absolute; top: 825px; left:710px; font-size:13pt; "></div>
 <div id="so53-51b" style="position: absolute; top: 825px; left:730px; font-size:13pt; "></div>
 <div id="so53-51c" style="position: absolute; top: 825px; left:830px; font-size:13pt; color:#FF0000; "></div>
+
+
+<div style="position: absolute; top: 840px; left:60px; font-size:16pt"><p>(新綱島)</p></div>
+<div id="sh52-1ad" style="position: absolute; top: -100px; left:-100px;"><input type="text"  id = "sh52-1a" disabled / name="address" size="14" value=""　></div>
+<div id="sh52-1" style="position: absolute; top: 911px; left:36px; font-size:13pt; "></div>
+<div id="sh52-1b" style="position: absolute; top: 911px; left:56px; font-size:13pt; "></div>
+<div id="sh52-1c" style="position: absolute; top: 911px; left:156px; font-size:13pt; color:#FF0000; "></div>
+
+<div style="position: absolute; top: 820px; left:70px; font-size:22pt"><input type="button" id = "shibuya" value="←渋谷エリア" ></div>
+<div style="position: absolute; top: 790px; left:70px; font-size:22pt"><input type="button" id = "meguro" value="←目黒エリア" ></div>
+
+<!新綱島-新横浜>
+<div id="sh52-51d" style="position: absolute; top: -100px; left:-100px;"><input type="text"  id = "sh52-51" disabled / name="address" size="14" value=""　></div>
+<div id="sh52-51e" style="position: absolute; top: 911px; left:226px; font-size:13pt; "></div>
+<div id="sh52-51b" style="position: absolute; top: 911px; left:246px; font-size:13pt; "></div>
+<div id="sh52-51c" style="position: absolute; top: 911px; left:346px; font-size:13pt; color:#FF0000; "></div>
+<div id="sh51-52d" style="position: absolute; top: -100px; left:-100px;"><input type="text"  id = "sh51-52" disabled / name="address" size="14" value=""　></div>
+<div id="sh51-52e" style="position: absolute; top: 951px; left:226px; font-size:13pt; "></div>
+<div id="sh51-52b" style="position: absolute; top: 951px; left:246px; font-size:13pt; "></div>
+<div id="sh51-52c" style="position: absolute; top: 951px; left:346px; font-size:13pt; color:#FF0000; "></div>
+
 
 <div style="position: absolute; top: 800px; left:525px; font-size:18pt"><p>新横浜</p></div>
 <div style="position: absolute; top: 1020px; left:625px; font-size:10pt"><p>※処理遅延により二重表示となる場合があります</p></div>
@@ -345,6 +367,10 @@ background-color: #ffffff;
 </font>
 
 <script type="module" >
+
+document.getElementById("shibuya").addEventListener("click", function () {
+  location.replace("https://kisaragi-cure.github.io/tokyu/");
+}, false);
 
 /////////////////////////////////////ここから東急
 
@@ -708,6 +734,24 @@ if ( delay == "0"){
 
 switch (stid){
 
+case ('982'):
+	switch ( trid ) {
+	case ('-1'):
+	nameText = document.getElementById('sh52-1a');
+	target = document.getElementById('sh52-1ad');
+	target.style.left = '30px' ;
+	target.style.top = '908px' ;
+	doc2= document.getElementById("sh52-1"); 
+	doc0= document.getElementById("sh52-1b");  
+	doc1= document.getElementById("sh52-1c");  
+	break ;
+
+	default:
+	nameText = 0;
+        break ;
+	}
+        break ;
+
 case ('983'):
 
 	switch ( trid ) {
@@ -761,6 +805,32 @@ default:
 }
 
 
+switch (scid){
+
+case ('266'):
+	nameText = document.getElementById('sh52-51');
+	target = document.getElementById('sh52-51d');
+	target.style.left = '220px' ;
+	target.style.top = '908px' ;
+	doc2= document.getElementById("sh52-51e"); 
+	doc0= document.getElementById("sh52-51b");  
+	doc1= document.getElementById("sh52-51c");  
+	break ;
+
+case ('264'):
+	nameText = document.getElementById('sh51-52');
+	target = document.getElementById('sh51-52d');
+	target.style.left = '220px' ;
+	target.style.top = '948px' ;
+	doc2= document.getElementById("sh51-52e"); 
+	doc0= document.getElementById("sh51-52b");  
+	doc1= document.getElementById("sh51-52c");  
+	break ;
+
+}
+
+
+
 	localStorage.setItem( unban , sha + hensei );
 	localStorage.setItem( unban + 'time' , now );
 
@@ -787,7 +857,7 @@ doc0.style.backgroundColor = '#98fb98'; //背景
 
 switch (kind) {
 case '各' :
-if ( des == '相' ){
+if ( des == '相' && stid == '983' ){
 doc2.style.backgroundColor = '#696969'; //背景
 doc2.style.color = '#ffffff'; //文字
 } else {
@@ -919,7 +989,7 @@ if ( retsuban > 7899) {
 	choku = 1;
 	}
 }
-	if ( retsuban > 8649) {
+if ( retsuban > 8649) {
 	if ( retsuban < 8700 ){
 	choku = 1;
 	}
@@ -1039,7 +1109,7 @@ case '3044':
 	des = "赤";
 	break;
 case '3045':
-	des = "蔵";
+	des = "浦";
 	break;
 case '3046':
 	des = "大";
@@ -1092,8 +1162,14 @@ case '3098':
 case '3114':
 	des = "奥";
 	break;
+case '3131':
+	des = "岩";
+	break;
+case '3132':
+	des = "鳩";
+	break;
 case '3133':
-	des = "浦";
+	des = "美";
 	break;
 case '3140':
 	des = "高";
@@ -1440,7 +1516,12 @@ if ( up == "true" ){
 	target.style.top = '908px' ;
 	doc2= document.getElementById("so51-1");  
 	doc0= document.getElementById("so51-1b");  
-	doc1= document.getElementById("so51-1c");  
+	doc1= document.getElementById("so51-1c"); 
+	if ( unban + 'K' == localStorage.getItem( retsuban ) ){
+	unban = localStorage.getItem( retsuban ) ;
+	} else if ( unban + 'G' == localStorage.getItem( retsuban ) ){
+	unban = localStorage.getItem( retsuban ) ;
+	}
 	hensei = localStorage.getItem( unban );
 	if ( hensei != null ){
 	info =  des + unban + hensei ;
@@ -1518,6 +1599,11 @@ if ( up == "true" ){
 	doc2= document.getElementById("so08-1");  
 	doc0= document.getElementById("so08-1b");  
 	doc1= document.getElementById("so08-1c");  
+	if ( unban + 'K' == localStorage.getItem( retsuban ) ){
+	unban = localStorage.getItem( retsuban ) ;
+	} else if ( unban + 'G' == localStorage.getItem( retsuban ) ){
+	unban = localStorage.getItem( retsuban ) ;
+	}
 	hensei = localStorage.getItem( unban );
 	if ( hensei != null ){
 	info =  des + unban + hensei ;
@@ -1545,6 +1631,11 @@ if ( up == "true" ){
 	doc0= document.getElementById("so09-1b");  
 	doc1= document.getElementById("so09-1c");  
 	if ( choku == 1 ) {
+	if ( unban + 'K' == localStorage.getItem( retsuban ) ){
+	unban = localStorage.getItem( retsuban ) ;
+	} else if ( unban + 'G' == localStorage.getItem( retsuban ) ){
+	unban = localStorage.getItem( retsuban ) ;
+	}
 	hensei = localStorage.getItem( unban );
 	if ( hensei != null ){
 	info =  des + unban + hensei ;
@@ -1586,6 +1677,12 @@ if ( nameText.value == "" ){
 	break ;
 	}
 } else {
+	
+	if ( unban + 'K' == localStorage.getItem( retsuban ) ){
+	unban = localStorage.getItem( retsuban ) ;
+	} else if ( unban + 'G' == localStorage.getItem( retsuban ) ){
+	unban = localStorage.getItem( retsuban ) ;
+	}
 	if ( izu == 1 ) {
 	nameText = document.getElementById('so10-2a');
 	target = document.getElementById('so10-2ad');
@@ -1593,7 +1690,11 @@ if ( nameText.value == "" ){
 	target.style.top = '538px' ;
 	doc2= document.getElementById("so10-2");  
 	doc0= document.getElementById("so10-2b");  
-	doc1= document.getElementById("so10-2c");  
+	doc1= document.getElementById("so10-2c");   
+	hensei = localStorage.getItem( unban );
+	if ( hensei != null ){
+	info =  des + unban + hensei ;
+	}
 	break ;
 	} else {
 	nameText = document.getElementById('so10-1a');
@@ -1850,6 +1951,11 @@ if ( up == "true" ){
 	doc2= document.getElementById("so51-8e");  
 	doc0= document.getElementById("so51-08b");
 	doc1= document.getElementById("so51-08c"); 
+	if ( unban + 'K' == localStorage.getItem( retsuban ) ){
+	unban = localStorage.getItem( retsuban ) ;
+	} else if ( unban + 'G' == localStorage.getItem( retsuban ) ){
+	unban = localStorage.getItem( retsuban ) ;
+	}
 	hensei = localStorage.getItem( unban );
 	if ( hensei != null ){
 	info =  des + unban + hensei ;
@@ -1877,6 +1983,11 @@ if ( up == "true" ){
 	doc0= document.getElementById("so08-09b");
 	doc1= document.getElementById("so08-09c"); 
 	if ( choku == 1 ) {
+	if ( unban + 'K' == localStorage.getItem( retsuban ) ){
+	unban = localStorage.getItem( retsuban ) ;
+	} else if ( unban + 'G' == localStorage.getItem( retsuban ) ){
+	unban = localStorage.getItem( retsuban ) ;
+	}
 	hensei = localStorage.getItem( unban );
 	if ( hensei != null ){
 	info =  des + unban + hensei ;
@@ -1907,6 +2018,11 @@ if ( up == "true" ){
 	doc0= document.getElementById("so09-10b");
 	doc1= document.getElementById("so09-10c"); 
 	if ( choku == 1 ) {
+	if ( unban + 'K' == localStorage.getItem( retsuban ) ){
+	unban = localStorage.getItem( retsuban ) ;
+	} else if ( unban + 'G' == localStorage.getItem( retsuban ) ){
+	unban = localStorage.getItem( retsuban ) ;
+	}
 	hensei = localStorage.getItem( unban );
 	if ( hensei != null ){
 	info =  des + unban + hensei ;
