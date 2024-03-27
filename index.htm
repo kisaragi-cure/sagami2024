@@ -12,6 +12,8 @@
 body{
 	background-repeat: no-repeat;
 	background-image: url(sotetsu.png);
+	background-size:2045px;
+	zoom: 80%;
 }
 
 textarea {
@@ -133,7 +135,7 @@ background-color: #ffffff;
 <div id="so05-04b" style="position: absolute; top: 188px; left:1530px; font-size:13pt; "></div>
 <div id="so05-04c" style="position: absolute; top: 188px; left:1630px; font-size:13pt; color:#FF0000; "></div>
 
-<div id="ty99d" style="position: absolute; top: 5px; left:520px; font-size:18pt"　><input type="text"  id = "ty99" disabled / name="address" size="100" value="試験"　></div>
+<div id="ty99d" style="position: absolute; top: -50px; left:-50px; font-size:18pt"　><input type="text"  id = "ty99" disabled / name="address" size="100" value="試験"　></div>
 
 <div style="position: absolute; top: 15px; left:1800px; font-size:18pt"><p>星　川</p></div>
 <div style="position: absolute; top: 52px; left:1760px; font-size:10pt"><p>(各停は副本線に表示します)</p></div>
@@ -684,6 +686,10 @@ background-color: #ffffff;
 
 document.getElementById("shibuya").addEventListener("click", function () {
   location.replace("https://kisaragi-cure.github.io/tokyu/");
+}, false);
+
+document.getElementById("meguro").addEventListener("click", function () {
+  location.replace("https://kisaragi-cure.github.io/okusawa/");
 }, false);
 
 /////////////////////////////////////ここから東急
