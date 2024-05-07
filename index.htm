@@ -39,7 +39,7 @@ background-color: #ffffff;
 <font face="BIZ UDゴシック,メイリオ,ＭＳ ゴシック">
 
 <nobr>
-<p>相鉄エリア　　　　　　　　[更新間隔：15秒]　　　　　　　　　　　　　　　　　　　　　　◆編成情報は東急線走行時点で取得したもの　　　　(C)Cure_kisaragi 2024 / Ver.1.21 </p>
+<p>相鉄エリア　　　　　　　　[更新間隔：15秒]　　　　　　　　　　　　　　　　　　　　　　◆編成情報は東急線走行時点で取得したもの　　　　(C)Cure_kisaragi 2024 / Ver.1.22 </p>
 <br>
 <br>
 <br>
@@ -88,7 +88,7 @@ background-color: #ffffff;
 <div id="so02-03d" style="position: absolute; top: -100px; left:-100px;"><input type="text"  id = "so02-03" disabled / name="address" size="14" value=""　></div>
 <div id="so02-3e" style="position: absolute; top: 148px; left:676px; font-size:13pt; "></div>
 <div id="so02-03b" style="position: absolute; top: 148px; left:696px; font-size:13pt; "></div>
-<div id="so02-03c" style="position: absolute; top: 1483px; left:796px; font-size:13pt; color:#FF0000; "></div>
+<div id="so02-03c" style="position: absolute; top: 148px; left:796px; font-size:13pt; color:#FF0000; "></div>
 <div id="so03-02d" style="position: absolute; top: -100px; left:-100px;"><input type="text"  id = "so03-02" disabled / name="address" size="14" value=""　></div>
 <div id="so03-2e" style="position: absolute; top: 188px; left:676px; font-size:13pt; "></div>
 <div id="so03-02b" style="position: absolute; top: 188px; left:696px; font-size:13pt; "></div>
@@ -1587,6 +1587,10 @@ unban = "0" + (unban - 900)  + "G" ;
 unban = (unban - 900) + "G" ;
 } else {
 unban = unban ;
+}
+
+if ( unban == "96G" ){
+	unban = "00" ;
 }
 
 
