@@ -730,10 +730,13 @@ var data3 = JSON.parse(request3.responseText);
 
 	 sessionStorage.setItem( 'hazawa1' , '0' );
 	 sessionStorage.setItem( 'hazawa1des' , '0' );
+	 sessionStorage.setItem( 'hazawa1del' , '0' );
 	 sessionStorage.setItem( 'hazawa2' , '0' );
 	 sessionStorage.setItem( 'hazawa2des' , '0' );
+	 sessionStorage.setItem( 'hazawa2del' , '0' );
 	 sessionStorage.setItem( 'hazawa3' , '0' );
 	 sessionStorage.setItem( 'hazawa3des' , '0' );
+	 sessionStorage.setItem( 'hazawa3del' , '0' );
 
 
 
@@ -812,11 +815,13 @@ if (scid == '"0000000001789"'){
 		if (  sessionStorage.getItem( 'hazawa2' ) < unban1){
 		 sessionStorage.setItem( 'hazawa2' , unban1 );
 		 sessionStorage.setItem( 'hazawa2des' , des );
+		 sessionStorage.setItem( 'hazawa2del' , delay );
 		}
 	} else {
 		if (  sessionStorage.getItem( 'hazawa1' ) < unban1){
 		 sessionStorage.setItem( 'hazawa1' , unban1 );
 		 sessionStorage.setItem( 'hazawa1des' , des );
+		 sessionStorage.setItem( 'hazawa1del' , delay );
 		}
 	}
 
@@ -830,6 +835,9 @@ if (scid == '"0000000001789"'){
 		doc2= document.getElementById("so54e");  
 		doc0= document.getElementById("so54b");
 		doc1= document.getElementById("so54c"); 
+doc2.style.backgroundColor = '#696969'; //背景
+doc2.style.color = '#ffffff'; //文字
+doc0.style.fontWeight = "bold";
 }
 
         break ;
@@ -842,7 +850,7 @@ default:
 
 
 
-	doc2.innerHTML= kind + "　";
+	doc2.innerHTML= kind + unban ;
 if ( nameText.value == "" ){
 	doc0.innerHTML= info.replace("―999","留置");
 	doc1.innerHTML= delay;
@@ -850,7 +858,6 @@ if ( nameText.value == "" ){
 
 doc0.style.backgroundColor = '#ffffff'; //背景
 doc1.style.backgroundColor = '#ffffff'; //背景
-doc2.style.backgroundColor = '#ffffff'; //背景
 
 
 if ( nameText == 0 ){
@@ -866,16 +873,6 @@ doc2.style.color = '#ffffff'; //文字
 
 
 
-switch (cars) {
-	case '"6"' :
-	doc0.style.textDecoration = "underline";
-	break;
-	case '"8"' :
-	break;
-	case '"10"' :
-	doc0.style.fontWeight = "bold";
-	break;
-}
 }
 
 }
@@ -3806,7 +3803,7 @@ if ( nameText.value == "" ){
 	doc2.innerHTML= "各 ";
 }
 	doc0.innerHTML= info + "  ";
-	doc1.innerHTML= delay;
+	doc1.innerHTML= sessionStorage.getItem( 'hazawa1del' );
 doc2.style.backgroundColor = '#696969'; //背景
 doc2.style.color = '#ffffff'; //文字
 doc0.style.fontWeight = "bold";
@@ -3823,7 +3820,7 @@ if ( nameText.value == "" ){
 	doc2.innerHTML= "各 ";
 }
 	doc0.innerHTML= info + "  ";
-	doc1.innerHTML= '';
+	doc1.innerHTML= sessionStorage.getItem( 'hazawa2del' );
 doc2.style.backgroundColor = '#696969'; //背景
 doc2.style.color = '#ffffff'; //文字
 doc0.style.fontWeight = "bold";
