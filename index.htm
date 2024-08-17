@@ -829,6 +829,7 @@ if (scid == '"0000000001789"'){
 	console.log ('羽沢各-' +  sessionStorage.getItem( 'hazawa2' ));
 	console.log ('羽沢３-' +  sessionStorage.getItem( 'hazawa3' ));
 } else {
+		nameText = document.getElementById('so54a');
 		target = document.getElementById('so54d');
 		target.style.left = '280px' ;
 		target.style.top = '792px' ;
@@ -850,7 +851,7 @@ default:
 
 
 
-	doc2.innerHTML= kind + unban ;
+	doc2.innerHTML= kind ;
 if ( nameText.value == "" ){
 	doc0.innerHTML= info.replace("―999","留置");
 	doc1.innerHTML= delay;
