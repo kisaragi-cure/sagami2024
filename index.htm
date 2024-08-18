@@ -695,6 +695,16 @@ background-color: #ffffff;
 
 /////////////////////////////////////ここからJR
 
+	 sessionStorage.setItem( 'hazawa1' , '0' );
+	 sessionStorage.setItem( 'hazawa1des' , '0' );
+	 sessionStorage.setItem( 'hazawa1del' , '0' );
+	 sessionStorage.setItem( 'hazawa2' , '0' );
+	 sessionStorage.setItem( 'hazawa2des' , '0' );
+	 sessionStorage.setItem( 'hazawa2del' , '0' );
+	 sessionStorage.setItem( 'hazawa3' , '0' );
+	 sessionStorage.setItem( 'hazawa3des' , '0' );
+	 sessionStorage.setItem( 'hazawa3del' , '0' );
+
 var request3 = new XMLHttpRequest();
 request3.open("GET", "https://external-data.sotetsuapp.com/tid/jr_train_location_info.json", true);
 request3.responseType = "text";
@@ -728,15 +738,6 @@ var data3 = JSON.parse(request3.responseText);
 
 	let nameText = document.getElementById('ty01-3a');
 
-	 sessionStorage.setItem( 'hazawa1' , '0' );
-	 sessionStorage.setItem( 'hazawa1des' , '0' );
-	 sessionStorage.setItem( 'hazawa1del' , '0' );
-	 sessionStorage.setItem( 'hazawa2' , '0' );
-	 sessionStorage.setItem( 'hazawa2des' , '0' );
-	 sessionStorage.setItem( 'hazawa2del' , '0' );
-	 sessionStorage.setItem( 'hazawa3' , '0' );
-	 sessionStorage.setItem( 'hazawa3des' , '0' );
-	 sessionStorage.setItem( 'hazawa3del' , '0' );
 
 
 
@@ -767,7 +768,7 @@ case '0':
 	break;
 }
 
-      unban = JSON.stringify(data3.trainLocationInfo[0].directionInfo[1].trainInfo[n].trainNo).replace('"','').replace('"','') ;
+      unban = JSON.stringify(data3.trainLocationInfo[0].directionInfo[1].trainInfo[n].trainNo).replace('" ','').replace('"','') ;
       unban1 = JSON.stringify(data3.trainLocationInfo[0].directionInfo[1].trainInfo[n].trainNo).replace('" ','').replace('M"','') ;
       sha= '' ;
 
@@ -824,10 +825,20 @@ if (scid == '"0000000001789"'){
 		 sessionStorage.setItem( 'hazawa1del' , delay );
 		}
 	}
+	
+	if (sessionStorage.getItem( 'hazawaS1') == '0' ){
+		nameText = document.getElementById('so54-53');
+		target = document.getElementById('so54-53d');
+		target.style.left = '494px' ;
+		target.style.top = '792px' ;
+		doc2= document.getElementById("so54-53e");  
+		doc0= document.getElementById("so54-53b");
+		doc1= document.getElementById("so54-53c");
+doc2.style.backgroundColor = '#696969'; //背景
+doc2.style.color = '#ffffff'; //文字
+doc0.style.fontWeight = "bold";
+}
 
-	console.log ('羽沢特-' +  sessionStorage.getItem( 'hazawa1' ));
-	console.log ('羽沢各-' +  sessionStorage.getItem( 'hazawa2' ));
-	console.log ('羽沢３-' +  sessionStorage.getItem( 'hazawa3' ));
 } else {
 		nameText = document.getElementById('so54a');
 		target = document.getElementById('so54d');
@@ -848,14 +859,9 @@ default:
 
 }
 
-
-
-
 	doc2.innerHTML= kind ;
-if ( nameText.value == "" ){
 	doc0.innerHTML= info.replace("―999","留置");
 	doc1.innerHTML= delay;
-}
 
 doc0.style.backgroundColor = '#ffffff'; //背景
 doc1.style.backgroundColor = '#ffffff'; //背景
@@ -863,22 +869,16 @@ doc1.style.backgroundColor = '#ffffff'; //背景
 
 if ( nameText == 0 ){
 } else {
-nameText.value = "　";
 
-if ( dai == 1){
-doc0.style.backgroundColor = '#98fb98'; //背景
-}
 
-doc2.style.backgroundColor = '#696969'; //背景
-doc2.style.color = '#ffffff'; //文字
+
+
 
 
 
 }
 
 }
-
-
     }
   }
 };
@@ -1445,6 +1445,8 @@ request2.send(null);
 
 ///////////////////////////////ここから相鉄線
 
+sessionStorage.setItem( 'hazawaS' ,'0' )
+sessionStorage.setItem( 'hazawaS1' ,'1' )
       console.log( '新横1番-' + localStorage.getItem('shinyoko1a')  + localStorage.getItem('shinyoko1b'));
       console.log( '新横2番-' +  localStorage.getItem('shinyoko2a') +  localStorage.getItem('shinyoko2b'));
 
@@ -3065,7 +3067,7 @@ if ( up == "true" ){
 		info =  des + unban + '/' +  sessionStorage.getItem('hazawa1') + 'M' ;
 		}
 		}
-	 sessionStorage.setItem( 'hazawaS' , unban );
+	sessionStorage.setItem( 'hazawaS' , unban );
 		break ;
 	} else {
 
@@ -3789,8 +3791,12 @@ switch (cars) {
 
 }
 
+if (sessionStorage.getItem( 'hazawaS') == '0' ){
+sessionStorage.setItem( 'hazawaS1' , '0' );
+}  
+
 ///武蔵小杉～羽沢
-if ( sessionStorage.getItem( 'hazawaS' ) == '0' ){
+if ( sessionStorage.getItem( 'hazawaS1' ) == '0' ){
 if ( sessionStorage.getItem( 'hazawa1' ) != '0' ){
 nameText = document.getElementById('so54-53');
 		target = document.getElementById('so54-53d');
@@ -3799,15 +3805,15 @@ nameText = document.getElementById('so54-53');
 		doc2= document.getElementById("so54-53e");  
 		doc0= document.getElementById("so54-53b");
 		doc1= document.getElementById("so54-53c"); 
+
 	info =  sessionStorage.getItem( 'hazawa1des' ) + sessionStorage.getItem( 'hazawa1' ) + 'M' ;
-if ( nameText.value == "" ){
 	doc2.innerHTML= "各 ";
-}
 	doc0.innerHTML= info + "  ";
 	doc1.innerHTML= sessionStorage.getItem( 'hazawa1del' );
 doc2.style.backgroundColor = '#696969'; //背景
 doc2.style.color = '#ffffff'; //文字
 doc0.style.fontWeight = "bold";
+sessionStorage.setItem( 'hazawaS' ,'1' )
 } else if ( sessionStorage.getItem( 'hazawa2' ) != '0' ){
 nameText = document.getElementById('so54-53');
 		target = document.getElementById('so54-53d');
@@ -3815,16 +3821,16 @@ nameText = document.getElementById('so54-53');
 		target.style.top = '792px' ;
 		doc2= document.getElementById("so54-53e");  
 		doc0= document.getElementById("so54-53b");
-		doc1= document.getElementById("so54-53c"); 
+		doc1= document.getElementById("so54-53c");
+ 
 	info =  sessionStorage.getItem( 'hazawa2des' ) + sessionStorage.getItem( 'hazawa2' ) + 'M' ;
-if ( nameText.value == "" ){
 	doc2.innerHTML= "各 ";
-}
 	doc0.innerHTML= info + "  ";
 	doc1.innerHTML= sessionStorage.getItem( 'hazawa2del' );
 doc2.style.backgroundColor = '#696969'; //背景
 doc2.style.color = '#ffffff'; //文字
 doc0.style.fontWeight = "bold";
+sessionStorage.setItem( 'hazawaS' ,'2' )
 } 
 
 
