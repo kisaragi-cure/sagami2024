@@ -1519,7 +1519,7 @@ if ( retsuban > 7899) {
 	choku = 1;
 	}
 }
-if ( retsuban > 8649) {
+if ( retsuban > 8199) {
 	if ( retsuban < 8700 ){
 	choku = 1;
 	}
@@ -1757,8 +1757,10 @@ unban = unban + "K" ;
 }
 } else if(unban < 90){
 unban = unban  ;
-} else if(unban < 100){
+} else if(unban < 96){
 unban = unban + "G" ;
+} else if(unban < 100){
+unban = "00" ;
 } else if(unban < 110){
 unban = "0" +(unban - 100) +  "M" ;
 } else if(unban < 199){
