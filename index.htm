@@ -11,10 +11,10 @@
 
 body{
 	background-repeat: no-repeat;
-	background-image: url(sotetsu.png);
-	background-size:2045px;
+	background-image: url(sotetsu2.png);
+	background-size:1200px;
 	font-family:'BIZ UDゴシック','Arial',"Hiragino Sans",sans-serif;
-	zoom: 90%;
+	zoom: 85%;
 }
 
 textarea {
@@ -30,6 +30,12 @@ background-color: #ffffff;
     width: 155px;
 }
 
+.sotetsubutton{
+    width: 250px;
+    height: 2em;
+    padding: 7px;
+    font-size: 18pt;
+}
 
 </style>
 
@@ -39,670 +45,706 @@ background-color: #ffffff;
   <body>
 
 <nobr>
-<p>相鉄エリア　　　　　　　　[更新間隔：15秒]　　　　　　　　　　　　　　　　　　　　　　◆編成情報は東急線走行時点で取得したもの　　　　(C)Cure_kisaragi 2024 / Ver.1.86 </p>
+<p>相鉄エリア　[更新間隔：15秒]　　　　　　　　　　　◆編成情報は東急線走行時点で取得したもの　　　　(C)Cure_kisaragi 2024 / Ver.2.00 </p>
 <br>
 <br>
 <br>
 <br>
 <br>
 
-<div style="position: absolute; top: 30px; left:80px; font-size:18pt"><p>相鉄横浜</p></div>
-<div style="position: absolute; top: 70px; left:55px; font-size:10pt"><p>(実番線と異なります)</p></div>
-<div style="position: absolute; top: 120px; left:10px; font-size:12pt"><p>各停</p></div>
-<div style="position: absolute; top: 175px; left:10px; font-size:12pt"><p>優等</p></div>
-<div style="position: absolute; top: 235px; left:10px; font-size:12pt"><p>優等</p></div>
+<div style="position: absolute; top: 90px; left:710px; font-size:18pt"><p>相鉄横浜</p></div>
+<div style="position: absolute; top: 130px; left:675px; font-size:10pt"><p>(実番線と異なります)</p></div>
+<div style="position: absolute; top: 30px; left:1010px; font-size:12pt"><p>各停</p></div>
+<div style="position: absolute; top: 30px; left:930px; font-size:12pt"><p>優等</p></div>
+<div style="position: absolute; top: 30px; left:850px; font-size:12pt"><p>優等</p></div>
 <div id="so01-1ad" style="position: absolute; top: -100px; left:-100px;"><input type="text" id="so01-1a"  disabled / name="address" size="14" value=""　></div>
-<div id="so01-1" style="position: absolute; top: 133px; left:66px; font-size:12pt; "></div>
-<div id="so01-1b" style="position: absolute; top: 133px; left:83px; font-size:12pt; "></div>
-<div id="so01-1c" style="position: absolute; top: 133px; left:186px; font-size:12pt; color:#FF0000; "></div>
+<div id="so01-1b" style="position: absolute; top: 100px; left:1000px; font-size:12pt; "></div>
+<div id="so01-1" style="position: absolute; top: 100px; left:1010px; font-size:12pt; "></div>
+<div id="so01-1c" style="position: absolute; top: 145px; left:1000px; font-size:12pt; color:#FF0000; "></div>
 <div id="so01-2ad" style="position: absolute; top: -100px; left:-100px;"><input type="text"  id = "so01-2a"  disabled / name="address" size="14" value=""></div>
-<div id="so01-2" style="position: absolute; top: 188px; left:66px; font-size:12pt; "></div>
-<div id="so01-2b" style="position: absolute; top: 188px; left:83px; font-size:12pt; "></div>
-<div id="so01-2c" style="position: absolute; top: 188px; left:186px; font-size:12pt; color:#FF0000; "></div>
+<div id="so01-2b" style="position: absolute; top: 100px; left:920px; font-size:12pt; "></div>
+<div id="so01-2" style="position: absolute; top: 100px; left:930px; font-size:12pt; "></div>
+<div id="so01-2c" style="position: absolute; top: 145px; left:920px; font-size:12pt; color:#FF0000; "></div>
 <div id="so01-3ad" style="position: absolute; top: -100px; left:-100px;"><input type="text" id = "so01-3a"  disabled / name="address" size="14" value=""　></div>
-<div id="so01-3" style="position: absolute; top: 248px; left:66px; font-size:12pt; "></div>
-<div id="so01-3b" style="position: absolute; top: 248px; left:83px; font-size:12pt; "></div>
-<div id="so01-3c" style="position: absolute; top: 248px; left:186px; font-size:12pt; color:#FF0000; "></div>
+<div id="so01-3b" style="position: absolute; top: 100px; left:840px; font-size:12pt; "></div>
+<div id="so01-3" style="position: absolute; top: 100px; left:850px; font-size:12pt; "></div>
+<div id="so01-3c" style="position: absolute; top: 145px; left:840px; font-size:12pt; color:#FF0000; "></div>
 
 <!横浜-平沼橋>
 <div id="so01-02d" style="position: absolute; top: -100px; left:-100px;"><input type="text"  id = "so01-02" disabled / name="address" size="14" value=""　></div>
-<div id="so01-2e" style="position: absolute; top: 148px; left:276px; font-size:12pt; "></div>
-<div id="so01-02b" style="position: absolute; top: 148px; left:293px; font-size:12pt; "></div>
-<div id="so01-02c" style="position: absolute; top: 148px; left:396px; font-size:12pt; color:#FF0000; "></div>
+<div id="so01-02b" style="position: absolute; top: 310px; left:980px; font-size:12pt; "></div>
+<div id="so01-2e" style="position: absolute; top: 310px; left:990px; font-size:12pt; "></div>
+<div id="so01-02c" style="position: absolute; top: 355px; left:980px; font-size:12pt; color:#FF0000; "></div>
 <div id="so02-01d" style="position: absolute; top: -100px; left:-100px;"><input type="text"  id = "so02-01" disabled / name="address" size="14" value=""　></div>
-<div id="so02-1e" style="position: absolute; top: 188px; left:276px; font-size:12pt; "></div>
-<div id="so02-01b" style="position: absolute; top: 188px; left:293px; font-size:12pt; "></div>
-<div id="so02-01c" style="position: absolute; top: 188px; left:396px; font-size:12pt; color:#FF0000; "></div>
+<div id="so02-01b" style="position: absolute; top: 300px; left:920px; font-size:12pt; "></div>
+<div id="so02-1e" style="position: absolute; top: 300px; left:930px; font-size:12pt; "></div>
+<div id="so02-01c" style="position: absolute; top: 345px; left:920px; font-size:12pt; color:#FF0000; "></div>
 
-<div style="position: absolute; top: 30px; left:485px; font-size:18pt"><p>平沼橋</p></div>
+<div style="position: absolute; top: 410px; left:760px; font-size:18pt"><p>平沼橋</p></div>
 <div id="so02-1ad" style="position: absolute; top: -100px; left:-100px;"><input type="text"  id = "so02-1a" disabled / name="address" size="14" value=""　></div>
-<div id="so02-1" style="position: absolute; top: 133px; left:456px; font-size:12pt; "></div>
-<div id="so02-1b" style="position: absolute; top: 133px; left:473px; font-size:12pt; "></div>
-<div id="so02-1c" style="position: absolute; top: 133px; left:576px; font-size:12pt; color:#FF0000; "></div>
+<div id="so02-1b" style="position: absolute; top: 420px; left:990px; font-size:12pt; "></div>
+<div id="so02-1" style="position: absolute; top: 420px; left:1000px; font-size:12pt; "></div>
+<div id="so02-1c" style="position: absolute; top: 465px; left:990px; font-size:12pt; color:#FF0000; "></div>
 <div id="so02-2ad" style="position: absolute; top: -100px; left:-100px;"><input type="text"  id = "so02-2a" disabled / name="address" size="14" value=""　></div>
-<div id="so02-2" style="position: absolute; top: 188px; left:456px; font-size:12pt; "></div>
-<div id="so02-2b" style="position: absolute; top: 188px; left:473px; font-size:12pt; "></div>
-<div id="so02-2c" style="position: absolute; top: 188px; left:576px; font-size:12pt; color:#FF0000; "></div>
+<div id="so02-2b" style="position: absolute; top: 420px; left:910px; font-size:12pt; "></div>
+<div id="so02-2" style="position: absolute; top: 420px; left:920px; font-size:12pt; "></div>
+<div id="so02-2c" style="position: absolute; top: 465px; left:910px; font-size:12pt; color:#FF0000; "></div>
 
 <!平沼橋-西横浜>
 <div id="so02-03d" style="position: absolute; top: -100px; left:-100px;"><input type="text"  id = "so02-03" disabled / name="address" size="14" value=""　></div>
-<div id="so02-3e" style="position: absolute; top: 148px; left:676px; font-size:12pt; "></div>
-<div id="so02-03b" style="position: absolute; top: 148px; left:693px; font-size:12pt; "></div>
-<div id="so02-03c" style="position: absolute; top: 148px; left:796px; font-size:12pt; color:#FF0000; "></div>
+<div id="so02-03b" style="position: absolute; top: 550px; left:980px; font-size:12pt; "></div>
+<div id="so02-3e" style="position: absolute; top: 550px; left:990px; font-size:12pt; "></div>
+<div id="so02-03c" style="position: absolute; top: 595px; left:980px; font-size:12pt; color:#FF0000; "></div>
 <div id="so03-02d" style="position: absolute; top: -100px; left:-100px;"><input type="text"  id = "so03-02" disabled / name="address" size="14" value=""　></div>
-<div id="so03-2e" style="position: absolute; top: 188px; left:676px; font-size:12pt; "></div>
-<div id="so03-02b" style="position: absolute; top: 188px; left:693px; font-size:12pt; "></div>
-<div id="so03-02c" style="position: absolute; top: 188px; left:796px; font-size:12pt; color:#FF0000; "></div>
+<div id="so03-02b" style="position: absolute; top: 550px; left:920px; font-size:12pt; "></div>
+<div id="so03-2e" style="position: absolute; top: 550px; left:930px; font-size:12pt; "></div>
+<div id="so03-02c" style="position: absolute; top: 595px; left:920px; font-size:12pt; color:#FF0000; "></div>
 
-<div style="position: absolute; top: 30px; left:960px; font-size:18pt"><p>西横浜</p></div>
+<div style="position: absolute; top: 710px; left:760px; font-size:18pt"><p>西横浜</p></div>
 <div id="so03-1ad" style="position: absolute; top: -100px; left:-100px;"><input type="text"  id = "so03-1a" disabled / name="address" size="14" value=""　></div>
-<div id="so03-1" style="position: absolute; top: 133px; left:921px; font-size:12pt; "></div>
-<div id="so03-1b" style="position: absolute; top: 133px; left:938px; font-size:12pt; "></div>
-<div id="so03-1c" style="position: absolute; top: 133px; left:1041px; font-size:12pt; color:#FF0000; "></div>
+<div id="so03-1b" style="position: absolute; top: 720px; left:990px; font-size:12pt; "></div>
+<div id="so03-1" style="position: absolute; top: 720px; left:1000px; font-size:12pt; "></div>
+<div id="so03-1c" style="position: absolute; top: 765px; left:990px; font-size:12pt; color:#FF0000; "></div>
 <div id="so03-2ad" style="position: absolute; top: -100px; left:-100px;"><input type="text"  id = "so03-2a" disabled / name="address" size="14" value=""　></div>
-<div id="so03-2" style="position: absolute; top: 188px; left:921px; font-size:12pt; "></div>
-<div id="so03-2b" style="position: absolute; top: 188px; left:938px; font-size:12pt; "></div>
-<div id="so03-2c" style="position: absolute; top: 188px; left:1041px; font-size:12pt; color:#FF0000; "></div>
+<div id="so03-2b" style="position: absolute; top: 720px; left:910px; font-size:12pt; "></div>
+<div id="so03-2" style="position: absolute; top: 720px; left:920px; font-size:12pt; "></div>
+<div id="so03-2c" style="position: absolute; top: 765px; left:910px; font-size:12pt; color:#FF0000; "></div>
 
 <!西横浜-天王町>
 <div id="so03-04d" style="position: absolute; top: -100px; left:-100px;"><input type="text"  id = "so03-04" disabled / name="address" size="14" value=""　></div>
-<div id="so03-4e" style="position: absolute; top: 148px; left:1150px; font-size:12pt; "></div>
-<div id="so03-04b" style="position: absolute; top: 148px; left:1167px; font-size:12pt; "></div>
-<div id="so03-04c" style="position: absolute; top: 148px; left:1270px; font-size:12pt; color:#FF0000; "></div>
+<div id="so03-04b" style="position: absolute; top: 890px; left:980px; font-size:12pt; "></div>
+<div id="so03-4e" style="position: absolute; top: 890px; left:990px; font-size:12pt; "></div>
+<div id="so03-04c" style="position: absolute; top: 935px; left:980px; font-size:12pt; color:#FF0000; "></div>
 <div id="so04-03d" style="position: absolute; top: -100px; left:-100px;"><input type="text"  id = "so04-03" disabled / name="address" size="14" value=""　></div>
-<div id="so04-3e" style="position: absolute; top: 188px; left:1150px; font-size:12pt; "></div>
-<div id="so04-03b" style="position: absolute; top: 188px; left:1167px; font-size:12pt; "></div>
-<div id="so04-03c" style="position: absolute; top: 188px; left:1270px; font-size:12pt; color:#FF0000; "></div>
+<div id="so04-03b" style="position: absolute; top: 890px; left:920px; font-size:12pt; "></div>
+<div id="so04-3e" style="position: absolute; top: 890px; left:930px; font-size:12pt; "></div>
+<div id="so04-03c" style="position: absolute; top: 935px; left:920px; font-size:12pt; color:#FF0000; "></div>
 
-<div style="position: absolute; top: 30px; left:1370px; font-size:18pt"><p>天王町</p></div>
+<div style="position: absolute; top: 970px; left:760px; font-size:18pt"><p>天王町</p></div>
 <div id="so04-1ad" style="position: absolute; top: -100px; left:-100px;"><input type="text"  id = "so04-1a" disabled / name="address" size="14" value=""　></div>
-<div id="so04-1" style="position: absolute; top: 148px; left:1346px; font-size:12pt; "></div>
-<div id="so04-1b" style="position: absolute; top: 148px; left:1363px; font-size:12pt; "></div>
-<div id="so04-1c" style="position: absolute; top: 148px; left:1466px; font-size:12pt; color:#FF0000; "></div>
+<div id="so04-1b" style="position: absolute; top: 980px; left:980px; font-size:12pt; "></div>
+<div id="so04-1" style="position: absolute; top: 980px; left:990px; font-size:12pt; "></div>
+<div id="so04-1c" style="position: absolute; top: 1025px; left:980px; font-size:12pt; color:#FF0000; "></div>
 <div id="so04-2ad" style="position: absolute; top: -100px; left:-100px;"><input type="text"  id = "so04-2a" disabled / name="address" size="14" value=""　></div>
-<div id="so04-2" style="position: absolute; top: 188px; left:1346px; font-size:12pt; "></div>
-<div id="so04-2b" style="position: absolute; top: 188px; left:1363px; font-size:12pt; "></div>
-<div id="so04-2c" style="position: absolute; top: 188px; left:1466px; font-size:12pt; color:#FF0000; "></div>
+<div id="so04-2b" style="position: absolute; top: 980px; left:920px; font-size:12pt; "></div>
+<div id="so04-2" style="position: absolute; top: 980px; left:930px; font-size:12pt; "></div>
+<div id="so04-2c" style="position: absolute; top: 1025px; left:920px; font-size:12pt; color:#FF0000; "></div>
 
 
 <!天王町-星川>
 <div id="so04-05d" style="position: absolute; top: -100px; left:-100px;"><input type="text"  id = "so04-05" disabled / name="address" size="14" value=""　></div>
-<div id="so04-5e" style="position: absolute; top: 148px; left:1510px; font-size:12pt; "></div>
-<div id="so04-05b" style="position: absolute; top: 148px; left:1527px; font-size:12pt; "></div>
-<div id="so04-05c" style="position: absolute; top: 148px; left:1630px; font-size:12pt; color:#FF0000; "></div>
+<div id="so04-05b" style="position: absolute; top: 1080px; left:980px; font-size:12pt; "></div>
+<div id="so04-5e" style="position: absolute; top: 1080px; left:990px; font-size:12pt; "></div>
+<div id="so04-05c" style="position: absolute; top: 1125px; left:980px; font-size:12pt; color:#FF0000; "></div>
 <div id="so05-04d" style="position: absolute; top: -100px; left:-100px;"><input type="text"  id = "so05-04" disabled / name="address" size="14" value=""　></div>
-<div id="so05-4e" style="position: absolute; top: 188px; left:1510px; font-size:12pt; "></div>
-<div id="so05-04b" style="position: absolute; top: 188px; left:1527px; font-size:12pt; "></div>
-<div id="so05-04c" style="position: absolute; top: 188px; left:1630px; font-size:12pt; color:#FF0000; "></div>
+<div id="so05-04b" style="position: absolute; top: 1080px; left:920px; font-size:12pt; "></div>
+<div id="so05-4e" style="position: absolute; top: 1080px; left:930px; font-size:12pt; "></div>
+<div id="so05-04c" style="position: absolute; top: 1125px; left:920px; font-size:12pt; color:#FF0000; "></div>
 
 <div id="ty99d" style="position: absolute; top: -50px; left:-50px; font-size:18pt"　><input type="text"  id = "ty99" disabled / name="address" size="100" value="試験"　></div>
 
-<div style="position: absolute; top: 15px; left:1800px; font-size:18pt"><p>星　川</p></div>
-<div style="position: absolute; top: 52px; left:1760px; font-size:10pt"><p>(各停は副本線に表示します)</p></div>
+<div style="position: absolute; top: 1260px; left:755px; font-size:18pt"><p>星　川</p></div>
+<div style="position: absolute; top: 1300px; left:660px; font-size:10pt"><p>(各停は副本線に表示します)</p></div>
 <div id="so05-1ad" style="position: absolute; top: -100px; left:-100px;"><input type="text"  id = "so05-1a" disabled / name="address" size="14" value=""　></div>
-<div id="so05-1" style="position: absolute; top: 93px; left:1770px; font-size:12pt; "></div>
-<div id="so05-1b" style="position: absolute; top: 93px; left:1787px; font-size:12pt; "></div>
-<div id="so05-1c" style="position: absolute; top: 93px; left:1890px; font-size:12pt; color:#FF0000; "></div>
+<div id="so05-1b" style="position: absolute; top: 1270px; left:1060px; font-size:12pt; "></div>
+<div id="so05-1" style="position: absolute; top: 1270px; left:1070px; font-size:12pt; "></div>
+<div id="so05-1c" style="position: absolute; top: 1315px; left:1060px; font-size:12pt; color:#FF0000; "></div>
 <div id="so05-2ad" style="position: absolute; top: -100px; left:-100px;"><input type="text"  id = "so05-2a" disabled / name="address" size="14" value=""　></div>
-<div id="so05-2" style="position: absolute; top: 148px; left:1770px; font-size:12pt; "></div>
-<div id="so05-2b" style="position: absolute; top: 148px; left:1787px; font-size:12pt; "></div>
-<div id="so05-2c" style="position: absolute; top: 148px; left:1890px; font-size:12pt; color:#FF0000; "></div>
+<div id="so05-2b" style="position: absolute; top: 1270px; left:980px; font-size:12pt; "></div>
+<div id="so05-2" style="position: absolute; top: 1270px; left:990px; font-size:12pt; "></div>
+<div id="so05-2c" style="position: absolute; top: 1315px; left:980px; font-size:12pt; color:#FF0000; "></div>
 <div id="so05-3ad" style="position: absolute; top: -100px; left:-100px;"><input type="text"  id = "so05-3a" disabled / name="address" size="14" value=""　></div>
-<div id="so05-3" style="position: absolute; top: 188px; left:1770px; font-size:12pt; "></div>
-<div id="so05-3b" style="position: absolute; top: 188px; left:1787px; font-size:12pt; "></div>
-<div id="so05-3c" style="position: absolute; top: 188px; left:1890px; font-size:12pt; color:#FF0000; "></div>
+<div id="so05-3b" style="position: absolute; top: 1270px; left:920px; font-size:12pt; "></div>
+<div id="so05-3" style="position: absolute; top: 1270px; left:930px; font-size:12pt; "></div>
+<div id="so05-3c" style="position: absolute; top: 1315px; left:920px; font-size:12pt; color:#FF0000; "></div>
 <div id="so05-4ad" style="position: absolute; top: -100px; left:-100px;"><input type="text"  id = "so05-4a" disabled / name="address" size="14" value=""　></div>
-<div id="so05-4" style="position: absolute; top: 248px; left:1770px; font-size:12pt; "></div>
-<div id="so05-4b" style="position: absolute; top: 248px; left:1787px; font-size:12pt; "></div>
-<div id="so05-4c" style="position: absolute; top: 248px; left:1890px; font-size:12pt; color:#FF0000; "></div>
+<div id="so05-4b" style="position: absolute; top: 1270px; left:840px; font-size:12pt; "></div>
+<div id="so05-4" style="position: absolute; top: 1270px; left:850px; font-size:12pt; "></div>
+<div id="so05-4c" style="position: absolute; top: 1315px; left:840px; font-size:12pt; color:#FF0000; "></div>
 
 <!星川-和田町>
 <div id="so05-06d" style="position: absolute; top: -100px; left:-100px;"><input type="text"  id = "so05-06" disabled / name="address" size="14" value=""　></div>
-<div id="so05-6e" style="position: absolute; top: 541px; left:31px; font-size:12pt; "></div>
-<div id="so05-06b" style="position: absolute; top: 541px; left:48px; font-size:12pt; "></div>
-<div id="so05-06c" style="position: absolute; top: 541px; left:151px; font-size:12pt; color:#FF0000; "></div>
+<div id="so05-06b" style="position: absolute; top: 1465px; left:980px; font-size:12pt; "></div>
+<div id="so05-6e" style="position: absolute; top: 1465px; left:990px; font-size:12pt; "></div>
+<div id="so05-06c" style="position: absolute; top: 1510px; left:980px; font-size:12pt; color:#FF0000; "></div>
 <div id="so06-05d" style="position: absolute; top: -100px; left:-100px;"><input type="text"  id = "so06-05" disabled / name="address" size="14" value=""　></div>
-<div id="so06-5e" style="position: absolute; top: 581px; left:31px; font-size:12pt; "></div>
-<div id="so06-05b" style="position: absolute; top: 581px; left:48px; font-size:12pt; "></div>
-<div id="so06-05c" style="position: absolute; top: 581px; left:151px; font-size:12pt; color:#FF0000; "></div>
+<div id="so06-05b" style="position: absolute; top: 1465px; left:920px; font-size:12pt; "></div>
+<div id="so06-5e" style="position: absolute; top: 1465px; left:930px; font-size:12pt; "></div>
+<div id="so06-05c" style="position: absolute; top: 1510px; left:920px; font-size:12pt; color:#FF0000; "></div>
 
-<div style="position: absolute; top: 395px; left:230px; font-size:18pt"><p>和田町</p></div>
+<div style="position: absolute; top: 1540px; left:760px; font-size:18pt"><p>和田町</p></div>
 <div id="so06-1ad" style="position: absolute; top: -100px; left:-100px;"><input type="text"  id = "so06-1a" disabled / name="address" size="14" value=""　></div>
-<div id="so06-1" style="position: absolute; top: 541px; left:200px; font-size:12pt; "></div>
-<div id="so06-1b" style="position: absolute; top: 541px; left:217px; font-size:12pt; "></div>
-<div id="so06-1c" style="position: absolute; top: 541px; left:320px; font-size:12pt; color:#FF0000; "></div>
+<div id="so06-1b" style="position: absolute; top: 1550px; left:980px; font-size:12pt; "></div>
+<div id="so06-1" style="position: absolute; top: 1550px; left:990px; font-size:12pt; "></div>
+<div id="so06-1c" style="position: absolute; top: 1595px; left:980px; font-size:12pt; color:#FF0000; "></div>
 <div id="so06-2ad" style="position: absolute; top: -100px; left:-100px;"><input type="text"  id = "so06-2a" disabled / name="address" size="14" value=""　></div>
-<div id="so06-2" style="position: absolute; top: 581px; left:200px; font-size:12pt; "></div>
-<div id="so06-2b" style="position: absolute; top: 581px; left:217px; font-size:12pt; "></div>
-<div id="so06-2c" style="position: absolute; top: 581px; left:320px; font-size:12pt; color:#FF0000; "></div>
+<div id="so06-2b" style="position: absolute; top: 1550px; left:920px; font-size:12pt; "></div>
+<div id="so06-2" style="position: absolute; top: 1550px; left:930px; font-size:12pt; "></div>
+<div id="so06-2c" style="position: absolute; top: 1595px; left:920px; font-size:12pt; color:#FF0000; "></div>
 
 <!和田町-上星川>
 <div id="so06-07d" style="position: absolute; top: -100px; left:-100px;"><input type="text"  id = "so06-07" disabled / name="address" size="14" value=""　></div>
-<div id="so06-7e" style="position: absolute; top: 541px; left:361px; font-size:12pt; "></div>
-<div id="so06-07b" style="position: absolute; top: 541px; left:378px; font-size:12pt; "></div>
-<div id="so06-07c" style="position: absolute; top: 541px; left:481px; font-size:12pt; color:#FF0000; "></div>
+<div id="so06-07b" style="position: absolute; top: 1650px; left:980px; font-size:12pt; "></div>
+<div id="so06-7e" style="position: absolute; top: 1650px; left:990px; font-size:12pt; "></div>
+<div id="so06-07c" style="position: absolute; top: 1695px; left:980px; font-size:12pt; color:#FF0000; "></div>
 <div id="so07-06d" style="position: absolute; top: -100px; left:-100px;"><input type="text"  id = "so07-06" disabled / name="address" size="14" value=""　></div>
-<div id="so07-6e" style="position: absolute; top: 581px; left:361px; font-size:12pt; "></div>
-<div id="so07-06b" style="position: absolute; top: 581px; left:378px; font-size:12pt; "></div>
-<div id="so07-06c" style="position: absolute; top: 581px; left:481px; font-size:12pt; color:#FF0000; "></div>
+<div id="so07-06b" style="position: absolute; top: 1650px; left:920px; font-size:12pt; "></div>
+<div id="so07-6e" style="position: absolute; top: 1650px; left:930px; font-size:12pt; "></div>
+<div id="so07-06c" style="position: absolute; top: 1695px; left:920px; font-size:12pt; color:#FF0000; "></div>
 
-<div style="position: absolute; top: 395px; left:570px; font-size:18pt"><p>上星川</p></div>
+<div style="position: absolute; top: 1730px; left:760px; font-size:18pt"><p>上星川</p></div>
 <div id="so07-1ad" style="position: absolute; top: -100px; left:-100px;"><input type="text"  id = "so07-1a" disabled / name="address" size="14" value=""　></div>
-<div id="so07-1" style="position: absolute; top: 541px; left:536px; font-size:12pt; "></div>
-<div id="so07-1b" style="position: absolute; top: 541px; left:553px; font-size:12pt; "></div>
-<div id="so07-1c" style="position: absolute; top: 541px; left:656px; font-size:12pt; color:#FF0000; "></div>
+<div id="so07-1b" style="position: absolute; top: 1740px; left:980px; font-size:12pt; "></div>
+<div id="so07-1" style="position: absolute; top: 1740px; left:990px; font-size:12pt; "></div>
+<div id="so07-1c" style="position: absolute; top: 1785px; left:980px; font-size:12pt; color:#FF0000; "></div>
 <div id="so07-2ad" style="position: absolute; top: -100px; left:-100px;"><input type="text"  id = "so07-2a" disabled / name="address" size="14" value=""　></div>
-<div id="so07-2" style="position: absolute; top: 581px; left:536px; font-size:12pt; "></div>
-<div id="so07-2b" style="position: absolute; top: 581px; left:553px; font-size:12pt; "></div>
-<div id="so07-2c" style="position: absolute; top: 581px; left:656px; font-size:12pt; color:#FF0000; "></div>
+<div id="so07-2b" style="position: absolute; top: 1740px; left:920px; font-size:12pt; "></div>
+<div id="so07-2" style="position: absolute; top: 1740px; left:930px; font-size:12pt; "></div>
+<div id="so07-2c" style="position: absolute; top: 1785px; left:920px; font-size:12pt; color:#FF0000; "></div>
 
 <!上星川-西谷>
 <div id="so07-08d" style="position: absolute; top: -100px; left:-100px;"><input type="text"  id = "so07-08" disabled / name="address" size="14" value=""　></div>
-<div id="so07-8e" style="position: absolute; top: 541px; left:696px; font-size:12pt; "></div>
-<div id="so07-08b" style="position: absolute; top: 541px; left:713px; font-size:12pt; "></div>
-<div id="so07-08c" style="position: absolute; top: 541px; left:816px; font-size:12pt; color:#FF0000; "></div>
+<div id="so07-08b" style="position: absolute; top: 1850px; left:980px; font-size:12pt; "></div>
+<div id="so07-8e" style="position: absolute; top: 1850px; left:990px; font-size:12pt; "></div>
+<div id="so07-08c" style="position: absolute; top: 1895px; left:980px; font-size:12pt; color:#FF0000; "></div>
 <div id="so08-07d" style="position: absolute; top: -100px; left:-100px;"><input type="text"  id = "so08-07" disabled / name="address" size="14" value=""　></div>
-<div id="so08-7e" style="position: absolute; top: 581px; left:696px; font-size:12pt; "></div>
-<div id="so08-07b" style="position: absolute; top: 581px; left:713px; font-size:12pt; "></div>
-<div id="so08-07c" style="position: absolute; top: 581px; left:816px; font-size:12pt; color:#FF0000; "></div>
+<div id="so08-07b" style="position: absolute; top: 1840px; left:920px; font-size:12pt; "></div>
+<div id="so08-7e" style="position: absolute; top: 1840px; left:930px; font-size:12pt; "></div>
+<div id="so08-07c" style="position: absolute; top: 1885px; left:920px; font-size:12pt; color:#FF0000; "></div>
 
+<div style="position: absolute; top: 670px; left:500px; font-size:16pt"><p>(大 崎)</p></div>
+<div id="so56d" style="position: absolute; top: -100px; left:-100px;"><input type="text"  id = "so56" disabled / name="address" size="14" value=""　></div>
+<div id="so56b" style="position: absolute; top: 680px; left:590px; font-size:12pt; "></div>
+<div id="so56e" style="position: absolute; top: 680px; left:600px; font-size:12pt; "></div>
+<div id="so56c" style="position: absolute; top: 735px; left:590px; font-size:12pt; color:#FF0000; "></div>
 
-<!1鶴見-羽沢国大>
-<div style="position: absolute; top: 730px; left:290px; font-size:16pt"><p>(JR武蔵小杉)</p></div>
+<!大崎-西大井>
+<div id="so56-55d" style="position: absolute; top: -100px; left:-100px;"><input type="text"  id = "so56-55" disabled / name="address" size="14" value=""　></div>
+<div id="so56-55b" style="position: absolute; top: 780px; left:590px; font-size:12pt; "></div>
+<div id="so56-55e" style="position: absolute; top: 780px; left:600px; font-size:12pt; "></div>
+<div id="so56-55c" style="position: absolute; top: 835px; left:590px; font-size:12pt; color:#FF0000; "></div>
+
+<div style="position: absolute; top: 870px; left:490px; font-size:16pt"><p>(西大井)</p></div>
+<div id="so55d" style="position: absolute; top: -100px; left:-100px;"><input type="text"  id = "so55" disabled / name="address" size="14" value=""　></div>
+<div id="so55b" style="position: absolute; top: 880px; left:590px; font-size:12pt; "></div>
+<div id="so55e" style="position: absolute; top: 880px; left:600px; font-size:12pt; "></div>
+<div id="so55c" style="position: absolute; top: 935px; left:590px; font-size:12pt; color:#FF0000; "></div>
+
+<!西大井-武蔵小杉>
+<div id="so55-54d" style="position: absolute; top: -100px; left:-100px;"><input type="text"  id = "so55-54" disabled / name="address" size="14" value=""　></div>
+<div id="so55-54b" style="position: absolute; top: 980px; left:590px; font-size:12pt; "></div>
+<div id="so55-54e" style="position: absolute; top: 980px; left:600px; font-size:12pt; "></div>
+<div id="so55-54c" style="position: absolute; top: 1035px; left:590px; font-size:12pt; color:#FF0000; "></div>
+
+<div style="position: absolute; top: 1070px; left:450px; font-size:16pt"><p>(JR武蔵小杉)</p></div>
 <div id="so54d" style="position: absolute; top: -100px; left:-100px;"><input type="text"  id = "so54" disabled / name="address" size="14" value=""　></div>
-<div id="so54e" style="position: absolute; top: 795px; left:286px; font-size:12pt; "></div>
-<div id="so54b" style="position: absolute; top: 795px; left:303px; font-size:12pt; "></div>
-<div id="so54c" style="position: absolute; top: 795px; left:406px; font-size:12pt; color:#FF0000; "></div>
+<div id="so54b" style="position: absolute; top: 1080px; left:590px; font-size:12pt; "></div>
+<div id="so54e" style="position: absolute; top: 1080px; left:600px; font-size:12pt; "></div>
+<div id="so54c" style="position: absolute; top: 1135px; left:590px; font-size:12pt; color:#FF0000; "></div>
 
-
+<!武蔵小杉-羽沢国大>
 <div id="so54-53d" style="position: absolute; top: -100px; left:-100px;"><input type="text"  id = "so54-53" disabled / name="address" size="14" value=""　></div>
-<div id="so54-53e" style="position: absolute; top: 795px; left:500px; font-size:12pt; "></div>
-<div id="so54-53b" style="position: absolute; top: 795px; left:517px; font-size:12pt; "></div>
-<div id="so54-53c" style="position: absolute; top: 795px; left:620px; font-size:12pt; color:#FF0000; "></div>
+<div id="so54-53b" style="position: absolute; top: 1230px; left:590px; font-size:12pt; "></div>
+<div id="so54-53e" style="position: absolute; top: 1230px; left:600px; font-size:12pt; "></div>
+<div id="so54-53c" style="position: absolute; top: 1285px; left:590px; font-size:12pt; color:#FF0000; "></div>
 <div id="so53-51d" style="position: absolute; top: -100px; left:-100px;"><input type="text"  id = "so53-51" disabled / name="address" size="14" value=""　></div>
-<div id="so53-51e" style="position: absolute; top: 795px; left:665px; font-size:12pt; "></div>
-<div id="so53-51b" style="position: absolute; top: 795px; left:682px; font-size:12pt; "></div>
-<div id="so53-51c" style="position: absolute; top: 795px; left:785px; font-size:12pt; color:#FF0000; "></div>
+<div id="so53-51b" style="position: absolute; top: 1490px; left:410px; font-size:12pt; "></div>
+<div id="so53-51e" style="position: absolute; top: 1490px; left:420px; font-size:12pt; "></div>
+<div id="so53-51c" style="position: absolute; top: 1545px; left:410px; font-size:12pt; color:#FF0000; "></div>
+<div id="so53-54d" style="position: absolute; top: -100px; left:-100px;"><input type="text"  id = "so53-54" disabled / name="address" size="14" value=""　></div>
+<div id="so53-54b" style="position: absolute; top: 1230px; left:530px; font-size:12pt; "></div>
+<div id="so53-54e" style="position: absolute; top: 1230px; left:540px; font-size:12pt; "></div>
+<div id="so53-54c" style="position: absolute; top: 1285px; left:530px; font-size:12pt; color:#FF0000; "></div>
 
+<div style="position: absolute; top: 510px; left:120px; font-size:16pt"><p>(日 吉)</p></div>
+<div id="sh53-1ad" style="position: absolute; top: -100px; left:-100px;"><input type="text"  id = "sh53-1a" disabled / name="address" size="14" value=""　></div>
+<div id="sh53-1b" style="position: absolute; top: 510px; left:340px; font-size:12pt; "></div>
+<div id="sh53-1" style="position: absolute; top: 510px; left:350px; font-size:12pt; "></div>
+<div id="sh53-1c" style="position: absolute; top: 565px; left:340px; font-size:12pt; color:#FF0000; "></div>
+<div id="sh53-2ad" style="position: absolute; top: -100px; left:-100px;"><input type="text"  id = "sh53-2a" disabled / name="address" size="14" value=""　></div>
+<div id="sh53-2b" style="position: absolute; top: 510px; left:260px; font-size:12pt; "></div>
+<div id="sh53-2" style="position: absolute; top: 510px; left:270px; font-size:12pt; "></div>
+<div id="sh53-2c" style="position: absolute; top: 565px; left:260px; font-size:12pt; color:#FF0000; "></div>
 
-<div style="position: absolute; top: 870px; left:60px; font-size:16pt"><p>(新綱島)</p></div>
+<!日吉-新綱島>
+<div id="sh53-52d" style="position: absolute; top: -100px; left:-100px;"><input type="text"  id = "sh53-52" disabled / name="address" size="14" value=""　></div>
+<div id="sh53-52b" style="position: absolute; top: 720px; left:260px; font-size:12pt; "></div>
+<div id="sh53-52e" style="position: absolute; top: 720px; left:270px; font-size:12pt; "></div>
+<div id="sh53-52c" style="position: absolute; top: 775px; left:260px; font-size:12pt; color:#FF0000; "></div>
+
+<div style="position: absolute; top: 810px; left:120px; font-size:16pt"><p>(新綱島)</p></div>
 <div id="sh52-1ad" style="position: absolute; top: -100px; left:-100px;"><input type="text"  id = "sh52-1a" disabled / name="address" size="14" value=""　></div>
-<div id="sh52-1" style="position: absolute; top: 951px; left:36px; font-size:12pt; "></div>
-<div id="sh52-1b" style="position: absolute; top: 951px; left:53px; font-size:12pt; "></div>
-<div id="sh52-1c" style="position: absolute; top: 951px; left:156px; font-size:12pt; color:#FF0000; "></div>
-
-<div style="position: absolute; top: 820px; left:70px; font-size:22pt"><input type="button" id = "shibuya" value="←渋谷エリア" ></div>
-<div style="position: absolute; top: 790px; left:70px; font-size:22pt"><input type="button" id = "meguro" value="←目黒エリア" ></div>
-
-
-<div style="position: absolute; top: 1080px; left:300px; font-size:12pt"><p>東急電鉄TTC</p></div>
-<div style="position: absolute; top: 672px; left:390px; font-size:12pt"><p>JR東日本ATOS</p></div>
+<div id="sh52-1b" style="position: absolute; top: 810px; left:260px; font-size:12pt; "></div>
+<div id="sh52-1" style="position: absolute; top: 810px; left:270px; font-size:12pt; "></div>
+<div id="sh52-1c" style="position: absolute; top: 865px; left:260px; font-size:12pt; color:#FF0000; "></div>
 
 <!新綱島-新横浜>
 <div id="sh52-51d" style="position: absolute; top: -100px; left:-100px;"><input type="text"  id = "sh52-51" disabled / name="address" size="14" value=""　></div>
-<div id="sh52-51e" style="position: absolute; top: 951px; left:226px; font-size:12pt; "></div>
-<div id="sh52-51b" style="position: absolute; top: 951px; left:243px; font-size:12pt; "></div>
-<div id="sh52-51c" style="position: absolute; top: 951px; left:346px; font-size:12pt; color:#FF0000; "></div>
+<div id="sh52-51b" style="position: absolute; top: 1020px; left:350px; font-size:12pt; "></div>
+<div id="sh52-51e" style="position: absolute; top: 1020px; left:360px; font-size:12pt; "></div>
+<div id="sh52-51c" style="position: absolute; top: 1075px; left:350px; font-size:12pt; color:#FF0000; "></div>
 
 <div id="sh52-51d2" style="position: absolute; top: -100px; left:-100px;"><input type="text"  id = "sh52-512" disabled / name="address" size="14" value=""　></div>
-<div id="sh52-51e2" style="position: absolute; top: 921px; left:226px; font-size:12pt; "></div>
-<div id="sh52-51b2" style="position: absolute; top: 921px; left:243px; font-size:12pt; "></div>
-<div id="sh52-51c2" style="position: absolute; top: 921px; left:346px; font-size:12pt; color:#FF0000; "></div>
+<div id="sh52-51b2" style="position: absolute; top: 1020px; left:410px; font-size:12pt; "></div>
+<div id="sh52-51e2" style="position: absolute; top: 1020px; left:420px; font-size:12pt; "></div>
+<div id="sh52-51c2" style="position: absolute; top: 1075px; left:410px; font-size:12pt; color:#FF0000; "></div>
 
 <div id="sh51-52d" style="position: absolute; top: -100px; left:-100px;"><input type="text"  id = "sh51-52" disabled / name="address" size="14" value=""　></div>
-<div id="sh51-52e" style="position: absolute; top: 991px; left:226px; font-size:12pt; "></div>
-<div id="sh51-52b" style="position: absolute; top: 991px; left:243px; font-size:12pt; "></div>
-<div id="sh51-52c" style="position: absolute; top: 991px; left:346px; font-size:12pt; color:#FF0000; "></div>
+<div id="sh51-52b" style="position: absolute; top: 1050px; left:290px; font-size:12pt; "></div>
+<div id="sh51-52e" style="position: absolute; top: 1050px; left:300px; font-size:12pt; "></div>
+<div id="sh51-52c" style="position: absolute; top: 1105px; left:290px; font-size:12pt; color:#FF0000; "></div>
 
 
-<div style="position: absolute; top: 820px; left:525px; font-size:18pt"><p>新横浜</p></div>
-<div style="position: absolute; top: 1060px; left:625px; font-size:10pt"><p>※処理遅延により二重表示となる場合があります</p></div>
+<div style="position: absolute; top: 1210px; left:100px; font-size:18pt"><p>新横浜</p></div>
 <div id="so52-1ad" style="position: absolute; top: -100px; left:-100px;"><input type="text"  id = "so52-1a" disabled / name="address" size="14" value=""　></div>
-<div id="so52-1" style="position: absolute; top: 910px; left:496px; font-size:12pt; "></div>
-<div id="so52-1b" style="position: absolute; top: 910px; left:513px; font-size:12pt; "></div>
-<div id="so52-1c" style="position: absolute; top: 910px; left:616px; font-size:12pt; color:#FF0000; "></div>
+<div id="so52-1b" style="position: absolute; top: 1210px; left:400px; font-size:12pt; "></div>
+<div id="so52-1" style="position: absolute; top: 1210px; left:410px; font-size:12pt; "></div>
+<div id="so52-1c" style="position: absolute; top: 1265px; left:400px; font-size:12pt; color:#FF0000; "></div>
 <div id="so52-2ad" style="position: absolute; top: -100px; left:-100px;"><input type="text"  id = "so52-2a" disabled / name="address" size="14" value=""　></div>
-<div id="so52-2" style="position: absolute; top: 970px; left:496px; font-size:12pt; "></div>
-<div id="so52-2b" style="position: absolute; top: 970px; left:513px; font-size:12pt; "></div>
-<div id="so52-2c" style="position: absolute; top: 970px; left:616px; font-size:12pt; color:#FF0000; "></div>
+<div id="so52-2b" style="position: absolute; top: 1210px; left:320px; font-size:12pt; "></div>
+<div id="so52-2" style="position: absolute; top: 1210px; left:330px; font-size:12pt; "></div>
+<div id="so52-2c" style="position: absolute; top: 1265px; left:320px; font-size:12pt; color:#FF0000; "></div>
 <div id="so52-3ad" style="position: absolute; top: -100px; left:-100px;"><input type="text"  id = "so52-3a" disabled / name="address" size="14" value=""　></div>
-<div id="so52-3" style="position: absolute; top: 1030px; left:496px; font-size:12pt; "></div>
-<div id="so52-3b" style="position: absolute; top: 1030px; left:513px; font-size:12pt; "></div>
-<div id="so52-3c" style="position: absolute; top: 1030px; left:616px; font-size:12pt; color:#FF0000; "></div>
+<div id="so52-3b" style="position: absolute; top: 1210px; left:237px; font-size:12pt; "></div>
+<div id="so52-3" style="position: absolute; top: 1210px; left:247px; font-size:12pt; "></div>
+<div id="so52-3c" style="position: absolute; top: 1265px; left:237px; font-size:12pt; color:#FF0000; "></div>
 
 <!1新横浜-羽沢国大>
 <div id="so52-51d" style="position: absolute; top: -100px; left:-100px;"><input type="text"  id = "so52-51" disabled / name="address" size="14" value=""　></div>
-<div id="so52-51e" style="position: absolute; top: 951px; left:746px; font-size:12pt; "></div>
-<div id="so52-51b" style="position: absolute; top: 951px; left:763px; font-size:12pt; "></div>
-<div id="so52-51c" style="position: absolute; top: 951px; left:866px; font-size:12pt; color:#FF0000; "></div>
+<div id="so52-51b" style="position: absolute; top: 1490px; left:350px; font-size:12pt; "></div>
+<div id="so52-51e" style="position: absolute; top: 1490px; left:360px; font-size:12pt; "></div>
+<div id="so52-51c" style="position: absolute; top: 1545px; left:350px; font-size:12pt; color:#FF0000; "></div>
 <div id="so51-52d" style="position: absolute; top: -100px; left:-100px;"><input type="text"  id = "so51-52" disabled / name="address" size="14" value=""　></div>
-<div id="so51-52e" style="position: absolute; top: 991px; left:746px; font-size:12pt; "></div>
-<div id="so51-52b" style="position: absolute; top: 991px; left:763px; font-size:12pt; "></div>
-<div id="so51-52c" style="position: absolute; top: 991px; left:866px; font-size:12pt; color:#FF0000; "></div>
+<div id="so51-52b" style="position: absolute; top: 1380px; left:290px; font-size:12pt; "></div>
+<div id="so51-52e" style="position: absolute; top: 1380px; left:300px; font-size:12pt; "></div>
+<div id="so51-52c" style="position: absolute; top: 1435px; left:290px; font-size:12pt; color:#FF0000; "></div>
 
-<div style="position: absolute; top: 820px; left:960px; font-size:18pt"><p>羽沢横浜国大</p></div>
-<div style="position: absolute; top: 860px; left:900px; font-size:10pt"><p>(逆出発列車は実際と反対線に表示します)</p></div>
+<div style="position: absolute; top: 1640px; left:80px; font-size:18pt"><p>羽沢横浜国大</p></div>
+<div style="position: absolute; top: 1680px; left:5px; font-size:10pt"><p>(逆出発列車は実際と反対線に表示します)</p></div>
 <div id="so51-1ad" style="position: absolute; top: -100px; left:-100px;"><input type="text"  id = "so51-1a" disabled / name="address" size="14" value=""　></div>
-<div id="so51-1" style="position: absolute; top: 951px; left:966px; font-size:12pt; "></div>
-<div id="so51-1b" style="position: absolute; top: 951px; left:983px; font-size:12pt; "></div>
-<div id="so51-1c" style="position: absolute; top: 951px; left:1086px; font-size:12pt; color:#FF0000; "></div>
+<div id="so51-1b" style="position: absolute; top: 1645px; left:350px; font-size:12pt; "></div>
+<div id="so51-1" style="position: absolute; top: 1645px; left:360px; font-size:12pt; "></div>
+<div id="so51-1c" style="position: absolute; top: 1700px; left:350px; font-size:12pt; color:#FF0000; "></div>
 <div id="so51-2ad" style="position: absolute; top: -100px; left:-100px;"><input type="text"  id = "so51-2a" disabled / name="address" size="14" value=""　></div>
-<div id="so51-2" style="position: absolute; top: 991px; left:966px; font-size:12pt; "></div>
-<div id="so51-2b" style="position: absolute; top: 991px; left:983px; font-size:12pt; "></div>
-<div id="so51-2c" style="position: absolute; top: 991px; left:1086px; font-size:12pt; color:#FF0000; "></div>
+<div id="so51-2b" style="position: absolute; top: 1645px; left:290px; font-size:12pt; "></div>
+<div id="so51-2" style="position: absolute; top: 1645px; left:300px; font-size:12pt; "></div>
+<div id="so51-2c" style="position: absolute; top: 1700px; left:290px; font-size:12pt; color:#FF0000; "></div>
 
 <!羽沢国大-西谷>
 <div id="so51-08d" style="position: absolute; top: -100px; left:-100px;"><input type="text"  id = "so51-08" disabled / name="address" size="14" value=""　></div>
-<div id="so51-8e" style="position: absolute; top: 951px; left:1126px; font-size:12pt; "></div>
-<div id="so51-08b" style="position: absolute; top: 951px; left:1143px; font-size:12pt; "></div>
-<div id="so51-08c" style="position: absolute; top: 951px; left:1246px; font-size:12pt; color:#FF0000; "></div>
+<div id="so51-08b" style="position: absolute; top: 1790px; left:350px; font-size:12pt; "></div>
+<div id="so51-8e" style="position: absolute; top: 1790px; left:360px; font-size:12pt; "></div>
+<div id="so51-08c" style="position: absolute; top: 1845px; left:350px; font-size:12pt; color:#FF0000; "></div>
 <div id="so08-51d" style="position: absolute; top: -100px; left:-100px;"><input type="text"  id = "so08-51" disabled / name="address" size="14" value=""　></div>
-<div id="so08-51e" style="position: absolute; top: 991px; left:1146px; font-size:12pt; "></div>
-<div id="so08-51b" style="position: absolute; top: 991px; left:1163px; font-size:12pt; "></div>
-<div id="so08-51c" style="position: absolute; top: 991px; left:1266px; font-size:12pt; color:#FF0000; "></div>
+<div id="so08-51b" style="position: absolute; top: 1790px; left:290px; font-size:12pt; "></div>
+<div id="so08-51e" style="position: absolute; top: 1790px; left:300px; font-size:12pt; "></div>
+<div id="so08-51c" style="position: absolute; top: 1845px; left:290px; font-size:12pt; color:#FF0000; "></div>
 
-<div style="position: absolute; top: 395px; left:900px; font-size:18pt"><p>西　谷</p></div>
+<div style="position: absolute; top: 2120px; left:410px; font-size:18pt"><p>西　谷</p></div>
 <div id="so08-1ad" style="position: absolute; top: -100px; left:-100px;"><input type="text"  id = "so08-1a" disabled / name="address" size="14" value=""　></div>
-<div id="so08-1" style="position: absolute; top: 486px; left:860px; font-size:12pt; "></div>
-<div id="so08-1b" style="position: absolute; top: 486px; left:877px; font-size:12pt; "></div>
-<div id="so08-1c" style="position: absolute; top: 486px; left:980px; font-size:12pt; color:#FF0000; "></div>
+<div id="so08-1b" style="position: absolute; top: 2125px; left:740px; font-size:12pt; "></div>
+<div id="so08-1" style="position: absolute; top: 2125px; left:750px; font-size:12pt; "></div>
+<div id="so08-1c" style="position: absolute; top: 2180px; left:740px; font-size:12pt; color:#FF0000; "></div>
 <div id="so08-2ad" style="position: absolute; top: -100px; left:-100px;"><input type="text"  id = "so08-2a" disabled / name="address" size="14" value=""　></div>
-<div id="so08-2" style="position: absolute; top: 541px; left:860px; font-size:12pt; "></div>
-<div id="so08-2b" style="position: absolute; top: 541px; left:877px; font-size:12pt; "></div>
-<div id="so08-2c" style="position: absolute; top: 541px; left:980px; font-size:12pt; color:#FF0000; "></div>
+<div id="so08-2b" style="position: absolute; top: 2125px; left:660px; font-size:12pt; "></div>
+<div id="so08-2" style="position: absolute; top: 2125px; left:670px; font-size:12pt; "></div>
+<div id="so08-2c" style="position: absolute; top: 2180px; left:660px; font-size:12pt; color:#FF0000; "></div>
 <div id="so08-3ad" style="position: absolute; top: -100px; left:-100px;"><input type="text"  id = "so08-3a" disabled / name="address" size="14" value=""　></div>
-<div id="so08-3" style="position: absolute; top: 581px; left:860px; font-size:12pt; "></div>
-<div id="so08-3b" style="position: absolute; top: 581px; left:877px; font-size:12pt; "></div>
-<div id="so08-3c" style="position: absolute; top: 581px; left:980px; font-size:12pt; color:#FF0000; "></div>
+<div id="so08-3b" style="position: absolute; top: 2125px; left:600px; font-size:12pt; "></div>
+<div id="so08-3" style="position: absolute; top: 2125px; left:610px; font-size:12pt; "></div>
+<div id="so08-3c" style="position: absolute; top: 2180px; left:600px; font-size:12pt; color:#FF0000; "></div>
 <div id="so08-4ad" style="position: absolute; top: -100px; left:-100px;"><input type="text"  id = "so08-4a" disabled / name="address" size="14" value=""　></div>
-<div id="so08-4" style="position: absolute; top: 636px; left:860px; font-size:12pt; "></div>
-<div id="so08-4b" style="position: absolute; top: 636px; left:877px; font-size:12pt; "></div>
-<div id="so08-4c" style="position: absolute; top: 636px; left:980px; font-size:12pt; color:#FF0000; "></div>
+<div id="so08-4b" style="position: absolute; top: 2125px; left:520px; font-size:12pt; "></div>
+<div id="so08-4" style="position: absolute; top: 2125px; left:530px; font-size:12pt; "></div>
+<div id="so08-4c" style="position: absolute; top: 2180px; left:520px; font-size:12pt; color:#FF0000; "></div>
 
 <!西谷-鶴ヶ峰>
 <div id="so08-09d" style="position: absolute; top: -100px; left:-100px;"><input type="text"  id = "so08-09" disabled / name="address" size="14" value=""　></div>
-<div id="so08-9e" style="position: absolute; top: 502px; left:1058px; font-size:12pt; "></div>
-<div id="so08-09b" style="position: absolute; top: 502px; left:1075px; font-size:12pt; "></div>
-<div id="so08-09c" style="position: absolute; top: 502px; left:1178px; font-size:12pt; color:#FF0000; "></div>
+<div id="so08-09b" style="position: absolute; top: 2280px; left:720px; font-size:12pt; "></div>
+<div id="so08-9e" style="position: absolute; top: 2280px; left:730px; font-size:12pt; "></div>
+<div id="so08-09c" style="position: absolute; top: 2335px; left:720px; font-size:12pt; color:#FF0000; "></div>
 <div id="so09-08d" style="position: absolute; top: -100px; left:-100px;"><input type="text"  id = "so09-08" disabled / name="address" size="14" value=""　></div>
-<div id="so09-8e" style="position: absolute; top: 617px; left:1058px; font-size:12pt; "></div>
-<div id="so09-08b" style="position: absolute; top: 617px; left:1075px; font-size:12pt; "></div>
-<div id="so09-08c" style="position: absolute; top: 617px; left:1178px; font-size:12pt; color:#FF0000; "></div>
+<div id="so09-08b" style="position: absolute; top: 2280px; left:540px; font-size:12pt; "></div>
+<div id="so09-8e" style="position: absolute; top: 2280px; left:550px; font-size:12pt; "></div>
+<div id="so09-08c" style="position: absolute; top: 2335px; left:540px; font-size:12pt; color:#FF0000; "></div>
 
-<div style="position: absolute; top: 395px; left:1320px; font-size:18pt"><p>鶴ヶ峰</p></div>
+<div style="position: absolute; top: 2440px; left:410px; font-size:18pt"><p>鶴ヶ峰</p></div>
 <div id="so09-1ad" style="position: absolute; top: -100px; left:-100px;"><input type="text"  id = "so09-1a" disabled / name="address" size="14" value=""　></div>
-<div id="so09-1" style="position: absolute; top: 541px; left:1280px; font-size:12pt; "></div>
-<div id="so09-1b" style="position: absolute; top: 541px; left:1297px; font-size:12pt"></div>
-<div id="so09-1c" style="position: absolute; top: 541px; left:1400px; font-size:12pt; color:#FF0000;"></div>
+<div id="so09-1b" style="position: absolute; top: 2440px; left:660px; font-size:12pt; "></div>
+<div id="so09-1" style="position: absolute; top: 2440px; left:670px; font-size:12pt"></div>
+<div id="so09-1c" style="position: absolute; top: 2495px; left:660px; font-size:12pt; color:#FF0000;"></div>
 <div id="so09-2ad" style="position: absolute; top: -100px; left:-100px;"><input type="text"  id = "so09-2a" disabled / name="address" size="14" value=""　></div>
-<div id="so09-2" style="position: absolute; top: 581px; left:1280px; font-size:12pt; "></div>
-<div id="so09-2b" style="position: absolute; top: 581px; left:1297px; font-size:12pt"></div>
-<div id="so09-2c" style="position: absolute; top: 581px; left:1400px; font-size:12pt; color:#FF0000;"></div>
+<div id="so09-2b" style="position: absolute; top: 2440px; left:600px; font-size:12pt; "></div>
+<div id="so09-2" style="position: absolute; top: 2440px; left:610px; font-size:12pt"></div>
+<div id="so09-2c" style="position: absolute; top: 2495px; left:600px; font-size:12pt; color:#FF0000;"></div>
 
 <!鶴ヶ峰-二俣川>
 <div id="so09-10d" style="position: absolute; top: -100px; left:-100px;"><input type="text"  id = "so09-10" disabled / name="address" size="14" value=""　></div>
-<div id="so09-10e" style="position: absolute; top: 486px; left:1506px; font-size:12pt; "></div>
-<div id="so09-10b" style="position: absolute; top: 486px; left:1523px; font-size:12pt"></div>
-<div id="so09-10c" style="position: absolute; top: 486px; left:1626px; font-size:12pt; color:#FF0000;"></div>
+<div id="so09-10b" style="position: absolute; top: 2600px; left:740px; font-size:12pt; "></div>
+<div id="so09-10e" style="position: absolute; top: 2600px; left:750px; font-size:12pt"></div>
+<div id="so09-10c" style="position: absolute; top: 2655px; left:740px; font-size:12pt; color:#FF0000;"></div>
 <div id="so10-09d" style="position: absolute; top: -100px; left:-100px;"><input type="text"  id = "so10-09" disabled / name="address" size="14" value=""　></div>
-<div id="so10-9e" style="position: absolute; top: 636px; left:1506px; font-size:12pt; "></div>
-<div id="so10-09b" style="position: absolute; top: 636px; left:1523px; font-size:12pt"></div>
-<div id="so10-09c" style="position: absolute; top: 636px; left:1626px; font-size:12pt; color:#FF0000;"></div>
+<div id="so10-09b" style="position: absolute; top: 2600px; left:520px; font-size:12pt; "></div>
+<div id="so10-9e" style="position: absolute; top: 2600px; left:530px; font-size:12pt"></div>
+<div id="so10-09c" style="position: absolute; top: 2655px; left:520px; font-size:12pt; color:#FF0000;"></div>
 
 <div id="so10-09d2" style="position: absolute; top: -100px; left:-100px;"><input type="text"  id = "so10-092" disabled / name="address" size="14" value=""　></div>
-<div id="so10-9e2" style="position: absolute; top: 666px; left:1506px; font-size:12pt; "></div>
-<div id="so10-09b2" style="position: absolute; top: 666px; left:1523px; font-size:12pt"></div>
-<div id="so10-09c2" style="position: absolute; top: 666px; left:1626px; font-size:12pt; color:#FF0000;"></div>
+<div id="so10-09be2" style="position: absolute; top: 2600px; left:460px; font-size:12pt; "></div>
+<div id="so10-9e2" style="position: absolute; top: 2600px; left:470px; font-size:12pt"></div>
+<div id="so10-09c2" style="position: absolute; top: 2655px; left:460px; font-size:12pt; color:#FF0000;"></div>
 
-<div style="position: absolute; top: 395px; left:1700px; font-size:18pt"><p>二俣川</p></div>
-<div style="position: absolute; top: 435px; left:1630px; font-size:10pt"><p>(いずみ野線は副本線に表示します)</p></div>
+<div style="position: absolute; top: 2730px; left:410px; font-size:18pt"><p>二俣川</p></div>
+<div style="position: absolute; top: 2770px; left:300px; font-size:10pt"><p>(いずみ野線は副本線に表示します)</p></div>
 <div id="so10-1ad" style="position: absolute; top: -100px; left:-100px;"><input type="text"  id = "so10-1a" disabled / name="address" size="14" value=""　></div>
-<div id="so10-1" style="position: absolute; top: 486px; left:1666px; font-size:12pt; "></div>
-<div id="so10-1b" style="position: absolute; top: 486px; left:1683px; font-size:12pt"></div>
-<div id="so10-1c" style="position: absolute; top: 486px; left:1786px; font-size:12pt; color:#FF0000;"></div>
+<div id="so10-1b" style="position: absolute; top: 2730px; left:740px; font-size:12pt; "></div>
+<div id="so10-1" style="position: absolute; top: 2730px; left:750px; font-size:12pt"></div>
+<div id="so10-1c" style="position: absolute; top: 2785px; left:740px; font-size:12pt; color:#FF0000;"></div>
 <div id="so10-2ad" style="position: absolute; top: -100px; left:-100px;"><input type="text"  id = "so10-2a" disabled / name="address" size="14" value=""　></div>
-<div id="so10-2" style="position: absolute; top: 541px; left:1666px; font-size:12pt; "></div>
-<div id="so10-2b" style="position: absolute; top: 541px; left:1683px; font-size:12pt"></div>
-<div id="so10-2c" style="position: absolute; top: 541px; left:1786px; font-size:12pt; color:#FF0000;"></div>
+<div id="so10-2b" style="position: absolute; top: 2730px; left:660px; font-size:12pt; "></div>
+<div id="so10-2" style="position: absolute; top: 2730px; left:670px; font-size:12pt"></div>
+<div id="so10-2c" style="position: absolute; top: 2785px; left:660px; font-size:12pt; color:#FF0000;"></div>
 <div id="so10-3ad" style="position: absolute; top: -100px; left:-100px;"><input type="text"  id = "so10-3a" disabled / name="address" size="14" value=""　></div>
-<div id="so10-3" style="position: absolute; top: 581px; left:1666px; font-size:12pt; "></div>
-<div id="so10-3b" style="position: absolute; top: 581px; left:1683px; font-size:12pt"></div>
-<div id="so10-3c" style="position: absolute; top: 581px; left:1786px; font-size:12pt; color:#FF0000;"></div>
+<div id="so10-3b" style="position: absolute; top: 2730px; left:600px; font-size:12pt; "></div>
+<div id="so10-3" style="position: absolute; top: 2730px; left:610px; font-size:12pt"></div>
+<div id="so10-3c" style="position: absolute; top: 2785px; left:600px; font-size:12pt; color:#FF0000;"></div>
 <div id="so10-4ad" style="position: absolute; top: -100px; left:-100px;"><input type="text"  id = "so10-4a" disabled / name="address" size="14" value=""　></div>
-<div id="so10-4" style="position: absolute; top: 636px; left:1666px; font-size:12pt; "></div>
-<div id="so10-4b" style="position: absolute; top: 636px; left:1683px; font-size:12pt"></div>
-<div id="so10-4c" style="position: absolute; top: 636px; left:1786px; font-size:12pt; color:#FF0000;"></div>
+<div id="so10-4b" style="position: absolute; top: 2730px; left:520px; font-size:12pt; "></div>
+<div id="so10-4" style="position: absolute; top: 2730px; left:530px; font-size:12pt"></div>
+<div id="so10-4c" style="position: absolute; top: 2785px; left:520px; font-size:12pt; color:#FF0000;"></div>
 
 <!二俣川-南万騎が原>
 <div id="so10-31d" style="position: absolute; top: -100px; left:-100px;"><input type="text"  id = "so10-31" disabled / name="address" size="14" value=""　></div>
-<div id="so10-31e" style="position: absolute; top: 541px; left:1890px; font-size:12pt; "></div>
-<div id="so10-31b" style="position: absolute; top: 541px; left:1907px; font-size:12pt"></div>
-<div id="so10-31c" style="position: absolute; top: 541px; left:2010px; font-size:12pt; color:#FF0000;"></div>
+<div id="so10-31b" style="position: absolute; top: 3120px; left:980px; font-size:12pt; "></div>
+<div id="so10-31e" style="position: absolute; top: 3120px; left:990px; font-size:12pt"></div>
+<div id="so10-31c" style="position: absolute; top: 3175px; left:980px; font-size:12pt; color:#FF0000;"></div>
 <div id="so31-10d" style="position: absolute; top: -100px; left:-100px;"><input type="text"  id = "so31-10" disabled / name="address" size="14" value=""　></div>
-<div id="so31-10e" style="position: absolute; top: 581px; left:1890px; font-size:12pt; "></div>
-<div id="so31-10b" style="position: absolute; top: 581px; left:1907px; font-size:12pt"></div>
-<div id="so31-10c" style="position: absolute; top: 581px; left:2010px; font-size:12pt; color:#FF0000;"></div>
+<div id="so31-10b" style="position: absolute; top: 3120px; left:920px; font-size:12pt; "></div>
+<div id="so31-10e" style="position: absolute; top: 3120px; left:930px; font-size:12pt"></div>
+<div id="so31-10c" style="position: absolute; top: 3175px; left:920px; font-size:12pt; color:#FF0000;"></div>
 
 <!二俣川-希望が丘>
 <div id="so10-11d" style="position: absolute; top: -100px; left:-100px;"><input type="text"  id = "so10-11" disabled / name="address" size="14" value=""　></div>
-<div id="so10-11e" style="position: absolute; top: 1275px; left:31px; font-size:12pt; "></div>
-<div id="so10-11b" style="position: absolute; top: 1275px; left:48px; font-size:12pt"></div>
-<div id="so10-11c" style="position: absolute; top: 1275px; left:151px; font-size:12pt; color:#FF0000;"></div>
+<div id="so10-11b" style="position: absolute; top: 3120px; left:350px; font-size:12pt; "></div>
+<div id="so10-11e" style="position: absolute; top: 3120px; left:360px; font-size:12pt"></div>
+<div id="so10-11c" style="position: absolute; top: 3175px; left:350px; font-size:12pt; color:#FF0000;"></div>
 <div id="so11-10d" style="position: absolute; top: -100px; left:-100px;"><input type="text"  id = "so11-10" disabled / name="address" size="14" value=""　></div>
-<div id="so11-10e" style="position: absolute; top: 1313px; left:31px; font-size:12pt; "></div>
-<div id="so11-10b" style="position: absolute; top: 1313px; left:48px; font-size:12pt"></div>
-<div id="so11-10c" style="position: absolute; top: 1313px; left:151px; font-size:12pt; color:#FF0000;"></div>
+<div id="so11-10b" style="position: absolute; top: 3120px; left:290px; font-size:12pt; "></div>
+<div id="so11-10e" style="position: absolute; top: 3120px; left:300px; font-size:12pt"></div>
+<div id="so11-10c" style="position: absolute; top: 3175px; left:290px; font-size:12pt; color:#FF0000;"></div>
 
-<div style="position: absolute; top: 1130px; left:220px; font-size:18pt"><p>希望が丘</p></div>
+<div style="position: absolute; top: 3200px; left:100px; font-size:18pt"><p>希望が丘</p></div>
 <div id="so11-1ad" style="position: absolute; top: -100px; left:-100px;"><input type="text"  id = "so11-1a" disabled / name="address" size="14" value=""　></div>
-<div id="so11-1" style="position: absolute; top: 1275px; left:202px; font-size:12pt; "></div>
-<div id="so11-1b" style="position: absolute; top: 1275px; left:219px; font-size:12pt"></div>
-<div id="so11-1c" style="position: absolute; top: 1275px; left:322px; font-size:12pt; color:#FF0000;"></div>
+<div id="so11-1b" style="position: absolute; top: 3210px; left:350px; font-size:12pt; "></div>
+<div id="so11-1" style="position: absolute; top: 3210px; left:360px; font-size:12pt"></div>
+<div id="so11-1c" style="position: absolute; top: 3265px; left:350px; font-size:12pt; color:#FF0000;"></div>
 <div id="so11-2ad" style="position: absolute; top: -100px; left:-100px;"><input type="text"  id = "so11-2a" disabled / name="address" size="14" value=""　></div>
-<div id="so11-2" style="position: absolute; top: 1313px; left:202px; font-size:12pt; "></div>
-<div id="so11-2b" style="position: absolute; top: 1313px; left:219px; font-size:12pt"></div>
-<div id="so11-2c" style="position: absolute; top: 1313px; left:322px; font-size:12pt; color:#FF0000;"></div>
+<div id="so11-2b" style="position: absolute; top: 3210px; left:290px; font-size:12pt; "></div>
+<div id="so11-2" style="position: absolute; top: 3210px; left:300px; font-size:12pt"></div>
+<div id="so11-2c" style="position: absolute; top: 3265px; left:290px; font-size:12pt; color:#FF0000;"></div>
 
 <!希望が丘-三ツ境>
 <div id="so11-12d" style="position: absolute; top: -100px; left:-100px;"><input type="text"  id = "so11-12" disabled / name="address" size="14" value=""　></div>
-<div id="so11-12e" style="position: absolute; top: 1275px; left:366px; font-size:12pt; "></div>
-<div id="so11-12b" style="position: absolute; top: 1275px; left:383px; font-size:12pt"></div>
-<div id="so11-12c" style="position: absolute; top: 1275px; left:486px; font-size:12pt; color:#FF0000;"></div>
+<div id="so11-12b" style="position: absolute; top: 3310px; left:350px; font-size:12pt; "></div>
+<div id="so11-12e" style="position: absolute; top: 3310px; left:360px; font-size:12pt"></div>
+<div id="so11-12c" style="position: absolute; top: 3365px; left:350px; font-size:12pt; color:#FF0000;"></div>
 <div id="so12-11d" style="position: absolute; top: -100px; left:-100px;"><input type="text"  id = "so12-11" disabled / name="address" size="14" value=""　></div>
-<div id="so12-11e" style="position: absolute; top: 1313px; left:366px; font-size:12pt; "></div>
-<div id="so12-11b" style="position: absolute; top: 1313px; left:383px; font-size:12pt"></div>
-<div id="so12-11c" style="position: absolute; top: 1313px; left:486px; font-size:12pt; color:#FF0000;"></div>
+<div id="so12-11b" style="position: absolute; top: 3310px; left:290px; font-size:12pt; "></div>
+<div id="so12-11e" style="position: absolute; top: 3310px; left:300px; font-size:12pt"></div>
+<div id="so12-11c" style="position: absolute; top: 3365px; left:290px; font-size:12pt; color:#FF0000;"></div>
 
-<div style="position: absolute; top: 1130px; left:570px; font-size:18pt"><p>三ツ境</p></div>
+<div style="position: absolute; top: 3400px; left:100px; font-size:18pt"><p>三ツ境</p></div>
 <div id="so12-1ad" style="position: absolute; top: -100px; left:-100px;"><input type="text"  id = "so12-1a" disabled / name="address" size="14" value=""　></div>
-<div id="so12-1" style="position: absolute; top: 1275px; left:536px; font-size:12pt; "></div>
-<div id="so12-1b" style="position: absolute; top: 1275px; left:553px; font-size:12pt"></div>
-<div id="so12-1c" style="position: absolute; top: 1275px; left:656px; font-size:12pt; color:#FF0000;"></div>
+<div id="so12-1b" style="position: absolute; top: 3410px; left:350px; font-size:12pt; "></div>
+<div id="so12-1" style="position: absolute; top: 3410px; left:360px; font-size:12pt"></div>
+<div id="so12-1c" style="position: absolute; top: 3465px; left:350px; font-size:12pt; color:#FF0000;"></div>
 <div id="so12-2ad" style="position: absolute; top: -100px; left:-100px;"><input type="text"  id = "so12-2a" disabled / name="address" size="14" value=""　></div>
-<div id="so12-2" style="position: absolute; top: 1313px; left:536px; font-size:12pt; "></div>
-<div id="so12-2b" style="position: absolute; top: 1313px; left:553px; font-size:12pt"></div>
-<div id="so12-2c" style="position: absolute; top: 1313px; left:656px; font-size:12pt; color:#FF0000;"></div>
+<div id="so12-2b" style="position: absolute; top: 3410px; left:290px; font-size:12pt; "></div>
+<div id="so12-2" style="position: absolute; top: 3410px; left:300px; font-size:12pt"></div>
+<div id="so12-2c" style="position: absolute; top: 3465px; left:290px; font-size:12pt; color:#FF0000;"></div>
 
 <!三ツ境-瀬谷>
 <div id="so12-13d" style="position: absolute; top: -100px; left:-100px;"><input type="text"  id = "so12-13" disabled / name="address" size="14" value=""　></div>
-<div id="so12-13e" style="position: absolute; top: 1275px; left:716px; font-size:12pt; "></div>
-<div id="so12-13b" style="position: absolute; top: 1275px; left:733px; font-size:12pt"></div>
-<div id="so12-13c" style="position: absolute; top: 1275px; left:836px; font-size:12pt; color:#FF0000;"></div>
+<div id="so12-13b" style="position: absolute; top: 3510px; left:350px; font-size:12pt; "></div>
+<div id="so12-13e" style="position: absolute; top: 3510px; left:360px; font-size:12pt"></div>
+<div id="so12-13c" style="position: absolute; top: 3565px; left:350px; font-size:12pt; color:#FF0000;"></div>
 <div id="so13-12d" style="position: absolute; top: -100px; left:-100px;"><input type="text"  id = "so13-12" disabled / name="address" size="14" value=""　></div>
-<div id="so13-12e" style="position: absolute; top: 1313px; left:716px; font-size:12pt; "></div>
-<div id="so13-12b" style="position: absolute; top: 1313px; left:733px; font-size:12pt"></div>
-<div id="so13-12c" style="position: absolute; top: 1313px; left:836px; font-size:12pt; color:#FF0000;"></div>
+<div id="so13-12b" style="position: absolute; top: 3510px; left:290px; font-size:12pt; "></div>
+<div id="so13-12e" style="position: absolute; top: 3510px; left:300px; font-size:12pt"></div>
+<div id="so13-12c" style="position: absolute; top: 3565px; left:290px; font-size:12pt; color:#FF0000;"></div>
 
-<div style="position: absolute; top: 1130px; left:975px; font-size:18pt"><p>瀬　谷</p></div>
-<div style="position: absolute; top: 1170px; left:920px; font-size:10pt"><p>(特急以外は副本線に表示します)</p></div>
+<div style="position: absolute; top: 3640px; left:100px; font-size:18pt"><p>瀬　谷</p></div>
+<div style="position: absolute; top: 3680px; left:0px; font-size:10pt"><p>(特急以外は副本線に表示します)</p></div>
 <div id="so13-1ad" style="position: absolute; top: -100px; left:-100px;"><input type="text"  id = "so13-1a" disabled / name="address" size="14" value=""　></div>
-<div id="so13-1" style="position: absolute; top: 1220px; left:940px; font-size:12pt; "></div>
-<div id="so13-1b" style="position: absolute; top: 1220px; left:957px; font-size:12pt"></div>
-<div id="so13-1c" style="position: absolute; top: 1220px; left:1060px; font-size:12pt; color:#FF0000;"></div>
+<div id="so13-1b" style="position: absolute; top: 3650px; left:430px; font-size:12pt; "></div>
+<div id="so13-1" style="position: absolute; top: 3650px; left:440px; font-size:12pt"></div>
+<div id="so13-1c" style="position: absolute; top: 3705px; left:430px; font-size:12pt; color:#FF0000;"></div>
 <div id="so13-2ad" style="position: absolute; top: -100px; left:-100px;"><input type="text"  id = "so13-2a" disabled / name="address" size="14" value=""　></div>
-<div id="so13-2" style="position: absolute; top: 1275px; left:940px; font-size:12pt; "></div>
-<div id="so13-2b" style="position: absolute; top: 1275px; left:957px; font-size:12pt"></div>
-<div id="so13-2c" style="position: absolute; top: 1275px; left:1060px; font-size:12pt; color:#FF0000;"></div>
+<div id="so13-2b" style="position: absolute; top: 3650px; left:350px; font-size:12pt; "></div>
+<div id="so13-2" style="position: absolute; top: 3650px; left:360px; font-size:12pt"></div>
+<div id="so13-2c" style="position: absolute; top: 3705px; left:350px; font-size:12pt; color:#FF0000;"></div>
 <div id="so13-3ad" style="position: absolute; top: -100px; left:-100px;"><input type="text"  id = "so13-3a" disabled / name="address" size="14" value=""　></div>
-<div id="so13-3" style="position: absolute; top: 1313px; left:940px; font-size:12pt; "></div>
-<div id="so13-3b" style="position: absolute; top: 1313px; left:957px; font-size:12pt"></div>
-<div id="so13-3c" style="position: absolute; top: 1313px; left:1060px; font-size:12pt; color:#FF0000;"></div>
+<div id="so13-3b" style="position: absolute; top: 3650px; left:290px; font-size:12pt; "></div>
+<div id="so13-3" style="position: absolute; top: 3650px; left:300px; font-size:12pt"></div>
+<div id="so13-3c" style="position: absolute; top: 3705px; left:290px; font-size:12pt; color:#FF0000;"></div>
 <div id="so13-4ad" style="position: absolute; top: -100px; left:-100px;"><input type="text"  id = "so13-4a" disabled / name="address" size="14" value=""　></div>
-<div id="so13-4" style="position: absolute; top: 1368px; left:940px; font-size:12pt; "></div>
-<div id="so13-4b" style="position: absolute; top: 1368px; left:957px; font-size:12pt"></div>
-<div id="so13-4c" style="position: absolute; top: 1368px; left:1060px; font-size:12pt; color:#FF0000;"></div>
+<div id="so13-4b" style="position: absolute; top: 3650px; left:210px; font-size:12pt; "></div>
+<div id="so13-4" style="position: absolute; top: 3650px; left:220px; font-size:12pt"></div>
+<div id="so13-4c" style="position: absolute; top: 3705px; left:210px; font-size:12pt; color:#FF0000;"></div>
 
 <!瀬谷-大和>
 <div id="so13-14d" style="position: absolute; top: -100px; left:-100px;"><input type="text"  id = "so13-14" disabled / name="address" size="14" value=""　></div>
-<div id="so13-14e" style="position: absolute; top: 1275px; left:1186px; font-size:12pt; "></div>
-<div id="so13-14b" style="position: absolute; top: 1275px; left:1203px; font-size:12pt"></div>
-<div id="so13-14c" style="position: absolute; top: 1275px; left:1306px; font-size:12pt; color:#FF0000;"></div>
+<div id="so13-14b" style="position: absolute; top: 3840px; left:350px; font-size:12pt; "></div>
+<div id="so13-14e" style="position: absolute; top: 3840px; left:360px; font-size:12pt"></div>
+<div id="so13-14c" style="position: absolute; top: 3895px; left:350px; font-size:12pt; color:#FF0000;"></div>
 <div id="so14-13d" style="position: absolute; top: -100px; left:-100px;"><input type="text"  id = "so14-13" disabled / name="address" size="14" value=""　></div>
-<div id="so14-13e" style="position: absolute; top: 1313px; left:1186px; font-size:12pt; "></div>
-<div id="so14-13b" style="position: absolute; top: 1313px; left:1203px; font-size:12pt"></div>
-<div id="so14-13c" style="position: absolute; top: 1313px; left:1306px; font-size:12pt; color:#FF0000;"></div>
+<div id="so14-13b" style="position: absolute; top: 3840px; left:290px; font-size:12pt; "></div>
+<div id="so14-13e" style="position: absolute; top: 3840px; left:300px; font-size:12pt"></div>
+<div id="so14-13c" style="position: absolute; top: 3895px; left:290px; font-size:12pt; color:#FF0000;"></div>
 
-<div style="position: absolute; top: 1130px; left:1430px; font-size:18pt"><p>大　和</p></div>
+<div style="position: absolute; top: 3955px; left:100px; font-size:18pt"><p>大　和</p></div>
 <div id="so14-1ad" style="position: absolute; top: -100px; left:-100px;"><input type="text"  id = "so14-1a" disabled / name="address" size="14" value=""　></div>
-<div id="so14-1" style="position: absolute; top: 1255px; left:1406px; font-size:12pt; "></div>
-<div id="so14-1b" style="position: absolute; top: 1255px; left:1423px; font-size:12pt"></div>
-<div id="so14-1c" style="position: absolute; top: 1255px; left:1526px; font-size:12pt; color:#FF0000;"></div>
+<div id="so14-1b" style="position: absolute; top: 3960px; left:360px; font-size:12pt; "></div>
+<div id="so14-1" style="position: absolute; top: 3960px; left:370px; font-size:12pt"></div>
+<div id="so14-1c" style="position: absolute; top: 4015px; left:360px; font-size:12pt; color:#FF0000;"></div>
 <div id="so14-2ad" style="position: absolute; top: -100px; left:-100px;"><input type="text"  id = "so14-2a" disabled / name="address" size="14" value=""　></div>
-<div id="so14-2" style="position: absolute; top: 1313px; left:1406px; font-size:12pt; "></div>
-<div id="so14-2b" style="position: absolute; top: 1313px; left:1423px; font-size:12pt"></div>
-<div id="so14-2c" style="position: absolute; top: 1313px; left:1526px; font-size:12pt; color:#FF0000;"></div>
+<div id="so14-2b" style="position: absolute; top: 3960px; left:280px; font-size:12pt; "></div>
+<div id="so14-2" style="position: absolute; top: 3960px; left:290px; font-size:12pt"></div>
+<div id="so14-2c" style="position: absolute; top: 4015px; left:280px; font-size:12pt; color:#FF0000;"></div>
 
 <!大和-相模大塚>
 <div id="so14-15d" style="position: absolute; top: -100px; left:-100px;"><input type="text"  id = "so14-15" disabled / name="address" size="14" value=""　></div>
-<div id="so14-15e" style="position: absolute; top: 1255px; left:1586px; font-size:12pt; "></div>
-<div id="so14-15b" style="position: absolute; top: 1255px; left:1603px; font-size:12pt"></div>
-<div id="so14-15c" style="position: absolute; top: 1255px; left:1706px; font-size:12pt; color:#FF0000;"></div>
+<div id="so14-15b" style="position: absolute; top: 4090px; left:360px; font-size:12pt; "></div>
+<div id="so14-15e" style="position: absolute; top: 4090px; left:370px; font-size:12pt"></div>
+<div id="so14-15c" style="position: absolute; top: 4145px; left:360px; font-size:12pt; color:#FF0000;"></div>
 <div id="so15-14d" style="position: absolute; top: -100px; left:-100px;"><input type="text"  id = "so15-14" disabled / name="address" size="14" value=""　></div>
-<div id="so15-14e" style="position: absolute; top: 1313px; left:1586px; font-size:12pt; "></div>
-<div id="so15-14b" style="position: absolute; top: 1313px; left:1603px; font-size:12pt"></div>
-<div id="so15-14c" style="position: absolute; top: 1313px; left:1706px; font-size:12pt; color:#FF0000;"></div>
+<div id="so15-14b" style="position: absolute; top: 4090px; left:280px; font-size:12pt; "></div>
+<div id="so15-14e" style="position: absolute; top: 4090px; left:290px; font-size:12pt"></div>
+<div id="so15-14c" style="position: absolute; top: 4145px; left:280px; font-size:12pt; color:#FF0000;"></div>
 
-<div style="position: absolute; top: 1130px; left:1790px; font-size:18pt"><p>相模大塚</p></div>
+<div style="position: absolute; top: 4225px; left:95px; font-size:18pt"><p>相模大塚</p></div>
 <div id="so15-1ad" style="position: absolute; top: -100px; left:-100px;"><input type="text"  id = "so15-1a" disabled / name="address" size="14" value=""　></div>
-<div id="so15-1" style="position: absolute; top: 1255px; left:1776px; font-size:12pt; "></div>
-<div id="so15-1b" style="position: absolute; top: 1255px; left:1793px; font-size:12pt"></div>
-<div id="so15-1c" style="position: absolute; top: 1255px; left:1896px; font-size:12pt; color:#FF0000;"></div>
+<div id="so15-1b" style="position: absolute; top: 4230px; left:360px; font-size:12pt; "></div>
+<div id="so15-1" style="position: absolute; top: 4230px; left:370px; font-size:12pt"></div>
+<div id="so15-1c" style="position: absolute; top: 4285px; left:360px; font-size:12pt; color:#FF0000;"></div>
 <div id="so15-2ad" style="position: absolute; top: -100px; left:-100px;"><input type="text"  id = "so15-2a" disabled / name="address" size="14" value=""　></div>
-<div id="so15-2" style="position: absolute; top: 1313px; left:1776px; font-size:12pt; "></div>
-<div id="so15-2b" style="position: absolute; top: 1313px; left:1793px; font-size:12pt"></div>
-<div id="so15-2c" style="position: absolute; top: 1313px; left:1896px; font-size:12pt; color:#FF0000;"></div>
+<div id="so15-2b" style="position: absolute; top: 4230px; left:280px; font-size:12pt; "></div>
+<div id="so15-2" style="position: absolute; top: 4230px; left:290px; font-size:12pt"></div>
+<div id="so15-2c" style="position: absolute; top: 4285px; left:280px; font-size:12pt; color:#FF0000;"></div>
 
 <!相模大塚-さがみ野>
 <div id="so15-16d" style="position: absolute; top: -100px; left:-100px;"><input type="text"  id = "so15-16" disabled / name="address" size="14" value=""　></div>
-<div id="so15-16e" style="position: absolute; top: 1630px; left:31px; font-size:12pt; "></div>
-<div id="so15-16b" style="position: absolute; top: 1630px; left:48px; font-size:12pt"></div>
-<div id="so15-16c" style="position: absolute; top: 1630px; left:151px; font-size:12pt; color:#FF0000;"></div>
+<div id="so15-16b" style="position: absolute; top: 4430px; left:350px; font-size:12pt; "></div>
+<div id="so15-16e" style="position: absolute; top: 4430px; left:360px; font-size:12pt"></div>
+<div id="so15-16c" style="position: absolute; top: 4485px; left:350px; font-size:12pt; color:#FF0000;"></div>
 <div id="so16-15d" style="position: absolute; top: -100px; left:-100px;"><input type="text"  id = "so16-15" disabled / name="address" size="14" value=""　></div>
-<div id="so16-15e" style="position: absolute; top: 1670px; left:31px; font-size:12pt; "></div>
-<div id="so16-15b" style="position: absolute; top: 1670px; left:48px; font-size:12pt"></div>
-<div id="so16-15c" style="position: absolute; top: 1670px; left:151px; font-size:12pt; color:#FF0000;"></div>
+<div id="so16-15b" style="position: absolute; top: 4430px; left:290px; font-size:12pt; "></div>
+<div id="so16-15e" style="position: absolute; top: 4430px; left:300px; font-size:12pt"></div>
+<div id="so16-15c" style="position: absolute; top: 4485px; left:290px; font-size:12pt; color:#FF0000;"></div>
 
-<div style="position: absolute; top: 1490px; left:220px; font-size:18pt"><p>さがみ野</p></div>
+<div style="position: absolute; top: 4520px; left:100px; font-size:18pt"><p>さがみ野</p></div>
 <div id="so16-1ad" style="position: absolute; top: -100px; left:-100px;"><input type="text"  id = "so16-1a" disabled / name="address" size="14" value=""　></div>
-<div id="so16-1" style="position: absolute; top: 1630px; left:202px; font-size:12pt; "></div>
-<div id="so16-1b" style="position: absolute; top: 1630px; left:219px; font-size:12pt"></div>
-<div id="so16-1c" style="position: absolute; top: 1630px; left:322px; font-size:12pt; color:#FF0000;"></div>
+<div id="so16-1b" style="position: absolute; top: 4520px; left:350px; font-size:12pt; "></div>
+<div id="so16-1" style="position: absolute; top: 4520px; left:360px; font-size:12pt"></div>
+<div id="so16-1c" style="position: absolute; top: 4575px; left:350px; font-size:12pt; color:#FF0000;"></div>
 <div id="so16-2ad" style="position: absolute; top: -100px; left:-100px;"><input type="text"  id = "so16-2a" disabled / name="address" size="14" value=""　></div>
-<div id="so16-2" style="position: absolute; top: 1670px; left:202px; font-size:12pt; "></div>
-<div id="so16-2b" style="position: absolute; top: 1670px; left:219px; font-size:12pt"></div>
-<div id="so16-2c" style="position: absolute; top: 1670px; left:322px; font-size:12pt; color:#FF0000;"></div>
+<div id="so16-2b" style="position: absolute; top: 4520px; left:290px; font-size:12pt; "></div>
+<div id="so16-2" style="position: absolute; top: 4520px; left:300px; font-size:12pt"></div>
+<div id="so16-2c" style="position: absolute; top: 4575px; left:290px; font-size:12pt; color:#FF0000;"></div>
 
 <!さがみ野-かしわ台>
 <div id="so16-17d" style="position: absolute; top: -100px; left:-100px;"><input type="text"  id = "so16-17" disabled / name="address" size="14" value=""　></div>
-<div id="so16-17e" style="position: absolute; top: 1630px; left:406px; font-size:12pt; "></div>
-<div id="so16-17b" style="position: absolute; top: 1630px; left:423px; font-size:12pt"></div>
-<div id="so16-17c" style="position: absolute; top: 1630px; left:526px; font-size:12pt; color:#FF0000;"></div>
+<div id="so16-17b" style="position: absolute; top: 4620px; left:350px; font-size:12pt; "></div>
+<div id="so16-17e" style="position: absolute; top: 4620px; left:360px; font-size:12pt"></div>
+<div id="so16-17c" style="position: absolute; top: 4675px; left:350px; font-size:12pt; color:#FF0000;"></div>
 <div id="so17-16d" style="position: absolute; top: -100px; left:-100px;"><input type="text"  id = "so17-16" disabled / name="address" size="14" value=""　></div>
-<div id="so17-16e" style="position: absolute; top: 1670px; left:406px; font-size:12pt; "></div>
-<div id="so17-16b" style="position: absolute; top: 1670px; left:423px; font-size:12pt"></div>
-<div id="so17-16c" style="position: absolute; top: 1670px; left:526px; font-size:12pt; color:#FF0000;"></div>
+<div id="so17-16b" style="position: absolute; top: 4620px; left:290px; font-size:12pt; "></div>
+<div id="so17-16e" style="position: absolute; top: 4620px; left:300px; font-size:12pt"></div>
+<div id="so17-16c" style="position: absolute; top: 4675px; left:290px; font-size:12pt; color:#FF0000;"></div>
 
-<div style="position: absolute; top: 1490px; left:750px; font-size:18pt"><p>かしわ台</p></div>
-<div style="position: absolute; top: 1527px; left:722px; font-size:10pt"><p>(一部実番線と異なります)</p></div>
+<div style="position: absolute; top: 4830px; left:500px; font-size:18pt"><p>かしわ台</p></div>
+<div style="position: absolute; top: 4865px; left:490px; font-size:10pt"><p>(一部実番線と異なります)</p></div>
 <div id="so17-1ad" style="position: absolute; top: -100px; left:-100px;"><input type="text"  id = "so17-1a" disabled / name="address" size="14" value=""　></div>
-<div id="so17-1" style="position: absolute; top: 1575px; left:732px; font-size:12pt; "></div>
-<div id="so17-1b" style="position: absolute; top: 1575px; left:749px; font-size:12pt"></div>
-<div id="so17-1c" style="position: absolute; top: 1575px; left:852px; font-size:12pt; color:#FF0000;"></div>
+<div id="so17-1b" style="position: absolute; top: 4840px; left:430px; font-size:12pt; "></div>
+<div id="so17-1" style="position: absolute; top: 4840px; left:440px; font-size:12pt"></div>
+<div id="so17-1c" style="position: absolute; top: 4895px; left:430px; font-size:12pt; color:#FF0000;"></div>
 <div id="so17-2ad" style="position: absolute; top: -100px; left:-100px;"><input type="text"  id = "so17-2a" disabled / name="address" size="14" value=""　></div>
-<div id="so17-2" style="position: absolute; top: 1630px; left:732px; font-size:12pt; "></div>
-<div id="so17-2b" style="position: absolute; top: 1630px; left:749px; font-size:12pt"></div>
-<div id="so17-2c" style="position: absolute; top: 1630px; left:852px; font-size:12pt; color:#FF0000;"></div>
+<div id="so17-2b" style="position: absolute; top: 4840px; left:350px; font-size:12pt; "></div>
+<div id="so17-2" style="position: absolute; top: 4840px; left:360px; font-size:12pt"></div>
+<div id="so17-2c" style="position: absolute; top: 4895px; left:350px; font-size:12pt; color:#FF0000;"></div>
 <div id="so17-3ad" style="position: absolute; top: -100px; left:-100px;"><input type="text"  id = "so17-3a" disabled / name="address" size="14" value=""　></div>
-<div id="so17-3" style="position: absolute; top: 1670px; left:732px; font-size:12pt; "></div>
-<div id="so17-3b" style="position: absolute; top: 1670px; left:749px; font-size:12pt"></div>
-<div id="so17-3c" style="position: absolute; top: 1670px; left:852px; font-size:12pt; color:#FF0000;"></div>
+<div id="so17-3b" style="position: absolute; top: 4840px; left:290px; font-size:12pt; "></div>
+<div id="so17-3" style="position: absolute; top: 4840px; left:300px; font-size:12pt"></div>
+<div id="so17-3c" style="position: absolute; top: 4895px; left:290px; font-size:12pt; color:#FF0000;"></div>
 <div id="so17-4ad" style="position: absolute; top: -100px; left:-100px;"><input type="text"  id = "so17-4a" disabled / name="address" size="14" value=""　></div>
-<div id="so17-4" style="position: absolute; top: 1725px; left:732px; font-size:12pt; "></div>
-<div id="so17-4b" style="position: absolute; top: 1725px; left:749px; font-size:12pt"></div>
-<div id="so17-4c" style="position: absolute; top: 1725px; left:852px; font-size:12pt; color:#FF0000;"></div>
+<div id="so17-4b" style="position: absolute; top: 4840px; left:210px; font-size:12pt; "></div>
+<div id="so17-4" style="position: absolute; top: 4840px; left:220px; font-size:12pt"></div>
+<div id="so17-4c" style="position: absolute; top: 4895px; left:210px; font-size:12pt; color:#FF0000;"></div>
 
 <!かしわ台-海老名>
 <div id="so17-18d" style="position: absolute; top: -100px; left:-100px;"><input type="text"  id = "so17-18" disabled / name="address" size="14" value=""　></div>
-<div id="so17-18e" style="position: absolute; top: 1630px; left:1036px; font-size:12pt; "></div>
-<div id="so17-18b" style="position: absolute; top: 1630px; left:1053px; font-size:12pt"></div>
-<div id="so17-18c" style="position: absolute; top: 1630px; left:1156px; font-size:12pt; color:#FF0000;"></div>
+<div id="so17-18b" style="position: absolute; top: 5050px; left:350px; font-size:12pt; "></div>
+<div id="so17-18e" style="position: absolute; top: 5050px; left:360px; font-size:12pt"></div>
+<div id="so17-18c" style="position: absolute; top: 5105px; left:350px; font-size:12pt; color:#FF0000;"></div>
 <div id="so18-17d" style="position: absolute; top: -100px; left:-100px;"><input type="text"  id = "so18-17" disabled / name="address" size="14" value=""　></div>
-<div id="so18-17e" style="position: absolute; top: 1670px; left:1036px; font-size:12pt; "></div>
-<div id="so18-17b" style="position: absolute; top: 1670px; left:1053px; font-size:12pt"></div>
-<div id="so18-17c" style="position: absolute; top: 1670px; left:1156px; font-size:12pt; color:#FF0000;"></div>
+<div id="so18-17b" style="position: absolute; top: 5050px; left:290px; font-size:12pt; "></div>
+<div id="so18-17e" style="position: absolute; top: 5050px; left:300px; font-size:12pt"></div>
+<div id="so18-17c" style="position: absolute; top: 5105px; left:290px; font-size:12pt; color:#FF0000;"></div>
 
-<div style="position: absolute; top: 1490px; left:1540px; font-size:18pt"><p>海老名</p></div>
-<div style="position: absolute; top: 1527px; left:1510px; font-size:10pt"><p>(実番線と異なります)</p></div>
+<div style="position: absolute; top: 5100px; left:480px; font-size:18pt"><p>相模国分</p></div>
+
+<div style="position: absolute; top: 5370px; left:480px; font-size:18pt"><p>海老名</p></div>
+<div style="position: absolute; top: 5410px; left:480px; font-size:10pt"><p>(実番線と異なります)</p></div>
 <div id="so18-1ad" style="position: absolute; top: -100px; left:-100px;"><input type="text"  id = "so18-1a" disabled / name="address" size="14" value=""　></div>
-<div id="so18-1" style="position: absolute; top: 1610px; left:1502px; font-size:12pt; "></div>
-<div id="so18-1b" style="position: absolute; top: 1610px; left:1519px; font-size:12pt"></div>
-<div id="so18-1c" style="position: absolute; top: 1610px; left:1622px; font-size:12pt; color:#FF0000;"></div>
+<div id="so18-1b" style="position: absolute; top: 5390px; left:360px; font-size:12pt; "></div>
+<div id="so18-1" style="position: absolute; top: 5390px; left:370px; font-size:12pt"></div>
+<div id="so18-1c" style="position: absolute; top: 5445px; left:360px; font-size:12pt; color:#FF0000;"></div>
 <div id="so18-2ad" style="position: absolute; top: -100px; left:-100px;"><input type="text"  id = "so18-2a" disabled / name="address" size="14" value=""　></div>
-<div id="so18-2" style="position: absolute; top: 1670px; left:1502px; font-size:12pt; "></div>
-<div id="so18-2b" style="position: absolute; top: 1670px; left:1519px; font-size:12pt"></div>
-<div id="so18-2c" style="position: absolute; top: 1670px; left:1622px; font-size:12pt; color:#FF0000;"></div>
+<div id="so18-2b" style="position: absolute; top: 5390px; left:280px; font-size:12pt; "></div>
+<div id="so18-2" style="position: absolute; top: 5390px; left:290px; font-size:12pt"></div>
+<div id="so18-2c" style="position: absolute; top: 5445px; left:280px; font-size:12pt; color:#FF0000;"></div>
 
-<div style="position: absolute; top: 1900px; left:65px; font-size:18pt"><p>南万騎が原</p></div>
+<div style="position: absolute; top: 3200px; left:730px; font-size:18pt"><p>南万騎が原</p></div>
 <div id="so31-1ad" style="position: absolute; top: -100px; left:-100px;"><input type="text"  id = "so31-1a" disabled / name="address" size="14" value=""　></div>
-<div id="so31-1" style="position: absolute; top: 2045px; left:56px; font-size:12pt; "></div>
-<div id="so31-1b" style="position: absolute; top: 2045px; left:73px; font-size:12pt"></div>
-<div id="so31-1c" style="position: absolute; top: 2045px; left:176px; font-size:12pt; color:#FF0000;"></div>
+<div id="so31-1b" style="position: absolute; top: 3210px; left:980px; font-size:12pt; "></div>
+<div id="so31-1" style="position: absolute; top: 3210px; left:990px; font-size:12pt"></div>
+<div id="so31-1c" style="position: absolute; top: 3265px; left:980px; font-size:12pt; color:#FF0000;"></div>
 <div id="so31-2ad" style="position: absolute; top: -100px; left:-100px;"><input type="text"  id = "so31-2a" disabled / name="address" size="14" value=""　></div>
-<div id="so31-2" style="position: absolute; top: 2085px; left:56px; font-size:12pt; "></div>
-<div id="so31-2b" style="position: absolute; top: 2085px; left:73px; font-size:12pt"></div>
-<div id="so31-2c" style="position: absolute; top: 2085px; left:176px; font-size:12pt; color:#FF0000;"></div>
+<div id="so31-2b" style="position: absolute; top: 3210px; left:920px; font-size:12pt; "></div>
+<div id="so31-2" style="position: absolute; top: 3210px; left:930px; font-size:12pt"></div>
+<div id="so31-2c" style="position: absolute; top: 3265px; left:920px; font-size:12pt; color:#FF0000;"></div>
 
 <!南万騎が原-緑園都市>
 <div id="so31-32d" style="position: absolute; top: -100px; left:-100px;"><input type="text"  id = "so31-32" disabled / name="address" size="14" value=""　></div>
-<div id="so31-32e" style="position: absolute; top: 2045px; left:256px; font-size:12pt; "></div>
-<div id="so31-32b" style="position: absolute; top: 2045px; left:273px; font-size:12pt"></div>
-<div id="so31-32c" style="position: absolute; top: 2045px; left:376px; font-size:12pt; color:#FF0000;"></div>
+<div id="so31-32b" style="position: absolute; top: 3310px; left:980px; font-size:12pt; "></div>
+<div id="so31-32e" style="position: absolute; top: 3310px; left:990px; font-size:12pt"></div>
+<div id="so31-32c" style="position: absolute; top: 3365px; left:980px; font-size:12pt; color:#FF0000;"></div>
 <div id="so32-31d" style="position: absolute; top: -100px; left:-100px;"><input type="text"  id = "so32-31" disabled / name="address" size="14" value=""　></div>
-<div id="so32-31e" style="position: absolute; top: 2085px; left:256px; font-size:12pt; "></div>
-<div id="so32-31b" style="position: absolute; top: 2085px; left:273px; font-size:12pt"></div>
-<div id="so32-31c" style="position: absolute; top: 2085px; left:376px; font-size:12pt; color:#FF0000;"></div>
+<div id="so32-31b" style="position: absolute; top: 3310px; left:920px; font-size:12pt; "></div>
+<div id="so32-31e" style="position: absolute; top: 3310px; left:930px; font-size:12pt"></div>
+<div id="so32-31c" style="position: absolute; top: 3365px; left:920px; font-size:12pt; color:#FF0000;"></div>
 
-<div style="position: absolute; top: 1900px; left:490px; font-size:18pt"><p>緑園都市</p></div>
+<div style="position: absolute; top: 3400px; left:730px; font-size:18pt"><p>緑園都市</p></div>
 <div id="so32-1ad" style="position: absolute; top: -100px; left:-100px;"><input type="text"  id = "so32-1a" disabled / name="address" size="14" value=""　></div>
-<div id="so32-1" style="position: absolute; top: 2045px; left:470px; font-size:12pt; "></div>
-<div id="so32-1b" style="position: absolute; top: 2045px; left:487px; font-size:12pt"></div>
-<div id="so32-1c" style="position: absolute; top: 2045px; left:590px; font-size:12pt; color:#FF0000;"></div>
+<div id="so32-1b" style="position: absolute; top: 3410px; left:980px; font-size:12pt; "></div>
+<div id="so32-1" style="position: absolute; top: 3410px; left:990px; font-size:12pt"></div>
+<div id="so32-1c" style="position: absolute; top: 3465px; left:980px; font-size:12pt; color:#FF0000;"></div>
 <div id="so32-2ad" style="position: absolute; top: -100px; left:-100px;"><input type="text"  id = "so32-2a" disabled / name="address" size="14" value=""　></div>
-<div id="so32-2" style="position: absolute; top: 2085px; left:470px; font-size:12pt; "></div>
-<div id="so32-2b" style="position: absolute; top: 2085px; left:487px; font-size:12pt"></div>
-<div id="so32-2c" style="position: absolute; top: 2085px; left:590px; font-size:12pt; color:#FF0000;"></div>
+<div id="so32-2b" style="position: absolute; top: 3410px; left:920px; font-size:12pt; "></div>
+<div id="so32-2" style="position: absolute; top: 3410px; left:930px; font-size:12pt"></div>
+<div id="so32-2c" style="position: absolute; top: 3465px; left:920px; font-size:12pt; color:#FF0000;"></div>
 
 <!緑園都市-弥生台>
 <div id="so32-33d" style="position: absolute; top: -100px; left:-100px;"><input type="text"  id = "so32-33" disabled / name="address" size="14" value=""　></div>
-<div id="so32-33e" style="position: absolute; top: 2045px; left:686px; font-size:12pt; "></div>
-<div id="so32-33b" style="position: absolute; top: 2045px; left:703px; font-size:12pt"></div>
-<div id="so32-33c" style="position: absolute; top: 2045px; left:806px; font-size:12pt; color:#FF0000;"></div>
+<div id="so32-33b" style="position: absolute; top: 3510px; left:980px; font-size:12pt; "></div>
+<div id="so32-33e" style="position: absolute; top: 3510px; left:990px; font-size:12pt"></div>
+<div id="so32-33c" style="position: absolute; top: 3565px; left:980px; font-size:12pt; color:#FF0000;"></div>
 <div id="so33-32d" style="position: absolute; top: -100px; left:-100px;"><input type="text"  id = "so33-32" disabled / name="address" size="14" value=""　></div>
-<div id="so33-32e" style="position: absolute; top: 2085px; left:686px; font-size:12pt; "></div>
-<div id="so33-32b" style="position: absolute; top: 2085px; left:703px; font-size:12pt"></div>
-<div id="so33-32c" style="position: absolute; top: 2085px; left:806px; font-size:12pt; color:#FF0000;"></div>
+<div id="so33-32b" style="position: absolute; top: 3510px; left:920px; font-size:12pt; "></div>
+<div id="so33-32e" style="position: absolute; top: 3510px; left:930px; font-size:12pt"></div>
+<div id="so33-32c" style="position: absolute; top: 3565px; left:920px; font-size:12pt; color:#FF0000;"></div>
 
-<div style="position: absolute; top: 1900px; left:940px; font-size:18pt"><p>弥生台</p></div>
+<div style="position: absolute; top: 3600px; left:740px; font-size:18pt"><p>弥生台</p></div>
 <div id="so33-1ad" style="position: absolute; top: -100px; left:-100px;"><input type="text"  id = "so33-1a" disabled / name="address" size="14" value=""　></div>
-<div id="so33-1" style="position: absolute; top: 2045px; left:910px; font-size:12pt; "></div>
-<div id="so33-1b" style="position: absolute; top: 2045px; left:927px; font-size:12pt"></div>
-<div id="so33-1c" style="position: absolute; top: 2045px; left:1030px; font-size:12pt; color:#FF0000;"></div>
+<div id="so33-1b" style="position: absolute; top: 3610px; left:980px; font-size:12pt; "></div>
+<div id="so33-1" style="position: absolute; top: 3610px; left:990px; font-size:12pt"></div>
+<div id="so33-1c" style="position: absolute; top: 3665px; left:980px; font-size:12pt; color:#FF0000;"></div>
 <div id="so33-2ad" style="position: absolute; top: -100px; left:-100px;"><input type="text"  id = "so33-2a" disabled / name="address" size="14" value=""　></div>
-<div id="so33-2" style="position: absolute; top: 2085px; left:910px; font-size:12pt; "></div>
-<div id="so33-2b" style="position: absolute; top: 2085px; left:927px; font-size:12pt"></div>
-<div id="so33-2c" style="position: absolute; top: 2085px; left:1030px; font-size:12pt; color:#FF0000;"></div>
+<div id="so33-2b" style="position: absolute; top: 3610px; left:920px; font-size:12pt; "></div>
+<div id="so33-2" style="position: absolute; top: 3610px; left:930px; font-size:12pt"></div>
+<div id="so33-2c" style="position: absolute; top: 3665px; left:920px; font-size:12pt; color:#FF0000;"></div>
 
 <!弥生台-いずみ野>
 <div id="so33-34d" style="position: absolute; top: -100px; left:-100px;"><input type="text"  id = "so33-34" disabled / name="address" size="14" value=""　></div>
-<div id="so33-34e" style="position: absolute; top: 2045px; left:1186px; font-size:12pt; "></div>
-<div id="so33-34b" style="position: absolute; top: 2045px; left:1203px; font-size:12pt"></div>
-<div id="so33-34c" style="position: absolute; top: 2045px; left:1306px; font-size:12pt; color:#FF0000;"></div>
+<div id="so33-34b" style="position: absolute; top: 3710px; left:980px; font-size:12pt; "></div>
+<div id="so33-34e" style="position: absolute; top: 3710px; left:990px; font-size:12pt"></div>
+<div id="so33-34c" style="position: absolute; top: 3765px; left:980px; font-size:12pt; color:#FF0000;"></div>
 <div id="so34-33d" style="position: absolute; top: -100px; left:-100px;"><input type="text"  id = "so34-33" disabled / name="address" size="14" value=""　></div>
-<div id="so34-33e" style="position: absolute; top: 2085px; left:1186px; font-size:12pt; "></div>
-<div id="so34-33b" style="position: absolute; top: 2085px; left:1203px; font-size:12pt"></div>
-<div id="so34-33c" style="position: absolute; top: 2085px; left:1306px; font-size:12pt; color:#FF0000;"></div>
+<div id="so34-33b" style="position: absolute; top: 3710px; left:920px; font-size:12pt; "></div>
+<div id="so34-33e" style="position: absolute; top: 3710px; left:930px; font-size:12pt"></div>
+<div id="so34-33c" style="position: absolute; top: 3765px; left:920px; font-size:12pt; color:#FF0000;"></div>
 
-<div style="position: absolute; top: 1900px; left:1540px; font-size:18pt"><p>いずみ野</p></div>
-<div style="position: absolute; top: 1940px; left:1490px; font-size:10pt"><p>(特急・通特以外は副本線に表示します)</p></div>
+<div style="position: absolute; top: 3880px; left:720px; font-size:18pt"><p>いずみ野</p></div>
+<div style="position: absolute; top: 3920px; left:590px; font-size:10pt"><p>(特急・通特以外は副本線に表示します)</p></div>
 <div id="so34-1ad" style="position: absolute; top: -100px; left:-100px;"><input type="text"  id = "so34-1a" disabled / name="address" size="14" value=""　></div>
-<div id="so34-1" style="position: absolute; top: 1990px; left:1522px; font-size:12pt; "></div>
-<div id="so34-1b" style="position: absolute; top: 1990px; left:1539px; font-size:12pt"></div>
-<div id="so34-1c" style="position: absolute; top: 1990px; left:1642px; font-size:12pt; color:#FF0000;"></div>
+<div id="so34-1b" style="position: absolute; top: 3890px; left:1060px; font-size:12pt; "></div>
+<div id="so34-1" style="position: absolute; top: 3890px; left:1070px; font-size:12pt"></div>
+<div id="so34-1c" style="position: absolute; top: 3945px; left:1060px; font-size:12pt; color:#FF0000;"></div>
 <div id="so34-2ad" style="position: absolute; top: -100px; left:-100px;"><input type="text"  id = "so34-2a" disabled / name="address" size="14" value=""　></div>
-<div id="so34-2" style="position: absolute; top: 2045px; left:1522px; font-size:12pt; "></div>
-<div id="so34-2b" style="position: absolute; top: 2045px; left:1539px; font-size:12pt"></div>
-<div id="so34-2c" style="position: absolute; top: 2045px; left:1642px; font-size:12pt; color:#FF0000;"></div>
+<div id="so34-2b" style="position: absolute; top: 3890px; left:980px; font-size:12pt; "></div>
+<div id="so34-2" style="position: absolute; top: 3890px; left:990px; font-size:12pt"></div>
+<div id="so34-2c" style="position: absolute; top: 3945px; left:980px; font-size:12pt; color:#FF0000;"></div>
 <div id="so34-3ad" style="position: absolute; top: -100px; left:-100px;"><input type="text"  id = "so34-3a" disabled / name="address" size="14" value=""　></div>
-<div id="so34-3" style="position: absolute; top: 2085px; left:1522px; font-size:12pt; "></div>
-<div id="so34-3b" style="position: absolute; top: 2085px; left:1539px; font-size:12pt"></div>
-<div id="so34-3c" style="position: absolute; top: 2085px; left:1642px; font-size:12pt; color:#FF0000;"></div>
+<div id="so34-3b" style="position: absolute; top: 3890px; left:920px; font-size:12pt; "></div>
+<div id="so34-3" style="position: absolute; top: 3890px; left:930px; font-size:12pt"></div>
+<div id="so34-3c" style="position: absolute; top: 3945px; left:920px; font-size:12pt; color:#FF0000;"></div>
 <div id="so34-4ad" style="position: absolute; top: -100px; left:-100px;"><input type="text"  id = "so34-4a" disabled / name="address" size="14" value=""　></div>
-<div id="so34-4" style="position: absolute; top: 2140px; left:1522px; font-size:12pt; "></div>
-<div id="so34-4b" style="position: absolute; top: 2140px; left:1539px; font-size:12pt"></div>
-<div id="so34-4c" style="position: absolute; top: 2140px; left:1642px; font-size:12pt; color:#FF0000;"></div>
+<div id="so34-4b" style="position: absolute; top: 3890px; left:840px; font-size:12pt; "></div>
+<div id="so34-4" style="position: absolute; top: 3890px; left:850px; font-size:12pt"></div>
+<div id="so34-4c" style="position: absolute; top: 3945px; left:840px; font-size:12pt; color:#FF0000;"></div>
 
 <!いずみ野-いずみ中央>
 <div id="so34-35d" style="position: absolute; top: -100px; left:-100px;"><input type="text"  id = "so34-35" disabled / name="address" size="14" value=""　></div>
-<div id="so34-35e" style="position: absolute; top: 2045px; left:1786px; font-size:12pt; "></div>
-<div id="so34-35b" style="position: absolute; top: 2045px; left:1803px; font-size:12pt"></div>
-<div id="so34-35c" style="position: absolute; top: 2045px; left:1906px; font-size:12pt; color:#FF0000;"></div>
+<div id="so34-35b" style="position: absolute; top: 4040px; left:980px; font-size:12pt; "></div>
+<div id="so34-35e" style="position: absolute; top: 4040px; left:990px; font-size:12pt"></div>
+<div id="so34-35c" style="position: absolute; top: 4095px; left:980px; font-size:12pt; color:#FF0000;"></div>
 <div id="so35-34d" style="position: absolute; top: -100px; left:-100px;"><input type="text"  id = "so35-34" disabled / name="address" size="14" value=""　></div>
-<div id="so35-34e" style="position: absolute; top: 2085px; left:1786px; font-size:12pt; "></div>
-<div id="so35-34b" style="position: absolute; top: 2085px; left:1803px; font-size:12pt"></div>
-<div id="so35-34c" style="position: absolute; top: 2085px; left:1906px; font-size:12pt; color:#FF0000;"></div>
+<div id="so35-34b" style="position: absolute; top: 4040px; left:920px; font-size:12pt; "></div>
+<div id="so35-34e" style="position: absolute; top: 4040px; left:930px; font-size:12pt"></div>
+<div id="so35-34c" style="position: absolute; top: 4095px; left:920px; font-size:12pt; color:#FF0000;"></div>
 
-<div style="position: absolute; top: 2320px; left:150px; font-size:18pt"><p>いずみ中央</p></div>
+<div style="position: absolute; top: 4150px; left:720px; font-size:18pt"><p>いずみ中央</p></div>
 <div id="so35-1ad" style="position: absolute; top: -100px; left:-100px;"><input type="text"  id = "so35-1a" disabled / name="address" size="14" value=""　></div>
-<div id="so35-1" style="position: absolute; top: 2420px; left:146px; font-size:12pt; "></div>
-<div id="so35-1b" style="position: absolute; top: 2420px; left:163px; font-size:12pt"></div>
-<div id="so35-1c" style="position: absolute; top: 2420px; left:266px; font-size:12pt; color:#FF0000;"></div>
+<div id="so35-1b" style="position: absolute; top: 4160px; left:990px; font-size:12pt; "></div>
+<div id="so35-1" style="position: absolute; top: 4160px; left:1000px; font-size:12pt"></div>
+<div id="so35-1c" style="position: absolute; top: 4215px; left:990px; font-size:12pt; color:#FF0000;"></div>
 <div id="so35-2ad" style="position: absolute; top: -100px; left:-100px;"><input type="text"  id = "so35-2a" disabled / name="address" size="14" value=""　></div>
-<div id="so35-2" style="position: absolute; top: 2478px; left:146px; font-size:12pt; "></div>
-<div id="so35-2b" style="position: absolute; top: 2478px; left:163px; font-size:12pt"></div>
-<div id="so35-2c" style="position: absolute; top: 2478px; left:266px; font-size:12pt; color:#FF0000;"></div>
+<div id="so35-2b" style="position: absolute; top: 4160px; left:910px; font-size:12pt; "></div>
+<div id="so35-2" style="position: absolute; top: 4160px; left:920px; font-size:12pt"></div>
+<div id="so35-2c" style="position: absolute; top: 4215px; left:910px; font-size:12pt; color:#FF0000;"></div>
 
 <!いずみ中央-ゆめが丘>
 <div id="so35-36d" style="position: absolute; top: -100px; left:-100px;"><input type="text"  id = "so35-36" disabled / name="address" size="14" value=""　></div>
-<div id="so35-36e" style="position: absolute; top: 2438px; left:406px; font-size:12pt; "></div>
-<div id="so35-36b" style="position: absolute; top: 2438px; left:423px; font-size:12pt"></div>
-<div id="so35-36c" style="position: absolute; top: 2438px; left:526px; font-size:12pt; color:#FF0000;"></div>
+<div id="so35-36b" style="position: absolute; top: 4290px; left:980px; font-size:12pt; "></div>
+<div id="so35-36e" style="position: absolute; top: 4290px; left:990px; font-size:12pt"></div>
+<div id="so35-36c" style="position: absolute; top: 4345px; left:980px; font-size:12pt; color:#FF0000;"></div>
 <div id="so36-35d" style="position: absolute; top: -100px; left:-100px;"><input type="text"  id = "so36-35" disabled / name="address" size="14" value=""　></div>
-<div id="so36-35e" style="position: absolute; top: 2478px; left:406px; font-size:12pt; "></div>
-<div id="so36-35b" style="position: absolute; top: 2478px; left:423px; font-size:12pt"></div>
-<div id="so36-35c" style="position: absolute; top: 2478px; left:526px; font-size:12pt; color:#FF0000;"></div>
+<div id="so36-35b" style="position: absolute; top: 4290px; left:920px; font-size:12pt; "></div>
+<div id="so36-35e" style="position: absolute; top: 4290px; left:930px; font-size:12pt"></div>
+<div id="so36-35c" style="position: absolute; top: 4345px; left:920px; font-size:12pt; color:#FF0000;"></div>
 
-<div style="position: absolute; top: 2320px; left:690px; font-size:18pt"><p>ゆめが丘</p></div>
+<div style="position: absolute; top: 4400px; left:720px; font-size:18pt"><p>ゆめが丘</p></div>
 <div id="so36-1ad" style="position: absolute; top: -100px; left:-100px;"><input type="text"  id = "so36-1a" disabled / name="address" size="14" value=""　></div>
-<div id="so36-1" style="position: absolute; top: 2420px; left:666px; font-size:12pt; "></div>
-<div id="so36-1b" style="position: absolute; top: 2420px; left:683px; font-size:12pt"></div>
-<div id="so36-1c" style="position: absolute; top: 2420px; left:786px; font-size:12pt; color:#FF0000;"></div>
+<div id="so36-1b" style="position: absolute; top: 4410px; left:990px; font-size:12pt; "></div>
+<div id="so36-1" style="position: absolute; top: 4410px; left:1000px; font-size:12pt"></div>
+<div id="so36-1c" style="position: absolute; top: 4465px; left:990px; font-size:12pt; color:#FF0000;"></div>
 <div id="so36-2ad" style="position: absolute; top: -100px; left:-100px;"><input type="text"  id = "so36-2a" disabled / name="address" size="14" value=""　></div>
-<div id="so36-2" style="position: absolute; top: 2478px; left:666px; font-size:12pt; "></div>
-<div id="so36-2b" style="position: absolute; top: 2478px; left:683px; font-size:12pt"></div>
-<div id="so36-2c" style="position: absolute; top: 2478px; left:786px; font-size:12pt; color:#FF0000;"></div>
+<div id="so36-2b" style="position: absolute; top: 4410px; left:910px; font-size:12pt; "></div>
+<div id="so36-2" style="position: absolute; top: 4410px; left:920px; font-size:12pt"></div>
+<div id="so36-2c" style="position: absolute; top: 4465px; left:910px; font-size:12pt; color:#FF0000;"></div>
 
 <!ゆめが丘-湘南台>
 <div id="so36-37d" style="position: absolute; top: -100px; left:-100px;"><input type="text"  id = "so36-37" disabled / name="address" size="14" value=""　></div>
-<div id="so36-37e" style="position: absolute; top: 2438px; left:926px; font-size:12pt; "></div>
-<div id="so36-37b" style="position: absolute; top: 2438px; left:943px; font-size:12pt"></div>
-<div id="so36-37c" style="position: absolute; top: 2438px; left:1046px; font-size:12pt; color:#FF0000;"></div>
+<div id="so36-37b" style="position: absolute; top: 4540px; left:980px; font-size:12pt; "></div>
+<div id="so36-37e" style="position: absolute; top: 4540px; left:990px; font-size:12pt"></div>
+<div id="so36-37c" style="position: absolute; top: 4595px; left:980px; font-size:12pt; color:#FF0000;"></div>
 <div id="so37-36d" style="position: absolute; top: -100px; left:-100px;"><input type="text"  id = "so37-36" disabled / name="address" size="14" value=""　></div>
-<div id="so37-36e" style="position: absolute; top: 2478px; left:926px; font-size:12pt; "></div>
-<div id="so37-36b" style="position: absolute; top: 2478px; left:943px; font-size:12pt"></div>
-<div id="so37-36c" style="position: absolute; top: 2478px; left:1046px; font-size:12pt; color:#FF0000;"></div>
+<div id="so37-36b" style="position: absolute; top: 4540px; left:920px; font-size:12pt; "></div>
+<div id="so37-36e" style="position: absolute; top: 4540px; left:930px; font-size:12pt"></div>
+<div id="so37-36c" style="position: absolute; top: 4595px; left:920px; font-size:12pt; color:#FF0000;"></div>
 
-<div style="position: absolute; top: 2320px; left:1300px; font-size:18pt"><p>湘南台</p></div>
-<div style="position: absolute; top: 2360px; left:1270px; font-size:10pt"><p>(実番線と異なります)</p></div>
+<div style="position: absolute; top: 4700px; left:760px; font-size:18pt"><p>湘南台</p></div>
+<div style="position: absolute; top: 4740px; left:710px; font-size:10pt"><p>(実番線と異なります)</p></div>
 <div id="so37-1ad" style="position: absolute; top: -100px; left:-100px;"><input type="text"  id = "so37-1a" disabled / name="address" size="14" value=""　></div>
-<div id="so37-1" style="position: absolute; top: 2420px; left:1256px; font-size:12pt; "></div>
-<div id="so37-1b" style="position: absolute; top: 2420px; left:1273px; font-size:12pt"></div>
-<div id="so37-1c" style="position: absolute; top: 2420px; left:1376px; font-size:12pt; color:#FF0000;"></div>
+<div id="so37-1b" style="position: absolute; top: 4705px; left:990px; font-size:12pt; "></div>
+<div id="so37-1" style="position: absolute; top: 4705px; left:1000px; font-size:12pt"></div>
+<div id="so37-1c" style="position: absolute; top: 4760px; left:990px; font-size:12pt; color:#FF0000;"></div>
 <div id="so37-2ad" style="position: absolute; top: -100px; left:-100px;"><input type="text"  id = "so37-2a" disabled / name="address" size="14" value=""　></div>
-<div id="so37-2" style="position: absolute; top: 2478px; left:1256px; font-size:12pt; "></div>
-<div id="so37-2b" style="position: absolute; top: 2478px; left:1273px; font-size:12pt"></div>
-<div id="so37-2c" style="position: absolute; top: 2478px; left:1376px; font-size:12pt; color:#FF0000;"></div>
+<div id="so37-2b" style="position: absolute; top: 4705px; left:910px; font-size:12pt; "></div>
+<div id="so37-2" style="position: absolute; top: 4705px; left:920px; font-size:12pt"></div>
+<div id="so37-2c" style="position: absolute; top: 4760px; left:910px; font-size:12pt; color:#FF0000;"></div>
 
-<div style="position: absolute; top: 2500px; left:2030px; font-size:18pt"><p>　</p></div>
+<div style="position: absolute; top: 300px; left:200px; font-size:24pt"><input type="button" id = "tokyu" value="東横目黒エリア" class="sotetsubutton"></div>
+<div style="position: absolute; top: 5500px; left:1120px; font-size:18pt"><p>　</p></div>
 
 </nobr>
 </font>
@@ -710,15 +752,6 @@ background-color: #ffffff;
 
 /////////////////////////////////////ここからJR
 
-	 sessionStorage.setItem( 'hazawa1' , '0' );
-	 sessionStorage.setItem( 'hazawa1des' , '0' );
-	 sessionStorage.setItem( 'hazawa1del' , '0' );
-	 sessionStorage.setItem( 'hazawa2' , '0' );
-	 sessionStorage.setItem( 'hazawa2des' , '0' );
-	 sessionStorage.setItem( 'hazawa2del' , '0' );
-	 sessionStorage.setItem( 'hazawa3' , '0' );
-	 sessionStorage.setItem( 'hazawa3des' , '0' );
-	 sessionStorage.setItem( 'hazawa3del' , '0' );
 
 var request3 = new XMLHttpRequest();
 request3.open("GET", "https://external-data.sotetsuapp.com/tid/jr_train_location_info.json", true);
@@ -800,14 +833,18 @@ case '0':
       hensei= '' ;
 
 
+
 //遅れ
 if ( delay == "0"){
- delay = "　" ;
+ delay = "" ;
+} else if ( delay < 10 ) {
+ delay = "　 " + delay + "　" ;
 } else {
+ delay = "　" + delay　+ "　";
 }
 
 
-      info =  des + unban +  sha + hensei ;
+     info =   '　　' + des + '<br/>' +  '⑩'　+ 　unban　+　 '<br/>' +  '　　' +　 '<br/>' +  '　　'  ;
 
 
 	nameText = 0;
@@ -822,33 +859,70 @@ if ( delay == "0"){
 
 switch (stid){
 
+case ('"0000000000308"'):
+
+if (scid == '"0000000001101"'){
+
+		nameText = document.getElementById('so56-55');
+		target = document.getElementById('so56-55d');
+		doc2= document.getElementById("so56-55e");  
+		doc0= document.getElementById("so56-55b");
+		doc1= document.getElementById("so56-55c");
+doc2.style.backgroundColor = '#696969'; //背景
+doc2.style.color = '#ffffff'; //文字
+doc0.style.fontWeight = "bold";
+} else {
+
+		nameText = document.getElementById('so56a');
+		target = document.getElementById('so56d');
+		doc2= document.getElementById("so56e");  
+		doc0= document.getElementById("so56b");
+		doc1= document.getElementById("so56c"); 
+doc2.style.backgroundColor = '#696969'; //背景
+doc2.style.color = '#ffffff'; //文字
+doc0.style.fontWeight = "bold";
+
+}
+        break ;
+
+case ('"0000000001101"'):
+
+if (scid == '"0000000001464"'){
+
+		nameText = document.getElementById('so55-54');
+		target = document.getElementById('so55-54d');
+		doc2= document.getElementById("so55-54e");  
+		doc0= document.getElementById("so55-54b");
+		doc1= document.getElementById("so55-54c");
+doc2.style.backgroundColor = '#696969'; //背景
+doc2.style.color = '#ffffff'; //文字
+doc0.style.fontWeight = "bold";
+} else {
+
+		nameText = document.getElementById('so55a');
+		target = document.getElementById('so55d');
+		doc2= document.getElementById("so55e");  
+		doc0= document.getElementById("so55b");
+		doc1= document.getElementById("so55c"); 
+doc2.style.backgroundColor = '#696969'; //背景
+doc2.style.color = '#ffffff'; //文字
+doc0.style.fontWeight = "bold";
+
+}
+        break ;
+
 case ('"0000000001464"'):
 
 if (scid == '"0000000001789"'){
- 
-
-	if ( unban1 > 200 ){
-		if (  sessionStorage.getItem( 'hazawa2' ) < unban1){
-		 sessionStorage.setItem( 'hazawa2' , unban1 );
-		 sessionStorage.setItem( 'hazawa2des' , des );
-		 sessionStorage.setItem( 'hazawa2del' , delay );
-		}
-	} else {
-		if (  sessionStorage.getItem( 'hazawa1' ) < unban1){
-		 sessionStorage.setItem( 'hazawa1' , unban1 );
-		 sessionStorage.setItem( 'hazawa1des' , des );
-		 sessionStorage.setItem( 'hazawa1del' , delay );
-		}
-	}
-	
-	if (sessionStorage.getItem( 'hazawaS1') == '0' ){
+if ( sessionStorage.getItem( 'hazawa' ) == unban1 ){
+        break ;
+} else {
 		nameText = document.getElementById('so54-53');
 		target = document.getElementById('so54-53d');
-		target.style.left = '494px' ;
-		target.style.top = '792px' ;
 		doc2= document.getElementById("so54-53e");  
 		doc0= document.getElementById("so54-53b");
 		doc1= document.getElementById("so54-53c");
+		sessionStorage.setItem( 'hazawaJR' , unban1 );
 doc2.style.backgroundColor = '#696969'; //背景
 doc2.style.color = '#ffffff'; //文字
 doc0.style.fontWeight = "bold";
@@ -857,8 +931,6 @@ doc0.style.fontWeight = "bold";
 } else {
 		nameText = document.getElementById('so54a');
 		target = document.getElementById('so54d');
-		target.style.left = '280px' ;
-		target.style.top = '792px' ;
 		doc2= document.getElementById("so54e");  
 		doc0= document.getElementById("so54b");
 		doc1= document.getElementById("so54c"); 
@@ -867,6 +939,22 @@ doc2.style.color = '#ffffff'; //文字
 doc0.style.fontWeight = "bold";
 }
 
+        break ;
+
+case ('"0000000001789"'):
+
+if (scid == '"0000000001464"'){
+
+		nameText = document.getElementById('so53-54');
+		target = document.getElementById('so53-54d');
+		doc2= document.getElementById("so53-54e");  
+		doc0= document.getElementById("so53-54b");
+		doc1= document.getElementById("so53-54c");
+doc2.style.backgroundColor = '#696969'; //背景
+doc2.style.color = '#ffffff'; //文字
+doc0.style.fontWeight = "bold";
+
+} 
         break ;
 default:	
 	nameText = 0;
@@ -884,16 +972,14 @@ doc1.style.backgroundColor = '#ffffff'; //背景
 
 if ( nameText == 0 ){
 } else {
-
-
-
-
-
+}
 
 
 }
 
-}
+
+
+
     }
   }
 };
@@ -905,13 +991,10 @@ request3.send(null);
 </script>
 <script type="module" >
 
-document.getElementById("shibuya").addEventListener("click", function () {
-  location.replace("https://kisaragi-cure.github.io/tokyu/");
+document.getElementById("tokyu").addEventListener("click", function () {
+  location.href ="https://kisaragi-cure.github.io/okusawa/";
 }, false);
 
-document.getElementById("meguro").addEventListener("click", function () {
-  location.replace("https://kisaragi-cure.github.io/okusawa/");
-}, false);
 
 /////////////////////////////////////ここから東急
 
@@ -1012,11 +1095,11 @@ case '76':
 case '77':
 	des = "奥";
 	break;
-case '78':
-	des = "渋";
+case '93':
+	des = "菊";
 	break;
-case '80':
-	des = "中";
+case '98':
+	des = "横";
 	break;
 case '81':
 	des = "祐";
@@ -1039,8 +1122,8 @@ case '108':
 case '111':
 	des = "相";
 	break;
-case '129':
-	des = "蒲";
+case '103':
+	des = "元";
 	break;
 case '0':
 	des = "―";
@@ -1253,15 +1336,36 @@ case 'null':
 	hensei = "　" ;
 	break;
 }
-
-//遅れ
-if ( delay == "0"){
- delay = "　" ;
-} else {
+switch (cars) {
+	case '"6"' :
+	unban = '⑥' + unban ;
+	break;
+	case '"7"' :
+	unban = '⑦' + unban ;
+	break;
+	case '"8"' :
+	unban = '　' + unban ;
+	break;
+	case '"10"' :
+	unban = '⑩' + unban ;
+	break;
+	default:
+	unban = '〇' + unban ;
+        break ;
 }
 
 
-      info =  des + unban +  sha + hensei ;
+//遅れ
+if ( delay == "0"){
+ delay = "" ;
+} else if ( delay < 10 ) {
+ delay = "　 " + delay + "　" ;
+} else {
+ delay = "　" + delay　+ "　";
+}
+
+
+      info =   '　　' + des + '<br/>' +  　unban +　 '<br/>' +  sha + hensei +　 '<br/>' +  '　　' ;
 
 
 	nameText = 0;
@@ -1276,13 +1380,33 @@ if ( delay == "0"){
 
 switch (stid){
 
+case ('919'):
+	switch ( trid ) {
+	case ('-1'):
+	nameText = document.getElementById('sh53-2a');
+	target = document.getElementById('sh53-2ad');
+	doc2= document.getElementById("sh53-2"); 
+	doc0= document.getElementById("sh53-2b");  
+        break ;
+
+	case ('-2'):
+	nameText = document.getElementById('sh53-1a');
+	target = document.getElementById('sh53-1ad');
+	doc2= document.getElementById("sh53-1"); 
+	doc0= document.getElementById("sh53-1b");  
+        break ;
+
+	default:
+	nameText = 0;
+        break ;
+	}
+        break ;
+
 case ('982'):
 	switch ( trid ) {
 	case ('-1'):
 	nameText = document.getElementById('sh52-1a');
 	target = document.getElementById('sh52-1ad');
-	target.style.left = '30px' ;
-	target.style.top = '948px' ;
 	doc2= document.getElementById("sh52-1"); 
 	doc0= document.getElementById("sh52-1b");  
 	doc1= document.getElementById("sh52-1c");  
@@ -1300,8 +1424,6 @@ case ('983'):
 	case ('-1'):
 	nameText = document.getElementById('so52-1a');
 	target = document.getElementById('so52-1ad');
-	target.style.left = '490px' ;
-	target.style.top = '907px' ;
 	doc2= document.getElementById("so52-1"); 
 	doc0= document.getElementById("so52-1b");  
 	doc1= document.getElementById("so52-1c");  
@@ -1313,8 +1435,6 @@ case ('983'):
 	case ('1'):
 	nameText = document.getElementById('so52-2a');
 	target = document.getElementById('so52-2ad');
-	target.style.left = '490px' ;
-	target.style.top = '967px' ;
 	doc2= document.getElementById("so52-2"); 
 	doc0= document.getElementById("so52-2b");  
 	doc1= document.getElementById("so52-2c");  
@@ -1326,8 +1446,6 @@ case ('983'):
 	case ('2'):
 	nameText = document.getElementById('so52-3a');
 	target = document.getElementById('so52-3ad');
-	target.style.left = '490px' ;
-	target.style.top = '1027px' ;
 	doc2= document.getElementById("so52-3"); 
 	doc0= document.getElementById("so52-3b");  
 	doc1= document.getElementById("so52-3c");  
@@ -1349,12 +1467,19 @@ default:
 
 switch (scid){
 
+
+case ('265'):
+	nameText = document.getElementById('sh53-52');
+	target = document.getElementById('sh53-52d');
+	doc2= document.getElementById("sh53-52e"); 
+	doc0= document.getElementById("sh53-52b");  
+	doc1= document.getElementById("sh53-52c");  
+	break ;
+
 case ('266'):
 	nameText = document.getElementById('sh52-51');
 	if ( nameText.value == "" ){
 	target = document.getElementById('sh52-51d');
-	target.style.left = '220px' ;
-	target.style.top = '948px' ;
 	doc2= document.getElementById("sh52-51e"); 
 	doc0= document.getElementById("sh52-51b");  
 	doc1= document.getElementById("sh52-51c"); 
@@ -1372,8 +1497,6 @@ case ('266'):
 case ('264'):
 	nameText = document.getElementById('sh51-52');
 	target = document.getElementById('sh51-52d');
-	target.style.left = '220px' ;
-	target.style.top = '988px' ;
 	doc2= document.getElementById("sh51-52e"); 
 	doc0= document.getElementById("sh51-52b");  
 	doc1= document.getElementById("sh51-52c");  
@@ -1388,7 +1511,7 @@ if ( unban1 > 50 ){
 }
 
 
-	doc2.innerHTML= kind + "　";
+	doc2.innerHTML= kind ;
 if ( nameText.value == "" ){
 	doc0.innerHTML= info.replace("―999","留置");
 	doc1.innerHTML= delay;
@@ -1444,7 +1567,6 @@ break;
 
 switch (cars) {
 	case '"6"' :
-	doc0.style.textDecoration = "underline";
 	break;
 	case '"8"' :
 	break;
@@ -1470,8 +1592,6 @@ request2.send(null);
 
 ///////////////////////////////ここから相鉄線
 
-sessionStorage.setItem( 'hazawaS' ,'0' )
-sessionStorage.setItem( 'hazawaS1' ,'1' )
       console.log( '新横1番-' + localStorage.getItem('shinyoko1a')  + localStorage.getItem('shinyoko1b'));
       console.log( '新横2番-' +  localStorage.getItem('shinyoko2a') +  localStorage.getItem('shinyoko2b'));
 
@@ -1509,7 +1629,6 @@ var data = JSON.parse(request.responseText);
 
       len = JSON.stringify(data.trains.length) ;
 
-	 sessionStorage.setItem( 'hazawaS' , '0' );
 	let nameText = document.getElementById('so01-3a');
 
 ty99.value = "表示試験" ;
@@ -1771,6 +1890,18 @@ unban = unban + "K" ;
 }
 } else if(unban < 30){
 unban = unban + "K" ;
+} else if(unban == 35){
+unban = unban + "G" ;
+} else if(unban == 37){
+unban = unban + "G" ;
+} else if(unban == 39){
+unban = unban + "G" ;
+} else if(unban == 41){
+unban = unban + "G" ;
+} else if(unban == 42){
+unban = unban + "G" ;
+} else if(unban == 44){
+unban = unban + "G" ;
 } else if(unban < 45){
 unban = unban  ;
 } else if(unban < 50){
@@ -1780,8 +1911,14 @@ unban = unban  ;
 if ( choku == 1 ){
 unban = unban + "K" ;
 }
+if ( unban == 60 ){
+unban = unban + "K" ;
+}
 } else if(unban < 90){
 unban = unban  ;
+if ( choku == 1 ){
+hensei = '&nbsp;'　+ '=' + (retsuban % 1000 ) + 'M' ;
+}
 } else if(unban < 96){
 unban = unban + "G" ;
 } else if(unban < 100){
@@ -1836,15 +1973,42 @@ unban = unban ;
 //所属編成設定
       line = JSON.stringify(data.trains[n].train_line_id); 
 
+if ( unban.length == 2 ){
+unban = '&nbsp;' + unban ;
+}
+
+switch (cars) {
+	case '"6"' :
+	unban = '⑥' + unban ;
+	break;
+	case '"7"' :
+	unban = '⑦' + unban ;
+	break;
+	case '"8"' :
+	unban = '　' + unban ;
+	break;
+	case '"10"' :
+	unban = '⑩' + unban ;
+	break;
+	default:
+	unban = '〇' + unban ;
+        break ;
+}
+
 //遅れ
 if ( delay == "0"){
- delay = "　" ;
+ delay = "" ;
+} else if ( delay < 10 ) {
+ delay = "　 " + delay + "　" ;
 } else {
+ delay = "　" + delay　+ "　";
 }
 
 
-      info =  des + unban + '　　　';
-
+     info =   '　　' + des + '<br/>' + unban　+　 '<br/>' +  '　　' +　 '<br/>' +  '　　'  ;
+if ( unban1 > 69 && unban1 < 90 && choku == 1 ){
+     info =   '　　' + des + '<br/>' +  unban　+　 '<br/>' +  hensei +　 '<br/>' +  '　　'  ;
+}
 
 	let now = Math.floor(Date.now() / 60000) ;
 	if ( localStorage.getItem( unban + 'time' ) != null ){
@@ -1869,8 +2033,6 @@ case ('3001'):
 	case '各':
 	nameText = document.getElementById('so01-1a');
 	target = document.getElementById('so01-1ad');
-	target.style.left = '60px' ;
-	target.style.top = '130px' ;
 	doc2= document.getElementById("so01-1");  
 	doc0= document.getElementById("so01-1b");  
 	doc1= document.getElementById("so01-1c");  
@@ -1883,8 +2045,6 @@ case ('3001'):
 if ( nameText.value == "" ){
 
 	target = document.getElementById('so01-2ad');
-	target.style.left = '60px' ;
-	target.style.top = '185px' ;
 	doc2= document.getElementById("so01-2");  
 	doc0= document.getElementById("so01-2b");  
 	doc1= document.getElementById("so01-2c");  
@@ -1892,8 +2052,6 @@ if ( nameText.value == "" ){
 
 	nameText = document.getElementById('so01-3a');
 	target = document.getElementById('so01-3ad');
-	target.style.left = '60px' ;
-	target.style.top = '245px' ;
 	doc2= document.getElementById("so01-3");  
 	doc0= document.getElementById("so01-3b");  
 	doc1= document.getElementById("so01-3c");  
@@ -1907,8 +2065,6 @@ if ( nameText.value == "" ){
 
 	nameText = document.getElementById('so01-3a');
 	target = document.getElementById('so01-3ad');
-	target.style.left = '60px' ;
-	target.style.top = '245px' ;
 	doc2= document.getElementById("so01-3");  
 	doc0= document.getElementById("so01-3b");  
 	doc1= document.getElementById("so01-3c");  
@@ -1916,8 +2072,6 @@ if ( nameText.value == "" ){
 
 	nameText = document.getElementById('so01-2a');
 	target = document.getElementById('so01-2ad');
-	target.style.left = '60px' ;
-	target.style.top = '185px' ;
 	doc2= document.getElementById("so01-2");  
 	doc0= document.getElementById("so01-2b");  
 	doc1= document.getElementById("so01-2c");  
@@ -1930,8 +2084,6 @@ case ('3002'):
 if ( up == "true" ){
 	nameText = document.getElementById('so02-2a');
 	target = document.getElementById('so02-2ad');
-	target.style.left = '450px' ;
-	target.style.top = '185px' ;
 	doc2= document.getElementById("so02-2"); 
 	doc0= document.getElementById("so02-2b");  
 	doc1= document.getElementById("so02-2c");  
@@ -1939,8 +2091,6 @@ if ( up == "true" ){
 } else {
 	nameText = document.getElementById('so02-1a');
 	target = document.getElementById('so02-1ad');
-	target.style.left = '450px' ;
-	target.style.top = '130px' ;
 	doc2= document.getElementById("so02-1");  
 	doc0= document.getElementById("so02-1b");  
 	doc1= document.getElementById("so02-1c");  
@@ -1952,8 +2102,6 @@ case ('3003'):
 if ( up == "true" ){
 	nameText = document.getElementById('so03-2a');
 	target = document.getElementById('so03-2ad');
-	target.style.left = '915px' ;
-	target.style.top = '185px' ;
 	doc2= document.getElementById("so03-2"); 
 	doc0= document.getElementById("so03-2b");  
 	doc1= document.getElementById("so03-2c");  
@@ -1961,8 +2109,6 @@ if ( up == "true" ){
 } else {
 	nameText = document.getElementById('so03-1a');
 	target = document.getElementById('so03-1ad');
-	target.style.left = '915px' ;
-	target.style.top = '130px' ;
 	doc2= document.getElementById("so03-1");  
 	doc0= document.getElementById("so03-1b");  
 	doc1= document.getElementById("so03-1c");  
@@ -1973,8 +2119,6 @@ case ('3004'):
 if ( up == "true" ){
 	nameText = document.getElementById('so04-2a');
 	target = document.getElementById('so04-2ad');
-	target.style.left = '1340px' ;
-	target.style.top = '185px' ;
 	doc2= document.getElementById("so04-2"); 
 	doc0= document.getElementById("so04-2b");  
 	doc1= document.getElementById("so04-2c");  
@@ -1982,8 +2126,6 @@ if ( up == "true" ){
 } else {
 	nameText = document.getElementById('so04-1a');
 	target = document.getElementById('so04-1ad');
-	target.style.left = '1340px' ;
-	target.style.top = '145px' ;
 	doc2= document.getElementById("so04-1");  
 	doc0= document.getElementById("so04-1b");  
 	doc1= document.getElementById("so04-1c");  
@@ -1995,8 +2137,6 @@ if ( up == "true" ){
 	if ( kind == '各' ){
 	nameText = document.getElementById('so05-4a');
 	target = document.getElementById('so05-4ad');
-	target.style.left = '1764px' ;
-	target.style.top = '245px' ;
 	doc2= document.getElementById("so05-4"); 
 	doc0= document.getElementById("so05-4b");  
 	doc1= document.getElementById("so05-4c");  
@@ -2004,8 +2144,6 @@ if ( up == "true" ){
 	} else {
 	nameText = document.getElementById('so05-3a');
 	target = document.getElementById('so05-3ad');
-	target.style.left = '1764px' ;
-	target.style.top = '185px' ;
 	doc2= document.getElementById("so05-3"); 
 	doc0= document.getElementById("so05-3b");  
 	doc1= document.getElementById("so05-3c");  
@@ -2015,8 +2153,6 @@ if ( up == "true" ){
 	if ( kind == '各' ){
 	nameText = document.getElementById('so05-1a');
 	target = document.getElementById('so05-1ad');
-	target.style.left = '1764px' ;
-	target.style.top = '90px' ;
 	doc2= document.getElementById("so05-1");  
 	doc0= document.getElementById("so05-1b");  
 	doc1= document.getElementById("so05-1c");  
@@ -2024,8 +2160,6 @@ if ( up == "true" ){
 	} else {
 	nameText = document.getElementById('so05-2a');
 	target = document.getElementById('so05-2ad');
-	target.style.left = '1764px' ;
-	target.style.top = '145px' ;
 	doc2= document.getElementById("so05-2"); 
 	doc0= document.getElementById("so05-2b");  
 	doc1= document.getElementById("so05-2c");  
@@ -2037,8 +2171,6 @@ case ('3006'):
 if ( up == "true" ){
 	nameText = document.getElementById('so06-2a');
 	target = document.getElementById('so06-2ad');
-	target.style.left = '194px' ;
-	target.style.top = '578px' ;
 	doc2= document.getElementById("so06-2"); 
 	doc0= document.getElementById("so06-2b");  
 	doc1= document.getElementById("so06-2c");  
@@ -2046,8 +2178,6 @@ if ( up == "true" ){
 } else {
 	nameText = document.getElementById('so06-1a');
 	target = document.getElementById('so06-1ad');
-	target.style.left = '194px' ;
-	target.style.top = '538px' ;
 	doc2= document.getElementById("so06-1");  
 	doc0= document.getElementById("so06-1b");  
 	doc1= document.getElementById("so06-1c");  
@@ -2058,8 +2188,6 @@ case ('3007'):
 if ( up == "true" ){
 	nameText = document.getElementById('so07-2a');
 	target = document.getElementById('so07-2ad');
-	target.style.left = '530px' ;
-	target.style.top = '578px' ;
 	doc2= document.getElementById("so07-2"); 
 	doc0= document.getElementById("so07-2b");  
 	doc1= document.getElementById("so07-2c");  
@@ -2067,8 +2195,6 @@ if ( up == "true" ){
 } else {
 	nameText = document.getElementById('so07-1a');
 	target = document.getElementById('so07-1ad');
-	target.style.left = '530px' ;
-	target.style.top = '538px' ;
 	doc2= document.getElementById("so07-1");  
 	doc0= document.getElementById("so07-1b");  
 	doc1= document.getElementById("so07-1c");  
@@ -2079,8 +2205,6 @@ case ('3028'):
 if ( up == "true" ){
 	nameText = document.getElementById('so51-2a');
 	target = document.getElementById('so51-2ad');
-	target.style.left = '960px' ;
-	target.style.top = '988px' ;
 	doc2= document.getElementById("so51-2"); 
 	doc0= document.getElementById("so51-2b");  
 	doc1= document.getElementById("so51-2c");  
@@ -2088,8 +2212,6 @@ if ( up == "true" ){
 } else {
 	nameText = document.getElementById('so51-1a');
 	target = document.getElementById('so51-1ad');
-	target.style.left = '960px' ;
-	target.style.top = '948px' ;
 	doc2= document.getElementById("so51-1");  
 	doc0= document.getElementById("so51-1b");  
 	doc1= document.getElementById("so51-1c"); 
@@ -2100,7 +2222,7 @@ if ( up == "true" ){
 	}
 	hensei = localStorage.getItem( unban );
 	if ( hensei != null ){
-	info =  des + unban + hensei ;
+	info =   '　　' + des + '<br/>' +  unban +　 '<br/>' +  hensei +　 '<br/>' +  '　　' ;
 	}
 	break ;
 }
@@ -2109,10 +2231,8 @@ case ('3029'):
 	if ( localStorage.getItem('shinyoko1a') == unban1 && (des != '←') ) {
 	nameText = document.getElementById('so52-1a');
 	target = document.getElementById('so52-1ad');
-	target.style.left = '490px' ;
-	target.style.top = '907px' ;
 	hensei = localStorage.getItem( unban );
-	info =  des + unban + hensei ;
+	info =   '　　' + des + '<br/>' +  unban +　 '<br/>' +  hensei +　 '<br/>' +  '　　' ;
 	doc0= document.getElementById("so52-1b");  
 	if ( localStorage.getItem('shinyoko1k') == '' ) {
 	doc2= document.getElementById("so52-1");  
@@ -2122,10 +2242,8 @@ case ('3029'):
 	} else if ( localStorage.getItem('shinyoko2a') == unban1 && (des != '←') ){
 	nameText = document.getElementById('so52-2a');
 	target = document.getElementById('so52-2ad');
-	target.style.left = '490px' ;
-	target.style.top = '967px' ;
 	hensei = localStorage.getItem( unban );
-	info =  des + unban + hensei ;
+	info =   '　　' + des + '<br/>' +  unban +　 '<br/>' +  hensei +　 '<br/>' +  '　　' ;
 	doc0= document.getElementById("so52-2b");  
 	if ( localStorage.getItem('shinyoko2k') == '' ) {
 	doc2= document.getElementById("so52-2");  
@@ -2141,8 +2259,6 @@ if ( up == "true" ){
 	if ( choku == 0 ) {
 	nameText = document.getElementById('so08-3a');
 	target = document.getElementById('so08-3ad');
-	target.style.left = '854px' ;
-	target.style.top = '578px' ;
 	doc2= document.getElementById("so08-3"); 
 	doc0= document.getElementById("so08-3b");  
 	doc1= document.getElementById("so08-3c");  
@@ -2150,8 +2266,6 @@ if ( up == "true" ){
 	} else {
 	nameText = document.getElementById('so08-4a');
 	target = document.getElementById('so08-4ad');
-	target.style.left = '854px' ;
-	target.style.top = '633px' ;
 	doc2= document.getElementById("so08-4");  
 	doc0= document.getElementById("so08-4b");  
 	doc1= document.getElementById("so08-4c");  
@@ -2161,8 +2275,6 @@ if ( up == "true" ){
 	if ( choku == 0 ) {
 	nameText = document.getElementById('so08-2a');
 	target = document.getElementById('so08-2ad');
-	target.style.left = '854px' ;
-	target.style.top = '538px' ;
 	doc2= document.getElementById("so08-2");  
 	doc0= document.getElementById("so08-2b");  
 	doc1= document.getElementById("so08-2c");  
@@ -2170,8 +2282,6 @@ if ( up == "true" ){
 	} else {
 	nameText = document.getElementById('so08-1a');
 	target = document.getElementById('so08-1ad');
-	target.style.left = '854px' ;
-	target.style.top = '483px' ;
 	doc2= document.getElementById("so08-1");  
 	doc0= document.getElementById("so08-1b");  
 	doc1= document.getElementById("so08-1c");  
@@ -2182,7 +2292,7 @@ if ( up == "true" ){
 	}
 	hensei = localStorage.getItem( unban );
 	if ( hensei != null ){
-	info =  des + unban + hensei ;
+	info =   '　　' + des + '<br/>' +  unban +　 '<br/>' +  hensei +　 '<br/>' +  '　　' ;
 	}
 	break ;
 	}
@@ -2192,8 +2302,6 @@ case ('3009'):
 if ( up == "true" ){
 	nameText = document.getElementById('so09-2a');
 	target = document.getElementById('so09-2ad');
-	target.style.left = '1274px' ;
-	target.style.top = '578px' ;
 	doc2= document.getElementById("so09-2"); 
 	doc0= document.getElementById("so09-2b");  
 	doc1= document.getElementById("so09-2c");  
@@ -2201,8 +2309,6 @@ if ( up == "true" ){
 } else {
 	nameText = document.getElementById('so09-1a');
 	target = document.getElementById('so09-1ad');
-	target.style.left = '1274px' ;
-	target.style.top = '538px' ;
 	doc2= document.getElementById("so09-1");  
 	doc0= document.getElementById("so09-1b");  
 	doc1= document.getElementById("so09-1c");  
@@ -2214,7 +2320,7 @@ if ( up == "true" ){
 	}
 	hensei = localStorage.getItem( unban );
 	if ( hensei != null ){
-	info =  des + unban + hensei ;
+	info =   '　　' + des + '<br/>' +  unban +　 '<br/>' +  hensei +　 '<br/>' +  '　　' ;
 	}
 	break ;
 	}
@@ -2227,16 +2333,12 @@ if ( up == "true" ){
 		nameText = document.getElementById('so10-3a');
 		if ( nameText.value == "" ){
 		target = document.getElementById('so10-3ad');
-		target.style.left = '1660px' ;
-		target.style.top = '578px' ;
 		doc2= document.getElementById("so10-3"); 
 		doc0= document.getElementById("so10-3b");  
 		doc1= document.getElementById("so10-3c");  
 		} else {
 		nameText = document.getElementById('so10-4a');
 		target = document.getElementById('so10-4ad');
-		target.style.left = '1660px' ;
-		target.style.top = '633px' ;
 		doc2= document.getElementById("so10-4");  
 		doc0= document.getElementById("so10-4b");  
 		doc1= document.getElementById("so10-4c");  
@@ -2246,16 +2348,12 @@ if ( up == "true" ){
 		nameText = document.getElementById('so10-4a');
 		if ( nameText.value == "" ){
 		target = document.getElementById('so10-4ad');
-		target.style.left = '1660px' ;
-		target.style.top = '633px' ;
 		doc2= document.getElementById("so10-4");  
 		doc0= document.getElementById("so10-4b");  
 		doc1= document.getElementById("so10-4c");  
 		} else {
 		nameText = document.getElementById('so10-3a');
 		target = document.getElementById('so10-3ad');
-		target.style.left = '1660px' ;
-		target.style.top = '578px' ;
 		doc2= document.getElementById("so10-3"); 
 		doc0= document.getElementById("so10-3b");  
 		doc1= document.getElementById("so10-3c");  
@@ -2274,44 +2372,36 @@ if ( up == "true" ){
 		nameText = document.getElementById('so10-2a');
 		if ( nameText.value == "" ){
 		target = document.getElementById('so10-2ad');
-		target.style.left = '1660px' ;
-		target.style.top = '538px' ;
 		doc2= document.getElementById("so10-2");  
 		doc0= document.getElementById("so10-2b");  
 		doc1= document.getElementById("so10-2c");  
 		} else {
 		nameText = document.getElementById('so10-1a');
 		target = document.getElementById('so10-1ad');
-		target.style.left = '1660px' ;
-		target.style.top = '483px' ;
 		doc2= document.getElementById("so10-1");  
 		doc0= document.getElementById("so10-1b");  
 		doc1= document.getElementById("so10-1c");  
 		}
 		if ( hensei != null ){
-		info =  des + unban + hensei ;
+		info =   '　　' + des + '<br/>' +  unban +　 '<br/>' +  hensei +　 '<br/>' +  '　　' ;
 		}
 		break ;
 	} else {
 		nameText = document.getElementById('so10-1a');
 		if ( nameText.value == "" ){
 		target = document.getElementById('so10-1ad');
-		target.style.left = '1660px' ;
-		target.style.top = '483px' ;
 		doc2= document.getElementById("so10-1");  
 		doc0= document.getElementById("so10-1b");  
 		doc1= document.getElementById("so10-1c");
 		} else {
 		nameText = document.getElementById('so10-2a');
 		target = document.getElementById('so10-2ad');
-		target.style.left = '1660px' ;
-		target.style.top = '538px' ;
 		doc2= document.getElementById("so10-2");  
 		doc0= document.getElementById("so10-2b");  
 		doc1= document.getElementById("so10-2c"); 
 		}
 	if ( hensei != null ){
-	info =  des + unban + hensei ;
+	info =   '　　' + des + '<br/>' +  unban +　 '<br/>' +  hensei +　 '<br/>' +  '　　' ;
 	}
 	break ;
 	}
@@ -2321,8 +2411,6 @@ case ('3011'):
 if ( up == "true" ){
 	nameText = document.getElementById('so11-2a');
 	target = document.getElementById('so11-2ad');
-	target.style.left = '196px' ;
-	target.style.top = '1310px' ;
 	doc2= document.getElementById("so11-2"); 
 	doc0= document.getElementById("so11-2b");  
 	doc1= document.getElementById("so11-2c");  
@@ -2330,8 +2418,6 @@ if ( up == "true" ){
 } else {
 	nameText = document.getElementById('so11-1a');
 	target = document.getElementById('so11-1ad');
-	target.style.left = '196px' ;
-	target.style.top = '1272px' ;
 	doc2= document.getElementById("so11-1");  
 	doc0= document.getElementById("so11-1b");  
 	doc1= document.getElementById("so11-1c");  
@@ -2343,7 +2429,7 @@ if ( up == "true" ){
 	}
 	hensei = localStorage.getItem( unban );
 	if ( hensei != null ){
-	info =  des + unban + hensei ;
+	info =   '　　' + des + '<br/>' +  unban +　 '<br/>' +  hensei +　 '<br/>' +  '　　' ;
 	}
 	break ;
 	}
@@ -2354,8 +2440,6 @@ case ('3012'):
 if ( up == "true" ){
 	nameText = document.getElementById('so12-2a');
 	target = document.getElementById('so12-2ad');
-	target.style.left = '530px' ;
-	target.style.top = '1310px' ;
 	doc2= document.getElementById("so12-2"); 
 	doc0= document.getElementById("so12-2b");  
 	doc1= document.getElementById("so12-2c");  
@@ -2363,8 +2447,6 @@ if ( up == "true" ){
 } else {
 	nameText = document.getElementById('so12-1a');
 	target = document.getElementById('so12-1ad');
-	target.style.left = '530px' ;
-	target.style.top = '1272px' ;
 	doc2= document.getElementById("so12-1");  
 	doc0= document.getElementById("so12-1b");  
 	doc1= document.getElementById("so12-1c");  
@@ -2376,7 +2458,7 @@ if ( up == "true" ){
 	}
 	hensei = localStorage.getItem( unban );
 	if ( hensei != null ){
-	info =  des + unban + hensei ;
+	info =   '　　' + des + '<br/>' +  unban +　 '<br/>' +  hensei +　 '<br/>' +  '　　' ;
 	}
 	break ;
 	}
@@ -2388,16 +2470,12 @@ if ( up == "true" ){
 	if ( kind == '特' ){
 	nameText = document.getElementById('so13-3a');
 	target = document.getElementById('so13-3ad');
-	target.style.left = '934px' ;
-	target.style.top = '1310px' ;
 	doc2= document.getElementById("so13-3"); 
 	doc0= document.getElementById("so13-3b");  
 	doc1= document.getElementById("so13-3c");  
 	} else {
 	nameText = document.getElementById('so13-4a');
 	target = document.getElementById('so13-4ad');
-	target.style.left = '934px' ;
-	target.style.top = '1365px' ;
 	doc2= document.getElementById("so13-4"); 
 	doc0= document.getElementById("so13-4b");  
 	doc1= document.getElementById("so13-4c");  
@@ -2407,16 +2485,12 @@ if ( up == "true" ){
 	if ( kind == '特' ){
 	nameText = document.getElementById('so13-2a');
 	target = document.getElementById('so13-2ad');
-	target.style.left = '934px' ;
-	target.style.top = '1272px' ;
 	doc2= document.getElementById("so13-2");  
 	doc0= document.getElementById("so13-2b");  
 	doc1= document.getElementById("so13-2c");  
 	} else {
 	nameText = document.getElementById('so13-1a');
 	target = document.getElementById('so13-1ad');
-	target.style.left = '934px' ;
-	target.style.top = '1217px' ;
 	doc2= document.getElementById("so13-1");  
 	doc0= document.getElementById("so13-1b");  
 	doc1= document.getElementById("so13-1c"); 
@@ -2429,7 +2503,7 @@ if ( up == "true" ){
 	}
 	hensei = localStorage.getItem( unban );
 	if ( hensei != null ){
-	info =  des + unban + hensei ;
+	info =   '　　' + des + '<br/>' +  unban +　 '<br/>' +  hensei +　 '<br/>' +  '　　' ;
 	}
 	break ;
 	}
@@ -2440,8 +2514,6 @@ case ('3014'):
 if ( up == "true" ){
 	nameText = document.getElementById('so14-2a');
 	target = document.getElementById('so14-2ad');
-	target.style.left = '1400px' ;
-	target.style.top = '1310px' ;
 	doc2= document.getElementById("so14-2"); 
 	doc0= document.getElementById("so14-2b");  
 	doc1= document.getElementById("so14-2c");  
@@ -2449,8 +2521,6 @@ if ( up == "true" ){
 } else {
 	nameText = document.getElementById('so14-1a');
 	target = document.getElementById('so14-1ad');
-	target.style.left = '1400px' ;
-	target.style.top = '1252px' ;
 	doc2= document.getElementById("so14-1");  
 	doc0= document.getElementById("so14-1b");  
 	doc1= document.getElementById("so14-1c");  
@@ -2462,7 +2532,7 @@ if ( up == "true" ){
 	}
 	hensei = localStorage.getItem( unban );
 	if ( hensei != null ){
-	info =  des + unban + hensei ;
+	info =   '　　' + des + '<br/>' +  unban +　 '<br/>' +  hensei +　 '<br/>' +  '　　' ;
 	}
 	break ;
 	}
@@ -2473,8 +2543,6 @@ case ('3015'):
 if ( up == "true" ){
 	nameText = document.getElementById('so15-2a');
 	target = document.getElementById('so15-2ad');
-	target.style.left = '1770px' ;
-	target.style.top = '1310px' ;
 	doc2= document.getElementById("so15-2"); 
 	doc0= document.getElementById("so15-2b");  
 	doc1= document.getElementById("so15-2c");  
@@ -2482,8 +2550,6 @@ if ( up == "true" ){
 } else {
 	nameText = document.getElementById('so15-1a');
 	target = document.getElementById('so15-1ad');
-	target.style.left = '1770px' ;
-	target.style.top = '1252px' ;
 	doc2= document.getElementById("so15-1");  
 	doc0= document.getElementById("so15-1b");  
 	doc1= document.getElementById("so15-1c");  
@@ -2495,7 +2561,7 @@ if ( up == "true" ){
 	}
 	hensei = localStorage.getItem( unban );
 	if ( hensei != null ){
-	info =  des + unban + hensei ;
+	info =   '　　' + des + '<br/>' +  unban +　 '<br/>' +  hensei +　 '<br/>' +  '　　' ;
 	}
 	break ;
 	}
@@ -2506,8 +2572,6 @@ case ('3016'):
 if ( up == "true" ){
 	nameText = document.getElementById('so16-2a');
 	target = document.getElementById('so16-2ad');
-	target.style.left = '196px' ;
-	target.style.top = '1667px' ;
 	doc2= document.getElementById("so16-2"); 
 	doc0= document.getElementById("so16-2b");  
 	doc1= document.getElementById("so16-2c");  
@@ -2515,8 +2579,6 @@ if ( up == "true" ){
 } else {
 	nameText = document.getElementById('so16-1a');
 	target = document.getElementById('so16-1ad');
-	target.style.left = '196px' ;
-	target.style.top = '1627px' ;
 	doc2= document.getElementById("so16-1");  
 	doc0= document.getElementById("so16-1b");  
 	doc1= document.getElementById("so16-1c");  
@@ -2528,7 +2590,7 @@ if ( up == "true" ){
 	}
 	hensei = localStorage.getItem( unban );
 	if ( hensei != null ){
-	info =  des + unban + hensei ;
+	info =   '　　' + des + '<br/>' +  unban +　 '<br/>' +  hensei +　 '<br/>' +  '　　' ;
 	}
 	break ;
 	}
@@ -2542,16 +2604,12 @@ if ( up == "true" ){
 	if ( retsuban == 6400 || nameText.value != "" ){
 	nameText = document.getElementById('so17-4a');
 	target = document.getElementById('so17-4ad');
-	target.style.left = '726px' ;
-	target.style.top = '1722px' ;
 	doc2= document.getElementById("so17-4"); 
 	doc0= document.getElementById("so17-4b");  
 	doc1= document.getElementById("so17-4c");
 	} else {
 	nameText = document.getElementById('so17-3a');
 	target = document.getElementById('so17-3ad');
-	target.style.left = '726px' ;
-	target.style.top = '1667px' ;
 	doc2= document.getElementById("so17-3"); 
 	doc0= document.getElementById("so17-3b");  
 	doc1= document.getElementById("so17-3c");  
@@ -2561,16 +2619,12 @@ if ( up == "true" ){
 	if ( des == "か" ) {
 	nameText = document.getElementById('so17-2a');
 	target = document.getElementById('so17-2ad');
-	target.style.left = '726px' ;
-	target.style.top = '1627px' ;
 	doc2= document.getElementById("so17-2");  
 	doc0= document.getElementById("so17-2b");  
 	doc1= document.getElementById("so17-2c");  
 	} else {
 	nameText = document.getElementById('so17-1a');
 	target = document.getElementById('so17-1ad');
-	target.style.left = '726px' ;
-	target.style.top = '1572px' ;
 	doc2= document.getElementById("so17-1");  
 	doc0= document.getElementById("so17-1b");  
 	doc1= document.getElementById("so17-1c");  
@@ -2583,7 +2637,7 @@ if ( up == "true" ){
 	}
 	hensei = localStorage.getItem( unban );
 	if ( hensei != null ){
-	info =  des + unban + hensei ;
+	info =   '　　' + des + '<br/>' +  unban +　 '<br/>' +  hensei +　 '<br/>' +  '　　' ;
 	}
 	break ;
 	}
@@ -2595,16 +2649,12 @@ case ('3019'):
 	nameText = document.getElementById('so18-2a');
 	if ( nameText.value == "" ){
 	target = document.getElementById('so18-2ad');
-	target.style.left = '1496px' ;
-	target.style.top = '1667px' ;
 	doc2= document.getElementById("so18-2"); 
 	doc0= document.getElementById("so18-2b");  
 	doc1= document.getElementById("so18-2c");  
 	} else {
 	nameText = document.getElementById('so18-1a');
 	target = document.getElementById('so18-1ad');
-	target.style.left = '1496px' ;
-	target.style.top = '1607px' ;
 	doc2= document.getElementById("so18-1"); 
 	doc0= document.getElementById("so18-1b");  
 	doc1= document.getElementById("so18-1c");  
@@ -2613,16 +2663,12 @@ case ('3019'):
 	nameText = document.getElementById('so18-1a');
 	if ( nameText.value == "" ){
 	target = document.getElementById('so18-1ad');
-	target.style.left = '1496px' ;
-	target.style.top = '1607px' ;
 	doc2= document.getElementById("so18-1"); 
 	doc0= document.getElementById("so18-1b");  
 	doc1= document.getElementById("so18-1c");  
 	} else {
 	nameText = document.getElementById('so18-2a');
 	target = document.getElementById('so18-2ad');
-	target.style.left = '1496px' ;
-	target.style.top = '1667px' ;
 	doc2= document.getElementById("so18-2"); 
 	doc0= document.getElementById("so18-2b");  
 	doc1= document.getElementById("so18-2c");  
@@ -2636,7 +2682,7 @@ case ('3019'):
 	}
 	hensei = localStorage.getItem( unban );
 	if ( hensei != null ){
-	info =  des + unban + hensei ;
+	info =   '　　' + des + '<br/>' +  unban +　 '<br/>' +  hensei +　 '<br/>' +  '　　' ;
 	}
 	break ;
 	}
@@ -2647,16 +2693,12 @@ case ('3021'):
 if ( up == "true" ){
 	nameText = document.getElementById('so31-2a');
 	target = document.getElementById('so31-2ad');
-	target.style.left = '50px' ;
-	target.style.top = '2082px' ;
 	doc2= document.getElementById("so31-2"); 
 	doc0= document.getElementById("so31-2b");  
 	doc1= document.getElementById("so31-2c");  
 } else {
 	nameText = document.getElementById('so31-1a');
 	target = document.getElementById('so31-1ad');
-	target.style.left = '50px' ;
-	target.style.top = '2042px' ;
 	doc2= document.getElementById("so31-1");  
 	doc0= document.getElementById("so31-1b");  
 	doc1= document.getElementById("so31-1c");  
@@ -2670,7 +2712,7 @@ if ( up == "true" ){
 	}
 	hensei = localStorage.getItem( unban );
 	if ( hensei != null ){
-	info =  des + unban + hensei ;
+	info =   '　　' + des + '<br/>' +  unban +　 '<br/>' +  hensei +　 '<br/>' +  '　　' ;
 	}
 	break ;
 	}
@@ -2680,16 +2722,12 @@ case ('3022'):
 if ( up == "true" ){
 	nameText = document.getElementById('so32-2a');
 	target = document.getElementById('so32-2ad');
-	target.style.left = '464px' ;
-	target.style.top = '2082px' ;
 	doc2= document.getElementById("so32-2"); 
 	doc0= document.getElementById("so32-2b");  
 	doc1= document.getElementById("so32-2c");  
 } else {
 	nameText = document.getElementById('so32-1a');
 	target = document.getElementById('so32-1ad');
-	target.style.left = '464px' ;
-	target.style.top = '2042px' ;
 	doc2= document.getElementById("so32-1");  
 	doc0= document.getElementById("so32-1b");  
 	doc1= document.getElementById("so32-1c");  
@@ -2703,7 +2741,7 @@ if ( up == "true" ){
 	}
 	hensei = localStorage.getItem( unban );
 	if ( hensei != null ){
-	info =  des + unban + hensei ;
+	info =   '　　' + des + '<br/>' +  unban +　 '<br/>' +  hensei +　 '<br/>' +  '　　' ;
 	}
 	break ;
 	}
@@ -2713,16 +2751,12 @@ case ('3023'):
 if ( up == "true" ){
 	nameText = document.getElementById('so33-2a');
 	target = document.getElementById('so33-2ad');
-	target.style.left = '904px' ;
-	target.style.top = '2082px' ;
 	doc2= document.getElementById("so33-2"); 
 	doc0= document.getElementById("so33-2b");  
 	doc1= document.getElementById("so33-2c");  
 } else {
 	nameText = document.getElementById('so33-1a');
 	target = document.getElementById('so33-1ad');
-	target.style.left = '904px' ;
-	target.style.top = '2042px' ;
 	doc2= document.getElementById("so33-1");  
 	doc0= document.getElementById("so33-1b");  
 	doc1= document.getElementById("so33-1c");  
@@ -2736,7 +2770,7 @@ if ( up == "true" ){
 	}
 	hensei = localStorage.getItem( unban );
 	if ( hensei != null ){
-	info =  des + unban + hensei ;
+	info =   '　　' + des + '<br/>' +  unban +　 '<br/>' +  hensei +　 '<br/>' +  '　　' ;
 	}
 	break ;
 	}
@@ -2747,16 +2781,12 @@ if ( up == "true" ){
 	if ( kind == '特' || kind == '通' ){
 	nameText = document.getElementById('so34-3a');
 	target = document.getElementById('so34-3ad');
-	target.style.left = '1516px' ;
-	target.style.top = '2082px' ;
 	doc2= document.getElementById("so34-3"); 
 	doc0= document.getElementById("so34-3b");  
 	doc1= document.getElementById("so34-3c"); 
 	} else {
 	nameText = document.getElementById('so34-4a');
 	target = document.getElementById('so34-4ad');
-	target.style.left = '1516px' ;
-	target.style.top = '2137px' ;
 	doc2= document.getElementById("so34-4"); 
 	doc0= document.getElementById("so34-4b");  
 	doc1= document.getElementById("so34-4c"); 
@@ -2765,16 +2795,12 @@ if ( up == "true" ){
 	if ( kind == '特' || kind == '通' ){
 	nameText = document.getElementById('so34-2a');
 	target = document.getElementById('so34-2ad');
-	target.style.left = '1516px' ;
-	target.style.top = '2042px' ;
 	doc2= document.getElementById("so34-2");  
 	doc0= document.getElementById("so34-2b");  
 	doc1= document.getElementById("so34-2c");  
 	} else {
 	nameText = document.getElementById('so34-1a');
 	target = document.getElementById('so34-1ad');
-	target.style.left = '1516px' ;
-	target.style.top = '1987px' ;
 	doc2= document.getElementById("so34-1");  
 	doc0= document.getElementById("so34-1b");  
 	doc1= document.getElementById("so34-1c");  
@@ -2789,7 +2815,7 @@ if ( up == "true" ){
 	}
 	hensei = localStorage.getItem( unban );
 	if ( hensei != null ){
-	info =  des + unban + hensei ;
+	info =   '　　' + des + '<br/>' +  unban +　 '<br/>' +  hensei +　 '<br/>' +  '　　' ;
 	}
 	break ;
 	}
@@ -2799,16 +2825,12 @@ case ('3025'):
 if ( up == "true" ){
 	nameText = document.getElementById('so35-2a');
 	target = document.getElementById('so35-2ad');
-	target.style.left = '140px' ;
-	target.style.top = '2475px' ;
 	doc2= document.getElementById("so35-2"); 
 	doc0= document.getElementById("so35-2b");  
 	doc1= document.getElementById("so35-2c");  
 } else {
 	nameText = document.getElementById('so35-1a');
 	target = document.getElementById('so35-1ad');
-	target.style.left = '140px' ;
-	target.style.top = '2417px' ;
 	doc2= document.getElementById("so35-1");  
 	doc0= document.getElementById("so35-1b");  
 	doc1= document.getElementById("so35-1c");  
@@ -2822,7 +2844,7 @@ if ( up == "true" ){
 	}
 	hensei = localStorage.getItem( unban );
 	if ( hensei != null ){
-	info =  des + unban + hensei ;
+	info =   '　　' + des + '<br/>' +  unban +　 '<br/>' +  hensei +　 '<br/>' +  '　　' ;
 	}
 	break ;
 	}
@@ -2832,16 +2854,12 @@ case ('3026'):
 if ( up == "true" ){
 	nameText = document.getElementById('so36-2a');
 	target = document.getElementById('so36-2ad');
-	target.style.left = '660px' ;
-	target.style.top = '2475px' ;
 	doc2= document.getElementById("so36-2"); 
 	doc0= document.getElementById("so36-2b");  
 	doc1= document.getElementById("so36-2c");  
 } else {
 	nameText = document.getElementById('so36-1a');
 	target = document.getElementById('so36-1ad');
-	target.style.left = '660px' ;
-	target.style.top = '2417px' ;
 	doc2= document.getElementById("so36-1");  
 	doc0= document.getElementById("so36-1b");  
 	doc1= document.getElementById("so36-1c");  
@@ -2855,7 +2873,7 @@ if ( up == "true" ){
 	}
 	hensei = localStorage.getItem( unban );
 	if ( hensei != null ){
-	info =  des + unban + hensei ;
+	info =   '　　' + des + '<br/>' +  unban +　 '<br/>' +  hensei +　 '<br/>' +  '　　' ;
 	}
 	break ;
 	}
@@ -2866,8 +2884,6 @@ case ('3027'):
 	nameText = document.getElementById('so37-1a');
 	if ( nameText.value == "" ){
 	target = document.getElementById('so37-1ad');
-	target.style.left = '1250px' ;
-	target.style.top = '2417px' ;
 	doc2= document.getElementById("so37-1");  
 	doc0= document.getElementById("so37-1b");  
 	doc1= document.getElementById("so37-1c");  
@@ -2875,8 +2891,6 @@ case ('3027'):
 	nameText = document.getElementById('so37-2a');
 	if ( nameText.value == "" ){
 	target = document.getElementById('so37-2ad');
-	target.style.left = '1250px' ;
-	target.style.top = '2475px' ;
 	doc2= document.getElementById("so37-2");  
 	doc0= document.getElementById("so37-2b");  
 	doc1= document.getElementById("so37-2c");  
@@ -2888,8 +2902,6 @@ case ('3027'):
 	nameText = document.getElementById('so37-2a');
 	if ( nameText.value == "" ){
 	target = document.getElementById('so37-2ad');
-	target.style.left = '1250px' ;
-	target.style.top = '2475px' ;
 	doc2= document.getElementById("so37-2");  
 	doc0= document.getElementById("so37-2b");  
 	doc1= document.getElementById("so37-2c");   
@@ -2897,8 +2909,6 @@ case ('3027'):
 	nameText = document.getElementById('so37-1a');
 	if ( nameText.value == "" ){
 	target = document.getElementById('so37-1ad');
-	target.style.left = '1250px' ;
-	target.style.top = '2417px' ;
 	doc2= document.getElementById("so37-1");  
 	doc0= document.getElementById("so37-1b");  
 	doc1= document.getElementById("so37-1c"); 
@@ -2915,7 +2925,7 @@ case ('3027'):
 	}
 	hensei = localStorage.getItem( unban );
 	if ( hensei != null ){
-	info =  des + unban + hensei ;
+	info =   '　　' + des + '<br/>' +  unban +　 '<br/>' +  hensei +　 '<br/>' +  '　　' ;
 	}
 	break ;
 	}
@@ -2931,8 +2941,6 @@ switch (scid){
 case ('3001'):
 	nameText = document.getElementById('so02-01');
 	target = document.getElementById('so02-01d');
-	target.style.left = '270px' ;
-	target.style.top = '185px' ;
 	doc2= document.getElementById("so02-1e");  
 	doc0= document.getElementById("so02-01b");
 	doc1= document.getElementById("so02-01c"); 
@@ -2942,8 +2950,6 @@ case ('3002'):
 if ( up == "true" ){
 	nameText = document.getElementById('so03-02');
 	target = document.getElementById('so03-02d');
-	target.style.left = '670px' ;
-	target.style.top = '185px' ;
 	doc2= document.getElementById("so03-2e");  
 	doc0= document.getElementById("so03-02b");
 	doc1= document.getElementById("so03-02c"); 
@@ -2952,8 +2958,6 @@ if ( up == "true" ){
 } else {
 	nameText = document.getElementById('so01-02');
 	target = document.getElementById('so01-02d');
-	target.style.left = '270px' ;
-	target.style.top = '145px' ;
 	doc2= document.getElementById("so01-2e");  
 	doc0= document.getElementById("so01-02b");
 	doc1= document.getElementById("so01-02c"); 
@@ -2965,8 +2969,6 @@ case ('3003'):
 if ( up == "true" ){
 	nameText = document.getElementById('so04-03');
 	target = document.getElementById('so04-03d');
-	target.style.left = '1144px' ;
-	target.style.top = '185px' ;
 	doc2= document.getElementById("so04-3e");  
 	doc0= document.getElementById("so04-03b");
 	doc1= document.getElementById("so04-03c"); 
@@ -2974,8 +2976,6 @@ if ( up == "true" ){
 } else {
 	nameText = document.getElementById('so02-03');
 	target = document.getElementById('so02-03d');
-	target.style.left = '670px' ;
-	target.style.top = '145px' ;
 	doc2= document.getElementById("so02-3e");  
 	doc0= document.getElementById("so02-03b");
 	doc1= document.getElementById("so02-03c"); 
@@ -2987,8 +2987,6 @@ case ('3004'):
 if ( up == "true" ){
 	nameText = document.getElementById('so05-04');
 	target = document.getElementById('so05-04d');
-	target.style.left = '1504px' ;
-	target.style.top = '185px' ;
 	doc2= document.getElementById("so05-4e");  
 	doc0= document.getElementById("so05-04b");
 	doc1= document.getElementById("so05-04c"); 
@@ -2996,8 +2994,6 @@ if ( up == "true" ){
 } else {
 	nameText = document.getElementById('so03-04');
 	target = document.getElementById('so03-04d');
-	target.style.left = '1144px' ;
-	target.style.top = '145px' ;
 	doc2= document.getElementById("so03-4e");  
 	doc0= document.getElementById("so03-04b");
 	doc1= document.getElementById("so03-04c"); 
@@ -3008,8 +3004,6 @@ case ('3005'):
 if ( up == "true" ){
 	nameText = document.getElementById('so06-05');
 	target = document.getElementById('so06-05d');
-	target.style.left = '25px' ;
-	target.style.top = '578px' ;
 	doc2= document.getElementById("so06-5e");  
 	doc0= document.getElementById("so06-05b");
 	doc1= document.getElementById("so06-05c"); 
@@ -3017,8 +3011,6 @@ if ( up == "true" ){
 } else {
 	nameText = document.getElementById('so04-05');
 	target = document.getElementById('so04-05d');
-	target.style.left = '1504px' ;
-	target.style.top = '145px' ;
 	doc2= document.getElementById("so04-5e");  
 	doc0= document.getElementById("so04-05b");
 	doc1= document.getElementById("so04-05c"); 
@@ -3029,8 +3021,6 @@ case ('3006'):
 if ( up == "true" ){
 	nameText = document.getElementById('so07-06');
 	target = document.getElementById('so07-06d');
-	target.style.left = '355px' ;
-	target.style.top = '578px' ;
 	doc2= document.getElementById("so07-6e");  
 	doc0= document.getElementById("so07-06b");
 	doc1= document.getElementById("so07-06c"); 
@@ -3038,8 +3028,6 @@ if ( up == "true" ){
 } else {
 	nameText = document.getElementById('so05-06');
 	target = document.getElementById('so05-06d');
-	target.style.left = '25px' ;
-	target.style.top = '538px' ;
 	doc2= document.getElementById("so05-6e");  
 	doc0= document.getElementById("so05-06b");
 	doc1= document.getElementById("so05-06c"); 
@@ -3050,8 +3038,6 @@ case ('3007'):
 if ( up == "true" ){
 	nameText = document.getElementById('so08-07');
 	target = document.getElementById('so08-07d');
-	target.style.left = '690px' ;
-	target.style.top = '578px' ;
 	doc2= document.getElementById("so08-7e");  
 	doc0= document.getElementById("so08-07b");
 	doc1= document.getElementById("so08-07c"); 
@@ -3059,8 +3045,6 @@ if ( up == "true" ){
 } else {
 	nameText = document.getElementById('so06-07');
 	target = document.getElementById('so06-07d');
-	target.style.left = '355px' ;
-	target.style.top = '538px' ;
 	doc2= document.getElementById("so06-7e");  
 	doc0= document.getElementById("so06-07b");
 	doc1= document.getElementById("so06-07c"); 
@@ -3070,31 +3054,18 @@ case ('3028'):
 if ( up == "true" ){
 	nameText = document.getElementById('so08-51');
 	target = document.getElementById('so08-51d');
-	target.style.left = '1140px' ;
-	target.style.top = '988px' ;
 	doc2= document.getElementById("so08-51e");  
 	doc0= document.getElementById("so08-51b");
 	doc1= document.getElementById("so08-51c"); 
 	break ;
 } else {
-	if (unban > 69 && unban < 90) {
+	if (unban1 > 69 && unban1 < 90) {
 		nameText = document.getElementById('so53-51');
 		target = document.getElementById('so53-51d');
-		target.style.left = '659px' ;
-		target.style.top = '792px' ;
 		doc2= document.getElementById("so53-51e");  
 		doc0= document.getElementById("so53-51b");
-		doc1= document.getElementById("so53-51c"); 
-		if ( retsuban > 6000 ){
-		if ( sessionStorage.getItem('hazawa2') != '0'){
-		info =  des + unban + '/' +  sessionStorage.getItem('hazawa2')　+ 'M' ;	
-		}
-		} else {
-		if ( sessionStorage.getItem('hazawa1') != '0'){
-		info =  des + unban + '/' +  sessionStorage.getItem('hazawa1') + 'M' ;
-		}
-		}
-	sessionStorage.setItem( 'hazawaS' , unban );
+		doc1= document.getElementById("so53-51c");
+		sessionStorage.setItem( 'hazawa' , ( retsuban.substring(1)) ); 
 		break ;
 	} else {
 
@@ -3110,14 +3081,12 @@ if ( up == "true" ){
 	}
 	nameText = document.getElementById('so52-51');
 	target = document.getElementById('so52-51d');
-	target.style.left = '740px' ;
-	target.style.top = '948px' ;
 	doc2= document.getElementById("so52-51e");  
 	doc0= document.getElementById("so52-51b");
 	doc1= document.getElementById("so52-51c"); 
 	hensei = localStorage.getItem( unban );
 	if ( hensei != null ){
-	info =  des + unban + hensei ;
+	info =   '　　' + des + '<br/>' +  unban +　 '<br/>' +  hensei +　 '<br/>' +  '　　' ;
 	}
 	break ;
 	}
@@ -3127,8 +3096,6 @@ case ('3029'):
 if ( up == "true" ){
 	nameText = document.getElementById('so51-52');
 	target = document.getElementById('so51-52d');
-	target.style.left = '740px' ;
-	target.style.top = '988px' ;
 	doc2= document.getElementById("so51-52e");  
 	doc0= document.getElementById("so51-52b");
 	doc1= document.getElementById("so51-52c"); 
@@ -3143,8 +3110,6 @@ case ('3008'):
 if ( up == "true" ){
 	nameText = document.getElementById('so09-08');
 	target = document.getElementById('so09-08d');
-	target.style.left = '1052px' ;
-	target.style.top = '614px' ;
 	doc2= document.getElementById("so09-8e");  
 	doc0= document.getElementById("so09-08b");
 	doc1= document.getElementById("so09-08c"); 
@@ -3154,8 +3119,6 @@ if ( up == "true" ){
 	if ( choku == 0 ) {
 	nameText = document.getElementById('so07-08');
 	target = document.getElementById('so07-08d');
-	target.style.left = '690px' ;
-	target.style.top = '538px' ;
 	doc2= document.getElementById("so07-8e");  
 	doc0= document.getElementById("so07-08b");
 	doc1= document.getElementById("so07-08c"); 
@@ -3164,8 +3127,6 @@ if ( up == "true" ){
 	} else {
 	nameText = document.getElementById('so51-08');
 	target = document.getElementById('so51-08d');
-	target.style.left = '1120px' ;
-	target.style.top = '948px' ;
 	doc2= document.getElementById("so51-8e");  
 	doc0= document.getElementById("so51-08b");
 	doc1= document.getElementById("so51-08c"); 
@@ -3176,7 +3137,7 @@ if ( up == "true" ){
 	}
 	hensei = localStorage.getItem( unban );
 	if ( hensei != null ){
-	info =  des + unban + hensei ;
+	info =   '　　' + des + '<br/>' +  unban +　 '<br/>' +  hensei +　 '<br/>' +  '　　' ;
 	}
 	break ;
 	}
@@ -3187,8 +3148,6 @@ if ( up == "true" ){
 	nameText = document.getElementById('so10-09');
 	if ( nameText.value == "" ){
 	target = document.getElementById('so10-09d');
-	target.style.left = '1500px' ;
-	target.style.top = '633px' ;
 	doc2= document.getElementById("so10-9e");  
 	doc0= document.getElementById("so10-09b");
 	doc1= document.getElementById("so10-09c"); 
@@ -3196,8 +3155,6 @@ if ( up == "true" ){
 	}else{ 
 	nameText = document.getElementById('so10-092');
 	target = document.getElementById('so10-09d2');
-	target.style.left = '1500px' ;
-	target.style.top = '663px' ;
 	doc2= document.getElementById("so10-9e2");  
 	doc0= document.getElementById("so10-09b2");
 	doc1= document.getElementById("so10-09c2"); 
@@ -3207,8 +3164,6 @@ if ( up == "true" ){
 } else {
 	nameText = document.getElementById('so08-09');
 	target = document.getElementById('so08-09d');
-	target.style.left = '1052px' ;
-	target.style.top = '499px' ;
 	doc2= document.getElementById("so08-9e");  
 	doc0= document.getElementById("so08-09b");
 	doc1= document.getElementById("so08-09c"); 
@@ -3220,7 +3175,7 @@ if ( up == "true" ){
 	}
 	hensei = localStorage.getItem( unban );
 	if ( hensei != null ){
-	info =  des + unban + hensei ;
+	info =   '　　' + des + '<br/>' +  unban +　 '<br/>' +  hensei +　 '<br/>' +  '　　' ;
 	}
 
 	}
@@ -3232,8 +3187,6 @@ if ( up == "true" ){
 	if ( izu == 1 ){
 	nameText = document.getElementById('so31-10');
 	target = document.getElementById('so31-10d');
-	target.style.left = '1884px' ;
-	target.style.top = '578px' ;
 	doc2= document.getElementById("so31-10e");  
 	doc0= document.getElementById("so31-10b");
 	doc1= document.getElementById("so31-10c"); 
@@ -3241,15 +3194,13 @@ if ( up == "true" ){
 	if ( choku == 1 ) {
 	hensei = localStorage.getItem( unban );
 	if ( hensei != null ){
-	info =  des + unban + hensei ;
+	info =   '　　' + des + '<br/>' +  unban +　 '<br/>' +  hensei +　 '<br/>' +  '　　' ;
 	}
 	}
 
 	} else {
 	nameText = document.getElementById('so11-10');
 	target = document.getElementById('so11-10d');
-	target.style.left = '25px' ;
-	target.style.top = '1310px' ;
 	doc2= document.getElementById("so11-10e");  
 	doc0= document.getElementById("so11-10b");
 	doc1= document.getElementById("so11-10c"); 
@@ -3258,8 +3209,6 @@ if ( up == "true" ){
 } else {
 	nameText = document.getElementById('so09-10');
 	target = document.getElementById('so09-10d');
-	target.style.left = '1500px' ;
-	target.style.top = '483px' ;
 	doc2= document.getElementById("so09-10e");  
 	doc0= document.getElementById("so09-10b");
 	doc1= document.getElementById("so09-10c"); 
@@ -3271,7 +3220,7 @@ if ( up == "true" ){
 	}
 	hensei = localStorage.getItem( unban );
 	if ( hensei != null ){
-	info =  des + unban + hensei ;
+	info =   '　　' + des + '<br/>' +  unban +　 '<br/>' +  hensei +　 '<br/>' +  '　　' ;
 	}
 	}
 	break ;
@@ -3281,8 +3230,6 @@ case ('3011'):
 if ( up == "true" ){
 	nameText = document.getElementById('so12-11');
 	target = document.getElementById('so12-11d');
-	target.style.left = '360px' ;
-	target.style.top = '1310px' ;
 	doc2= document.getElementById("so12-11e");  
 	doc0= document.getElementById("so12-11b");
 	doc1= document.getElementById("so12-11c"); 
@@ -3290,8 +3237,6 @@ if ( up == "true" ){
 } else {
 	nameText = document.getElementById('so10-11');
 	target = document.getElementById('so10-11d');
-	target.style.left = '25px' ;
-	target.style.top = '1272px' ;
 	doc2= document.getElementById("so10-11e");  
 	doc0= document.getElementById("so10-11b");
 	doc1= document.getElementById("so10-11c"); 
@@ -3303,7 +3248,7 @@ if ( up == "true" ){
 	}
 	hensei = localStorage.getItem( unban );
 	if ( hensei != null ){
-	info =  des + unban + hensei ;
+	info =   '　　' + des + '<br/>' +  unban +　 '<br/>' +  hensei +　 '<br/>' +  '　　' ;
 	}
 
 	}
@@ -3314,8 +3259,6 @@ case ('3012'):
 if ( up == "true" ){
 	nameText = document.getElementById('so13-12');
 	target = document.getElementById('so13-12d');
-	target.style.left = '710px' ;
-	target.style.top = '1310px' ;
 	doc2= document.getElementById("so13-12e");  
 	doc0= document.getElementById("so13-12b");
 	doc1= document.getElementById("so13-12c"); 
@@ -3323,8 +3266,6 @@ if ( up == "true" ){
 } else {
 	nameText = document.getElementById('so11-12');
 	target = document.getElementById('so11-12d');
-	target.style.left = '360px' ;
-	target.style.top = '1272px' ;
 	doc2= document.getElementById("so11-12e");  
 	doc0= document.getElementById("so11-12b");
 	doc1= document.getElementById("so11-12c"); 
@@ -3336,7 +3277,7 @@ if ( up == "true" ){
 	}
 	hensei = localStorage.getItem( unban );
 	if ( hensei != null ){
-	info =  des + unban + hensei ;
+	info =   '　　' + des + '<br/>' +  unban +　 '<br/>' +  hensei +　 '<br/>' +  '　　' ;
 	}
 
 	}
@@ -3347,8 +3288,6 @@ case ('3013'):
 if ( up == "true" ){
 	nameText = document.getElementById('so14-13');
 	target = document.getElementById('so14-13d');
-	target.style.left = '1180px' ;
-	target.style.top = '1310px' ;
 	doc2= document.getElementById("so14-13e");  
 	doc0= document.getElementById("so14-13b");
 	doc1= document.getElementById("so14-13c"); 
@@ -3356,8 +3295,6 @@ if ( up == "true" ){
 } else {
 	nameText = document.getElementById('so12-13');
 	target = document.getElementById('so12-13d');
-	target.style.left = '710px' ;
-	target.style.top = '1272px' ;
 	doc2= document.getElementById("so12-13e");  
 	doc0= document.getElementById("so12-13b");
 	doc1= document.getElementById("so12-13c"); 
@@ -3369,7 +3306,7 @@ if ( up == "true" ){
 	}
 	hensei = localStorage.getItem( unban );
 	if ( hensei != null ){
-	info =  des + unban + hensei ;
+	info =   '　　' + des + '<br/>' +  unban +　 '<br/>' +  hensei +　 '<br/>' +  '　　' ;
 	}
 
 	}
@@ -3380,8 +3317,6 @@ case ('3014'):
 if ( up == "true" ){
 	nameText = document.getElementById('so15-14');
 	target = document.getElementById('so15-14d');
-	target.style.left = '1580px' ;
-	target.style.top = '1310px' ;
 	doc2= document.getElementById("so15-14e");  
 	doc0= document.getElementById("so15-14b");
 	doc1= document.getElementById("so15-14c"); 
@@ -3389,8 +3324,6 @@ if ( up == "true" ){
 } else {
 	nameText = document.getElementById('so13-14');
 	target = document.getElementById('so13-14d');
-	target.style.left = '1180px' ;
-	target.style.top = '1272px' ;
 	doc2= document.getElementById("so13-14e");  
 	doc0= document.getElementById("so13-14b");
 	doc1= document.getElementById("so13-14c"); 
@@ -3402,7 +3335,7 @@ if ( up == "true" ){
 	}
 	hensei = localStorage.getItem( unban );
 	if ( hensei != null ){
-	info =  des + unban + hensei ;
+	info =   '　　' + des + '<br/>' +  unban +　 '<br/>' +  hensei +　 '<br/>' +  '　　' ;
 	}
 
 	}
@@ -3413,8 +3346,6 @@ case ('3015'):
 if ( up == "true" ){
 	nameText = document.getElementById('so16-15');
 	target = document.getElementById('so16-15d');
-	target.style.left = '25px' ;
-	target.style.top = '1667px' ;
 	doc2= document.getElementById("so16-15e");  
 	doc0= document.getElementById("so16-15b");
 	doc1= document.getElementById("so16-15c"); 
@@ -3422,8 +3353,6 @@ if ( up == "true" ){
 } else {
 	nameText = document.getElementById('so14-15');
 	target = document.getElementById('so14-15d');
-	target.style.left = '1580px' ;
-	target.style.top = '1252px' ;
 	doc2= document.getElementById("so14-15e");  
 	doc0= document.getElementById("so14-15b");
 	doc1= document.getElementById("so14-15c"); 
@@ -3435,7 +3364,7 @@ if ( up == "true" ){
 	}
 	hensei = localStorage.getItem( unban );
 	if ( hensei != null ){
-	info =  des + unban + hensei ;
+	info =   '　　' + des + '<br/>' +  unban +　 '<br/>' +  hensei +　 '<br/>' +  '　　' ;
 	}
 
 	}
@@ -3446,8 +3375,6 @@ case ('3016'):
 if ( up == "true" ){
 	nameText = document.getElementById('so17-16');
 	target = document.getElementById('so17-16d');
-	target.style.left = '400px' ;
-	target.style.top = '1667px' ;
 	doc2= document.getElementById("so17-16e");  
 	doc0= document.getElementById("so17-16b");
 	doc1= document.getElementById("so17-16c"); 
@@ -3455,8 +3382,6 @@ if ( up == "true" ){
 } else {
 	nameText = document.getElementById('so15-16');
 	target = document.getElementById('so15-16d');
-	target.style.left = '25px' ;
-	target.style.top = '1627px' ;
 	doc2= document.getElementById("so15-16e");  
 	doc0= document.getElementById("so15-16b");
 	doc1= document.getElementById("so15-16c"); 
@@ -3468,7 +3393,7 @@ if ( up == "true" ){
 	}
 	hensei = localStorage.getItem( unban );
 	if ( hensei != null ){
-	info =  des + unban + hensei ;
+	info =   '　　' + des + '<br/>' +  unban +　 '<br/>' +  hensei +　 '<br/>' +  '　　' ;
 	}
 
 	}
@@ -3479,8 +3404,6 @@ case ('3017'):
 if ( up == "true" ){
 	nameText = document.getElementById('so18-17');
 	target = document.getElementById('so18-17d');
-	target.style.left = '1030px' ;
-	target.style.top = '1667px' ;
 	doc2= document.getElementById("so18-17e");  
 	doc0= document.getElementById("so18-17b");
 	doc1= document.getElementById("so18-17c"); 
@@ -3488,8 +3411,6 @@ if ( up == "true" ){
 } else {
 	nameText = document.getElementById('so16-17');
 	target = document.getElementById('so16-17d');
-	target.style.left = '400px' ;
-	target.style.top = '1627px' ;
 	doc2= document.getElementById("so16-17e");  
 	doc0= document.getElementById("so16-17b");
 	doc1= document.getElementById("so16-17c"); 
@@ -3501,7 +3422,7 @@ if ( up == "true" ){
 	}
 	hensei = localStorage.getItem( unban );
 	if ( hensei != null ){
-	info =  des + unban + hensei ;
+	info =   '　　' + des + '<br/>' +  unban +　 '<br/>' +  hensei +　 '<br/>' +  '　　' ;
 	}
 
 	}
@@ -3514,8 +3435,6 @@ if ( up == "true" ){
 } else {
 	nameText = document.getElementById('so17-18');
 	target = document.getElementById('so17-18d');
-	target.style.left = '1030px' ;
-	target.style.top = '1627px' ;
 	doc2= document.getElementById("so17-18e");  
 	doc0= document.getElementById("so17-18b");
 	doc1= document.getElementById("so17-18c"); 
@@ -3527,7 +3446,7 @@ if ( up == "true" ){
 	}
 	hensei = localStorage.getItem( unban );
 	if ( hensei != null ){
-	info =  des + unban + hensei ;
+	info =   '　　' + des + '<br/>' +  unban +　 '<br/>' +  hensei +　 '<br/>' +  '　　' ;
 	}
 
 	}
@@ -3538,16 +3457,12 @@ case ('3021'):
 if ( up == "true" ){
 	nameText = document.getElementById('so32-31');
 	target = document.getElementById('so32-31d');
-	target.style.left = '250px' ;
-	target.style.top = '2082px' ;
 	doc2= document.getElementById("so32-31e");  
 	doc0= document.getElementById("so32-31b");
 	doc1= document.getElementById("so32-31c"); 
 } else {
 	nameText = document.getElementById('so10-31');
 	target = document.getElementById('so10-31d');
-	target.style.left = '1884px' ;
-	target.style.top = '538px' ;
 	doc2= document.getElementById("so10-31e");  
 	doc0= document.getElementById("so10-31b");
 	doc1= document.getElementById("so10-31c"); 
@@ -3560,7 +3475,7 @@ if ( up == "true" ){
 	}
 	hensei = localStorage.getItem( unban );
 	if ( hensei != null ){
-	info =  des + unban + hensei ;
+	info =   '　　' + des + '<br/>' +  unban +　 '<br/>' +  hensei +　 '<br/>' +  '　　' ;
 	}
 
 	}
@@ -3570,16 +3485,12 @@ case ('3022'):
 if ( up == "true" ){
 	nameText = document.getElementById('so33-32');
 	target = document.getElementById('so33-32d');
-	target.style.left = '680px' ;
-	target.style.top = '2082px' ;
 	doc2= document.getElementById("so33-32e");  
 	doc0= document.getElementById("so33-32b");
 	doc1= document.getElementById("so33-32c"); 
 } else {
 	nameText = document.getElementById('so31-32');
 	target = document.getElementById('so31-32d');
-	target.style.left = '250px' ;
-	target.style.top = '2042px' ;
 	doc2= document.getElementById("so31-32e");  
 	doc0= document.getElementById("so31-32b");
 	doc1= document.getElementById("so31-32c"); 
@@ -3592,7 +3503,7 @@ if ( up == "true" ){
 	}
 	hensei = localStorage.getItem( unban );
 	if ( hensei != null ){
-	info =  des + unban + hensei ;
+	info =   '　　' + des + '<br/>' +  unban +　 '<br/>' +  hensei +　 '<br/>' +  '　　' ;
 	}
 
 	}
@@ -3602,16 +3513,12 @@ case ('3023'):
 if ( up == "true" ){
 	nameText = document.getElementById('so34-33');
 	target = document.getElementById('so34-33d');
-	target.style.left = '1180px' ;
-	target.style.top = '2082px' ;
 	doc2= document.getElementById("so34-33e");  
 	doc0= document.getElementById("so34-33b");
 	doc1= document.getElementById("so34-33c"); 
 } else {
 	nameText = document.getElementById('so32-33');
 	target = document.getElementById('so32-33d');
-	target.style.left = '680px' ;
-	target.style.top = '2042px' ;
 	doc2= document.getElementById("so32-33e");  
 	doc0= document.getElementById("so32-33b");
 	doc1= document.getElementById("so32-33c"); 
@@ -3624,7 +3531,7 @@ if ( up == "true" ){
 	}
 	hensei = localStorage.getItem( unban );
 	if ( hensei != null ){
-	info =  des + unban + hensei ;
+	info =   '　　' + des + '<br/>' +  unban +　 '<br/>' +  hensei +　 '<br/>' +  '　　' ;
 	}
 
 	}
@@ -3634,8 +3541,6 @@ case ('3024'):
 if ( up == "true" ){
 	nameText = document.getElementById('so35-34');
 	target = document.getElementById('so35-34d');
-	target.style.left = '1780px' ;
-	target.style.top = '2082px' ;
 	doc2= document.getElementById("so35-34e");  
 	doc0= document.getElementById("so35-34b");
 	doc1= document.getElementById("so35-34c"); 
@@ -3643,8 +3548,6 @@ if ( up == "true" ){
 } else {
 	nameText = document.getElementById('so33-34');
 	target = document.getElementById('so33-34d');
-	target.style.left = '1180px' ;
-	target.style.top = '2042px' ;
 	doc2= document.getElementById("so33-34e");  
 	doc0= document.getElementById("so33-34b");
 	doc1= document.getElementById("so33-34c"); 
@@ -3657,7 +3560,7 @@ if ( up == "true" ){
 	}
 	hensei = localStorage.getItem( unban );
 	if ( hensei != null ){
-	info =  des + unban + hensei ;
+	info =   '　　' + des + '<br/>' +  unban +　 '<br/>' +  hensei +　 '<br/>' +  '　　' ;
 	}
 
 	}
@@ -3667,8 +3570,6 @@ case ('3025'):
 if ( up == "true" ){
 	nameText = document.getElementById('so36-35');
 	target = document.getElementById('so36-35d');
-	target.style.left = '400px' ;
-	target.style.top = '2475px' ;
 	doc2= document.getElementById("so36-35e");  
 	doc0= document.getElementById("so36-35b");
 	doc1= document.getElementById("so36-35c"); 
@@ -3676,8 +3577,6 @@ if ( up == "true" ){
 } else {
 	nameText = document.getElementById('so34-35');
 	target = document.getElementById('so34-35d');
-	target.style.left = '1780px' ;
-	target.style.top = '2042px' ;
 	doc2= document.getElementById("so34-35e");  
 	doc0= document.getElementById("so34-35b");
 	doc1= document.getElementById("so34-35c"); 
@@ -3690,7 +3589,7 @@ if ( up == "true" ){
 	}
 	hensei = localStorage.getItem( unban );
 	if ( hensei != null ){
-	info =  des + unban + hensei ;
+	info =   '　　' + des + '<br/>' +  unban +　 '<br/>' +  hensei +　 '<br/>' +  '　　' ;
 	}
 
 	}
@@ -3701,16 +3600,12 @@ case ('3026'):
 if ( up == "true" ){
 	nameText = document.getElementById('so37-36');
 	target = document.getElementById('so37-36d');
-	target.style.left = '920px' ;
-	target.style.top = '2475px' ;
 	doc2= document.getElementById("so37-36e");  
 	doc0= document.getElementById("so37-36b");
 	doc1= document.getElementById("so37-36c"); 
 } else {
 	nameText = document.getElementById('so35-36');
 	target = document.getElementById('so35-36d');
-	target.style.left = '400px' ;
-	target.style.top = '2435px' ;
 	doc2= document.getElementById("so35-36e");  
 	doc0= document.getElementById("so35-36b");
 	doc1= document.getElementById("so35-36c"); 
@@ -3723,7 +3618,7 @@ if ( up == "true" ){
 	}
 	hensei = localStorage.getItem( unban );
 	if ( hensei != null ){
-	info =  des + unban + hensei ;
+	info =   '　　' + des + '<br/>' +  unban +　 '<br/>' +  hensei +　 '<br/>' +  '　　' ;
 	}
 
 	}
@@ -3733,8 +3628,6 @@ if ( up == "true" ){
 case ('3027'):
 	nameText = document.getElementById('so36-37');
 	target = document.getElementById('so36-37d');
-	target.style.left = '920px' ;
-	target.style.top = '2435px' ;
 	doc2= document.getElementById("so36-37e");  
 	doc0= document.getElementById("so36-37b");
 	doc1= document.getElementById("so36-37c"); 
@@ -3747,7 +3640,7 @@ case ('3027'):
 	}
 	hensei = localStorage.getItem( unban );
 	if ( hensei != null ){
-	info =  des + unban + hensei ;
+	info =   '　　' + des + '<br/>' +  unban +　 '<br/>' +  hensei +　 '<br/>' +  '　　' ;
 	}
 }
 
@@ -3756,7 +3649,7 @@ case ('3027'):
 
 
 if ( nameText.value == "" ){
-	doc2.innerHTML= kind + " ";
+	doc2.innerHTML= kind ;
 }
 	doc0.innerHTML= info + "  ";
 	doc1.innerHTML= delay;
@@ -3828,49 +3721,7 @@ switch (cars) {
 
 }
 
-}
 
-if (sessionStorage.getItem( 'hazawaS') == '0' ){
-sessionStorage.setItem( 'hazawaS1' , '0' );
-}  
-
-///武蔵小杉～羽沢
-if ( sessionStorage.getItem( 'hazawaS1' ) == '0' ){
-if ( sessionStorage.getItem( 'hazawa1' ) != '0' ){
-nameText = document.getElementById('so54-53');
-		target = document.getElementById('so54-53d');
-		target.style.left = '494px' ;
-		target.style.top = '792px' ;
-		doc2= document.getElementById("so54-53e");  
-		doc0= document.getElementById("so54-53b");
-		doc1= document.getElementById("so54-53c"); 
-
-	info =  sessionStorage.getItem( 'hazawa1des' ) + sessionStorage.getItem( 'hazawa1' ) + 'M' ;
-	doc2.innerHTML= "各 ";
-	doc0.innerHTML= info + "  ";
-	doc1.innerHTML= sessionStorage.getItem( 'hazawa1del' );
-doc2.style.backgroundColor = '#696969'; //背景
-doc2.style.color = '#ffffff'; //文字
-doc0.style.fontWeight = "bold";
-sessionStorage.setItem( 'hazawaS' ,'1' )
-} else if ( sessionStorage.getItem( 'hazawa2' ) != '0' ){
-nameText = document.getElementById('so54-53');
-		target = document.getElementById('so54-53d');
-		target.style.left = '494px' ;
-		target.style.top = '792px' ;
-		doc2= document.getElementById("so54-53e");  
-		doc0= document.getElementById("so54-53b");
-		doc1= document.getElementById("so54-53c");
- 
-	info =  sessionStorage.getItem( 'hazawa2des' ) + sessionStorage.getItem( 'hazawa2' ) + 'M' ;
-	doc2.innerHTML= "各 ";
-	doc0.innerHTML= info + "  ";
-	doc1.innerHTML= sessionStorage.getItem( 'hazawa2del' );
-doc2.style.backgroundColor = '#696969'; //背景
-doc2.style.color = '#ffffff'; //文字
-doc0.style.fontWeight = "bold";
-sessionStorage.setItem( 'hazawaS' ,'2' )
-} 
 
 
 }
