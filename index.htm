@@ -148,7 +148,7 @@ background-color: #ffffff;
 <div id="ty99d" style="position: absolute; top: -50px; left:-50px; font-size:18pt"　><input type="text"  id = "ty99" disabled / name="address" size="100" value="試験"　></div>
 
 <div style="position: absolute; top: 1260px; left:745px; font-size:18pt"><p>星　川</p></div>
-<div style="position: absolute; top: 1300px; left:695px; font-size:10pt"><p>(各停は副本線に表示)</p></div>
+<div style="position: absolute; top: 1300px; left:665px; font-size:10pt"><p>(一部実番線と異なります)</p></div>
 <div id="so05-1ad" style="position: absolute; top: -100px; left:-100px;"><input type="text"  id = "so05-1a" disabled / name="address" size="14" value=""　></div>
 <div id="so05-1b" style="position: absolute; top: 1270px; left:1060px; font-size:12pt; "></div>
 <div id="so05-1" style="position: absolute; top: 1270px; left:1070px; font-size:12pt; "></div>
@@ -255,10 +255,10 @@ background-color: #ffffff;
 <div id="so53-51b" style="position: absolute; top: 1490px; left:410px; font-size:12pt; "></div>
 <div id="so53-51e" style="position: absolute; top: 1490px; left:420px; font-size:12pt; "></div>
 <div id="so53-51c" style="position: absolute; top: 1545px; left:410px; font-size:12pt; color:#FF0000; "></div>
-<div id="so53-54d" style="position: absolute; top: -100px; left:-100px;"><input type="text"  id = "so53-54" disabled / name="address" size="14" value=""　></div>
-<div id="so53-54b" style="position: absolute; top: 1230px; left:530px; font-size:12pt; "></div>
-<div id="so53-54e" style="position: absolute; top: 1230px; left:540px; font-size:12pt; "></div>
-<div id="so53-54c" style="position: absolute; top: 1285px; left:530px; font-size:12pt; color:#FF0000; "></div>
+<div id="so51-54d" style="position: absolute; top: -100px; left:-100px;"><input type="text"  id = "so51-54" disabled / name="address" size="14" value=""　></div>
+<div id="so51-54b" style="position: absolute; top: 1250px; left:527px; font-size:12pt; "></div>
+<div id="so51-54e" style="position: absolute; top: 1250px; left:537px; font-size:12pt; "></div>
+<div id="so51-54c" style="position: absolute; top: 1305px; left:527px; font-size:12pt; color:#FF0000; "></div>
 
 <div style="position: absolute; top: 510px; left:130px; font-size:16pt"><p>(日 吉)</p></div>
 <div id="sh53-1ad" style="position: absolute; top: -100px; left:-100px;"><input type="text"  id = "sh53-1a" disabled / name="address" size="14" value=""　></div>
@@ -315,9 +315,9 @@ background-color: #ffffff;
 
 <!1新横浜-羽沢国大>
 <div id="so52-51d" style="position: absolute; top: -100px; left:-100px;"><input type="text"  id = "so52-51" disabled / name="address" size="14" value=""　></div>
-<div id="so52-51b" style="position: absolute; top: 1490px; left:350px; font-size:12pt; "></div>
-<div id="so52-51e" style="position: absolute; top: 1490px; left:360px; font-size:12pt; "></div>
-<div id="so52-51c" style="position: absolute; top: 1545px; left:350px; font-size:12pt; color:#FF0000; "></div>
+<div id="so52-51b" style="position: absolute; top: 1460px; left:350px; font-size:12pt; "></div>
+<div id="so52-51e" style="position: absolute; top: 1460px; left:360px; font-size:12pt; "></div>
+<div id="so52-51c" style="position: absolute; top: 1515px; left:350px; font-size:12pt; color:#FF0000; "></div>
 <div id="so51-52d" style="position: absolute; top: -100px; left:-100px;"><input type="text"  id = "so51-52" disabled / name="address" size="14" value=""　></div>
 <div id="so51-52b" style="position: absolute; top: 1380px; left:290px; font-size:12pt; "></div>
 <div id="so51-52e" style="position: absolute; top: 1380px; left:300px; font-size:12pt; "></div>
@@ -785,12 +785,128 @@ var data3 = JSON.parse(request3.responseText);
       let dai = 0;
       let n = 1;
 
+	let jr1 =  JSON.stringify(data3.trainLocationInfo[0].directionInfo[0].trainInfo );
+	if ( jr1 != 'null' ){
+      len = JSON.stringify(data3.trainLocationInfo[0].directionInfo[0].trainInfo.length) ;
+}
+	 let nameText = document.getElementById('ty01-3a');
+
+
+for ( n = 0; n < len; n++) {
+
+
+dai = 0;
+
+//種別設定
+      kind= JSON.stringify(data3.trainLocationInfo[0].directionInfo[0].trainInfo[n].trainType); 
+	switch (kind) {
+case '"19"':
+	kind = "各";
+	break;
+case 'null':
+	kind = "　";
+	break;
+}
+
+//行先設定
+      des= JSON.stringify(data3.trainLocationInfo[0].directionInfo[0].trainInfo[n].organizationDetail[0].destination) ;
+	switch (des) {
+case '"0000000000829"':
+	des = "宿";
+	break;
+case '0':
+	des = "―";
+	break;
+default:	
+	des = "―";
+        break ;
+}
+
+      unban = JSON.stringify(data3.trainLocationInfo[0].directionInfo[0].trainInfo[n].trainNo).replace('" ','').replace('"','') ;
+      unban1 = JSON.stringify(data3.trainLocationInfo[0].directionInfo[0].trainInfo[n].trainNo).replace('" ','').replace('M"','') ;
+      sha= '' ;
+
+
+
+      stid= JSON.stringify(data3.trainLocationInfo[0].directionInfo[0].trainInfo[n].station) ;
+      scid= JSON.stringify(data3.trainLocationInfo[0].directionInfo[0].trainInfo[n].stationTo) ;
+      trid= '' ;
+      delay= JSON.stringify(data3.trainLocationInfo[0].directionInfo[0].trainInfo[n].delayTime) ;
+      cars= JSON.stringify(data3.trainLocationInfo[0].directionInfo[0].trainInfo[n].organizationCount) ;
+
+//所属編成設定
+      line = ''; 
+      hensei= '' ;
+
+
+
+//遅れ
+if ( delay == "0"){
+ delay = "" ;
+} else if ( delay < 10 ) {
+ delay = "　 " + delay + "　" ;
+} else {
+ delay = "　" + delay　+ "　";
+}
+
+
+     info =   '　　' + des + '<br/>' +  '⑩'　+ 　unban　+　 '<br/>' +  '　　' +　 '<br/>' +  '　　'  ;
+
+
+	nameText = 0;
+
+	var target;
+	var doc0= document.getElementById("ty99");  
+	var doc1= document.getElementById("ty99");
+	var doc2= document.getElementById("ty99");
+
+
+	let now = Math.floor(Date.now() / 60000) ;
+
+switch (stid){
+
+
+case ('"0000000001789"'):
+
+if (scid == '"0000000001464"'){
+
+		nameText = document.getElementById('so51-54');
+		target = document.getElementById('so51-54d');
+		doc2= document.getElementById("so51-54e");  
+		doc0= document.getElementById("so51-54b");
+		doc1= document.getElementById("so51-54c");
+doc2.style.backgroundColor = '#696969'; //背景
+doc2.style.color = '#ffffff'; //文字
+doc0.style.fontWeight = "bold";
+
+} 
+        break ;
+default:	
+	nameText = 0;
+        break ;
+
+}
+
+	doc2.innerHTML= kind ;
+	doc0.innerHTML= info.replace("―999","留置");
+	doc1.innerHTML= delay;
+
+doc0.style.backgroundColor = '#ffffff'; //背景
+doc1.style.backgroundColor = '#ffffff'; //背景
+
+
+if ( nameText == 0 ){
+} else {
+}
+
+
+}
+
+//下り(相鉄へ進入する方向)
+	jr1 =  JSON.stringify(data3.trainLocationInfo[0].directionInfo[1].trainInfo );
+	if ( jr1 != 'null' ){
       len = JSON.stringify(data3.trainLocationInfo[0].directionInfo[1].trainInfo.length) ;
-
-	let nameText = document.getElementById('ty01-3a');
-
-
-
+}
 
 for ( n = 0; n < len; n++) {
 
@@ -1497,8 +1613,6 @@ case ('266'):
 	} else {
 	nameText = document.getElementById('sh52-512');
 	target = document.getElementById('sh52-51d2');
-	target.style.left = '220px' ;
-	target.style.top = '918px' ;
 	doc2= document.getElementById("sh52-51e2"); 
 	doc0= document.getElementById("sh52-51b2");  
 	doc1= document.getElementById("sh52-51c2"); 
@@ -1637,6 +1751,8 @@ var data = JSON.parse(request.responseText);
       let choku = '';
       let izu = '';
       let n = 1;
+      let hoshi01 = 0;
+      let hoshi02 = 0;
 
       len = JSON.stringify(data.trains.length) ;
 
@@ -2105,6 +2221,9 @@ if ( up == "true" ){
 	doc2= document.getElementById("so02-1");  
 	doc0= document.getElementById("so02-1b");  
 	doc1= document.getElementById("so02-1c");  
+if ( kind != "各"){
+     hoshi01 = 1 ;
+}    
 	break ;
 }
 	break ;
@@ -2123,6 +2242,9 @@ if ( up == "true" ){
 	doc2= document.getElementById("so03-1");  
 	doc0= document.getElementById("so03-1b");  
 	doc1= document.getElementById("so03-1c");  
+if ( kind != "各"){
+     hoshi01 = 1 ;
+}    
 	break ;
 }
 
@@ -2139,13 +2261,16 @@ if ( up == "true" ){
 	target = document.getElementById('so04-1ad');
 	doc2= document.getElementById("so04-1");  
 	doc0= document.getElementById("so04-1b");  
-	doc1= document.getElementById("so04-1c");  
+	doc1= document.getElementById("so04-1c");
+if ( kind != "各"){
+     hoshi01 = 1 ;
+}    
 	break ;
 }
 
 case ('3005'):
 if ( up == "true" ){
-	if ( kind == '各' ){
+	if ( kind == '各' && sessionStorage.getItem("Hoshi2") == 0) {
 	nameText = document.getElementById('so05-4a');
 	target = document.getElementById('so05-4ad');
 	doc2= document.getElementById("so05-4"); 
@@ -2158,10 +2283,13 @@ if ( up == "true" ){
 	doc2= document.getElementById("so05-3"); 
 	doc0= document.getElementById("so05-3b");  
 	doc1= document.getElementById("so05-3c");  
+	if ( kind != "各"){
+	     hoshi02 = 1 ;
+	}    
 	break ;
 	}
 } else {
-	if ( kind == '各' ){
+	if ( kind == '各' && sessionStorage.getItem("Hoshi1") == 0) {
 	nameText = document.getElementById('so05-1a');
 	target = document.getElementById('so05-1ad');
 	doc2= document.getElementById("so05-1");  
@@ -2173,7 +2301,10 @@ if ( up == "true" ){
 	target = document.getElementById('so05-2ad');
 	doc2= document.getElementById("so05-2"); 
 	doc0= document.getElementById("so05-2b");  
-	doc1= document.getElementById("so05-2c");  
+	doc1= document.getElementById("so05-2c");
+	if ( kind != "各"){
+	     hoshi01 = 1 ;
+	}    
 	break ;
 	}
 }
@@ -2185,6 +2316,9 @@ if ( up == "true" ){
 	doc2= document.getElementById("so06-2"); 
 	doc0= document.getElementById("so06-2b");  
 	doc1= document.getElementById("so06-2c");  
+if ( kind != "各"){
+     hoshi02 = 1 ;
+}    
 	break ;
 } else {
 	nameText = document.getElementById('so06-1a');
@@ -2202,6 +2336,9 @@ if ( up == "true" ){
 	doc2= document.getElementById("so07-2"); 
 	doc0= document.getElementById("so07-2b");  
 	doc1= document.getElementById("so07-2c");  
+if ( kind != "各"){
+     hoshi02 = 1 ;
+}    
 	break ;
 } else {
 	nameText = document.getElementById('so07-1a');
@@ -2272,7 +2409,10 @@ if ( up == "true" ){
 	target = document.getElementById('so08-3ad');
 	doc2= document.getElementById("so08-3"); 
 	doc0= document.getElementById("so08-3b");  
-	doc1= document.getElementById("so08-3c");  
+	doc1= document.getElementById("so08-3c"); 
+if ( kind != "各"){
+     hoshi02 = 1 ;
+}    
 	break ;
 	} else {
 	nameText = document.getElementById('so08-4a');
@@ -2990,6 +3130,9 @@ if ( up == "true" ){
 	doc2= document.getElementById("so02-3e");  
 	doc0= document.getElementById("so02-03b");
 	doc1= document.getElementById("so02-03c"); 
+if ( kind != "各"){
+     hoshi01 = 1 ;
+}    
 	break ;
 }
 	break ;
@@ -3008,6 +3151,9 @@ if ( up == "true" ){
 	doc2= document.getElementById("so03-4e");  
 	doc0= document.getElementById("so03-04b");
 	doc1= document.getElementById("so03-04c"); 
+if ( kind != "各"){
+     hoshi01 = 1 ;
+}    
 	break ;
 }
 
@@ -3017,7 +3163,10 @@ if ( up == "true" ){
 	target = document.getElementById('so06-05d');
 	doc2= document.getElementById("so06-5e");  
 	doc0= document.getElementById("so06-05b");
-	doc1= document.getElementById("so06-05c"); 
+	doc1= document.getElementById("so06-05c");
+if ( kind != "各"){
+     hoshi02 = 1 ;
+}    
 	break ;
 } else {
 	nameText = document.getElementById('so04-05');
@@ -3025,6 +3174,9 @@ if ( up == "true" ){
 	doc2= document.getElementById("so04-5e");  
 	doc0= document.getElementById("so04-05b");
 	doc1= document.getElementById("so04-05c"); 
+if ( kind != "各"){
+     hoshi01 = 1 ;
+}    
 	break ;
 }
 
@@ -3035,6 +3187,9 @@ if ( up == "true" ){
 	doc2= document.getElementById("so07-6e");  
 	doc0= document.getElementById("so07-06b");
 	doc1= document.getElementById("so07-06c"); 
+if ( kind != "各"){
+     hoshi02 = 1 ;
+}    
 	break ;
 } else {
 	nameText = document.getElementById('so05-06');
@@ -3052,6 +3207,9 @@ if ( up == "true" ){
 	doc2= document.getElementById("so08-7e");  
 	doc0= document.getElementById("so08-07b");
 	doc1= document.getElementById("so08-07c"); 
+if ( kind != "各"){
+     hoshi02 = 1 ;
+}    
 	break ;
 } else {
 	nameText = document.getElementById('so06-07');
@@ -3735,6 +3893,18 @@ switch (cars) {
 
 
 
+}
+
+if ( hoshi01 == 0){
+      sessionStorage.setItem('Hoshi1',1) ;
+} else {
+      sessionStorage.setItem('Hoshi1',0) ;
+}
+
+if ( hoshi02 == 0){
+      sessionStorage.setItem('Hoshi2',1) ;
+} else {
+      sessionStorage.setItem('Hoshi2',0) ;
 }
 
 
