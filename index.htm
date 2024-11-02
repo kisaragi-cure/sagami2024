@@ -668,7 +668,7 @@ background-color: #ffffff;
 <div id="so34-33c" style="position: absolute; top: 3765px; left:920px; font-size:12pt; color:#FF0000;"></div>
 
 <div style="position: absolute; top: 3880px; left:710px; font-size:18pt"><p>いずみ野</p></div>
-<div style="position: absolute; top: 3920px; left:620px; font-size:10pt"><p>(特急・通特以外は副本線に表示)</p></div>
+<div style="position: absolute; top: 3920px; left:650px; font-size:10pt"><p>(一部実番線と異なります)</p></div>
 <div id="so34-1ad" style="position: absolute; top: -100px; left:-100px;"><input type="text"  id = "so34-1a" disabled / name="address" size="14" value=""　></div>
 <div id="so34-1b" style="position: absolute; top: 3890px; left:1060px; font-size:12pt; "></div>
 <div id="so34-1" style="position: absolute; top: 3890px; left:1070px; font-size:12pt"></div>
@@ -814,12 +814,12 @@ case 'null':
 case '"0000000000829"':
 	des = "宿";
 	break;
+case '"0000000000104"':
+	des = "池";
+	break;
 case '0':
 	des = "―";
 	break;
-default:	
-	des = "―";
-        break ;
 }
 
       unban = JSON.stringify(data3.trainLocationInfo[0].directionInfo[0].trainInfo[n].trainNo).replace('" ','').replace('"','') ;
@@ -1751,8 +1751,11 @@ var data = JSON.parse(request.responseText);
       let choku = '';
       let izu = '';
       let n = 1;
+      let dai = 0;
       let hoshi01 = 0;
       let hoshi02 = 0;
+      let izu01 = 0;
+      let izu02 = 0;
 
       len = JSON.stringify(data.trains.length) ;
 
@@ -1761,6 +1764,8 @@ var data = JSON.parse(request.responseText);
 ty99.value = "表示試験" ;
 
 for ( n = 0; n < len; n++) {
+
+dai = 0;
 
 //列番判定
       choku = 0;
@@ -2112,14 +2117,24 @@ switch (cars) {
 	unban = '⑦' + unban ;
 	break;
 	case '"8"' :
+if ( unban1 > 50 ) {
+	dai = 1 ;
+}
 	unban = '　' + unban ;
 	break;
 	case '"10"' :
+if ( unban1 < 50 ) {
+	dai = 1 ;
+}
 	unban = '⑩' + unban ;
 	break;
 	default:
 	unban = '〇' + unban ;
         break ;
+}
+
+if ( stid == 3029 ){
+	dai = 0;
 }
 
 //遅れ
@@ -2255,6 +2270,9 @@ if ( up == "true" ){
 	doc2= document.getElementById("so04-2"); 
 	doc0= document.getElementById("so04-2b");  
 	doc1= document.getElementById("so04-2c");  
+if ( kind != "各"){
+     hoshi02 = 1 ;
+}    
 	break ;
 } else {
 	nameText = document.getElementById('so04-1a');
@@ -2325,7 +2343,10 @@ if ( kind != "各"){
 	target = document.getElementById('so06-1ad');
 	doc2= document.getElementById("so06-1");  
 	doc0= document.getElementById("so06-1b");  
-	doc1= document.getElementById("so06-1c");  
+	doc1= document.getElementById("so06-1c"); 
+	if ( kind != "各"){
+	     hoshi02 = 1 ;
+	}     
 	break ;
 }
 
@@ -2410,9 +2431,6 @@ if ( up == "true" ){
 	doc2= document.getElementById("so08-3"); 
 	doc0= document.getElementById("so08-3b");  
 	doc1= document.getElementById("so08-3c"); 
-if ( kind != "各"){
-     hoshi02 = 1 ;
-}    
 	break ;
 	} else {
 	nameText = document.getElementById('so08-4a');
@@ -2882,6 +2900,9 @@ if ( up == "true" ){
 	doc2= document.getElementById("so32-1");  
 	doc0= document.getElementById("so32-1b");  
 	doc1= document.getElementById("so32-1c");  
+	if ( kind == "特" || kind == "通"){
+	     izu01 = 1 ;
+	}    
 
 }
 	if ( choku == 1 ) {
@@ -2904,14 +2925,19 @@ if ( up == "true" ){
 	target = document.getElementById('so33-2ad');
 	doc2= document.getElementById("so33-2"); 
 	doc0= document.getElementById("so33-2b");  
-	doc1= document.getElementById("so33-2c");  
+	doc1= document.getElementById("so33-2c");
+	if ( kind == "特" || kind == "通"){
+	     izu02 = 1 ;
+	}       
 } else {
 	nameText = document.getElementById('so33-1a');
 	target = document.getElementById('so33-1ad');
 	doc2= document.getElementById("so33-1");  
 	doc0= document.getElementById("so33-1b");  
 	doc1= document.getElementById("so33-1c");  
-
+	if ( kind == "特" || kind == "通"){
+	     izu01 = 1 ;
+	}    
 }
 	if ( choku == 1 ) {
 	if ( unban + 'K' == localStorage.getItem( retsuban ) ){
@@ -2929,12 +2955,15 @@ if ( up == "true" ){
 
 case ('3024'):
 if ( up == "true" ){
-	if ( kind == '特' || kind == '通' ){
+	if ( kind == '特' || kind == '通'  || sessionStorage.getItem("Izu2") == 1 ){
 	nameText = document.getElementById('so34-3a');
 	target = document.getElementById('so34-3ad');
 	doc2= document.getElementById("so34-3"); 
 	doc0= document.getElementById("so34-3b");  
 	doc1= document.getElementById("so34-3c"); 
+	if ( kind == "特" || kind == "通"){
+	     izu02 = 1 ;
+	}     
 	} else {
 	nameText = document.getElementById('so34-4a');
 	target = document.getElementById('so34-4ad');
@@ -2943,12 +2972,15 @@ if ( up == "true" ){
 	doc1= document.getElementById("so34-4c"); 
 	} 
 } else {
-	if ( kind == '特' || kind == '通' ){
+	if ( kind == '特' || kind == '通' || sessionStorage.getItem("Izu1") == 1 ){
 	nameText = document.getElementById('so34-2a');
 	target = document.getElementById('so34-2ad');
 	doc2= document.getElementById("so34-2");  
 	doc0= document.getElementById("so34-2b");  
-	doc1= document.getElementById("so34-2c");  
+	doc1= document.getElementById("so34-2c"); 
+	if ( kind == "特" || kind == "通"){
+	     izu01 = 1 ;
+	}     
 	} else {
 	nameText = document.getElementById('so34-1a');
 	target = document.getElementById('so34-1ad');
@@ -2979,12 +3011,18 @@ if ( up == "true" ){
 	doc2= document.getElementById("so35-2"); 
 	doc0= document.getElementById("so35-2b");  
 	doc1= document.getElementById("so35-2c");  
+	if ( kind == "特" || kind == "通"){
+	     izu02 = 1 ;
+	}     
 } else {
 	nameText = document.getElementById('so35-1a');
 	target = document.getElementById('so35-1ad');
 	doc2= document.getElementById("so35-1");  
 	doc0= document.getElementById("so35-1b");  
-	doc1= document.getElementById("so35-1c");  
+	doc1= document.getElementById("so35-1c"); 
+	if ( kind == "特" || kind == "通"){
+	     izu01 = 1 ;
+	}      
 
 }
 	if ( choku == 1 ) {
@@ -3008,6 +3046,9 @@ if ( up == "true" ){
 	doc2= document.getElementById("so36-2"); 
 	doc0= document.getElementById("so36-2b");  
 	doc1= document.getElementById("so36-2c");  
+	if ( kind == "特" || kind == "通"){
+	     izu02 = 1 ;
+	}     
 } else {
 	nameText = document.getElementById('so36-1a');
 	target = document.getElementById('so36-1ad');
@@ -3144,6 +3185,9 @@ if ( up == "true" ){
 	doc2= document.getElementById("so05-4e");  
 	doc0= document.getElementById("so05-04b");
 	doc1= document.getElementById("so05-04c"); 
+if ( kind != "各"){
+     hoshi02 = 1 ;
+}    
 	break ;
 } else {
 	nameText = document.getElementById('so03-04');
@@ -3197,6 +3241,9 @@ if ( kind != "各"){
 	doc2= document.getElementById("so05-6e");  
 	doc0= document.getElementById("so05-06b");
 	doc1= document.getElementById("so05-06c"); 
+if ( kind != "各"){
+     hoshi01 = 1 ;
+}    
 	break ;
 }
 
@@ -3663,6 +3710,9 @@ if ( up == "true" ){
 	doc2= document.getElementById("so31-32e");  
 	doc0= document.getElementById("so31-32b");
 	doc1= document.getElementById("so31-32c"); 
+	if ( kind == "特" || kind == "通"){
+	     izu01 = 1 ;
+	}     
 }
 	if ( choku == 1 ) {
 	if ( unban + 'K' == localStorage.getItem( retsuban ) ){
@@ -3685,12 +3735,18 @@ if ( up == "true" ){
 	doc2= document.getElementById("so34-33e");  
 	doc0= document.getElementById("so34-33b");
 	doc1= document.getElementById("so34-33c"); 
+	if ( kind == "特" || kind == "通"){
+	     izu02 = 1 ;
+	}     
 } else {
 	nameText = document.getElementById('so32-33');
 	target = document.getElementById('so32-33d');
 	doc2= document.getElementById("so32-33e");  
 	doc0= document.getElementById("so32-33b");
 	doc1= document.getElementById("so32-33c"); 
+	if ( kind == "特" || kind == "通"){
+	     izu01 = 1 ;
+	}     
 }
 	if ( choku == 1 ) {
 	if ( unban + 'K' == localStorage.getItem( retsuban ) ){
@@ -3713,13 +3769,19 @@ if ( up == "true" ){
 	doc2= document.getElementById("so35-34e");  
 	doc0= document.getElementById("so35-34b");
 	doc1= document.getElementById("so35-34c"); 
+	if ( kind == "特" || kind == "通"){
+	     izu02 = 1 ;
+	}     
 
 } else {
 	nameText = document.getElementById('so33-34');
 	target = document.getElementById('so33-34d');
 	doc2= document.getElementById("so33-34e");  
 	doc0= document.getElementById("so33-34b");
-	doc1= document.getElementById("so33-34c"); 
+	doc1= document.getElementById("so33-34c");
+	if ( kind == "特" || kind == "通"){
+	     izu01 = 1 ;
+	}      
 }
 	if ( choku == 1 ) {
 	if ( unban + 'K' == localStorage.getItem( retsuban ) ){
@@ -3742,6 +3804,9 @@ if ( up == "true" ){
 	doc2= document.getElementById("so36-35e");  
 	doc0= document.getElementById("so36-35b");
 	doc1= document.getElementById("so36-35c"); 
+	if ( kind == "特" || kind == "通"){
+	     izu02 = 1 ;
+	}     
 
 } else {
 	nameText = document.getElementById('so34-35');
@@ -3749,6 +3814,9 @@ if ( up == "true" ){
 	doc2= document.getElementById("so34-35e");  
 	doc0= document.getElementById("so34-35b");
 	doc1= document.getElementById("so34-35c"); 
+	if ( kind == "特" || kind == "通"){
+	     izu01 = 1 ;
+	}     
 }
 	if ( choku == 1 ) {
 	if ( unban + 'K' == localStorage.getItem( retsuban ) ){
@@ -3772,6 +3840,9 @@ if ( up == "true" ){
 	doc2= document.getElementById("so37-36e");  
 	doc0= document.getElementById("so37-36b");
 	doc1= document.getElementById("so37-36c"); 
+	if ( kind == "特" || kind == "通"){
+	     izu02 = 1 ;
+	}     
 } else {
 	nameText = document.getElementById('so35-36');
 	target = document.getElementById('so35-36d');
@@ -3830,6 +3901,10 @@ doc2.style.backgroundColor = '#ffffff'; //背景
 
 if ( nameText == 0 ){
 } else {
+
+if ( dai == 1){
+doc0.style.backgroundColor = '#87ceeb'; //背景
+}
 
 nameText.value = "　";
 switch (kind) {
@@ -3905,6 +3980,18 @@ if ( hoshi02 == 0){
       sessionStorage.setItem('Hoshi2',1) ;
 } else {
       sessionStorage.setItem('Hoshi2',0) ;
+}
+
+if ( izu01 == 0){
+      sessionStorage.setItem('Izu1',1) ;
+} else {
+      sessionStorage.setItem('Izu1',0) ;
+}
+
+if ( izu02 == 0){
+      sessionStorage.setItem('Izu2',1) ;
+} else {
+      sessionStorage.setItem('Izu2',0) ;
 }
 
 
