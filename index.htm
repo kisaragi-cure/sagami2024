@@ -47,7 +47,7 @@ background-color: #ffffff;
   <body>
 
 <nobr>
-<p>相鉄エリア　[自動更新：15秒]　　　　　　　　　　　◆編成情報は東急線走行時点で取得したもの　　　　(C)Cure_kisaragi 2024 / Ver.2.10 </p>
+<p>相鉄エリア　[自動更新：15秒]　　　　　　　　　　　◆編成情報は東急線走行時点で取得したもの　　　　(C)Cure_kisaragi 2024 / Ver.2.20 </p>
 <br>
 <br>
 <br>
@@ -468,16 +468,16 @@ background-color: #ffffff;
 
 <!三ツ境-瀬谷>
 <div id="so12-13d" style="position: absolute; top: -100px; left:-100px;"><input type="text"  id = "so12-13" disabled / name="address" size="14" value=""　></div>
-<div id="so12-13b" style="position: absolute; top: 3510px; left:350px; font-size:12pt; "></div>
-<div id="so12-13e" style="position: absolute; top: 3510px; left:360px; font-size:12pt"></div>
-<div id="so12-13c" style="position: absolute; top: 3565px; left:350px; font-size:12pt; color:#FF0000;"></div>
+<div id="so12-13b" style="position: absolute; top: 3505px; left:350px; font-size:12pt; "></div>
+<div id="so12-13e" style="position: absolute; top: 3505px; left:360px; font-size:12pt"></div>
+<div id="so12-13c" style="position: absolute; top: 3560px; left:350px; font-size:12pt; color:#FF0000;"></div>
 <div id="so13-12d" style="position: absolute; top: -100px; left:-100px;"><input type="text"  id = "so13-12" disabled / name="address" size="14" value=""　></div>
-<div id="so13-12b" style="position: absolute; top: 3510px; left:290px; font-size:12pt; "></div>
-<div id="so13-12e" style="position: absolute; top: 3510px; left:300px; font-size:12pt"></div>
-<div id="so13-12c" style="position: absolute; top: 3565px; left:290px; font-size:12pt; color:#FF0000;"></div>
+<div id="so13-12b" style="position: absolute; top: 3505px; left:290px; font-size:12pt; "></div>
+<div id="so13-12e" style="position: absolute; top: 3505px; left:300px; font-size:12pt"></div>
+<div id="so13-12c" style="position: absolute; top: 3560px; left:290px; font-size:12pt; color:#FF0000;"></div>
 
 <div style="position: absolute; top: 3640px; left:100px; font-size:18pt"><p>瀬　谷</p></div>
-<div style="position: absolute; top: 3680px; left:25px; font-size:10pt"><p>(特急以外は副本線に表示)</p></div>
+<div style="position: absolute; top: 3680px; left:30px; font-size:10pt"><p>(一部実番線と異なります)</p></div>
 <div id="so13-1ad" style="position: absolute; top: -100px; left:-100px;"><input type="text"  id = "so13-1a" disabled / name="address" size="14" value=""　></div>
 <div id="so13-1b" style="position: absolute; top: 3650px; left:430px; font-size:12pt; "></div>
 <div id="so13-1" style="position: absolute; top: 3650px; left:440px; font-size:12pt"></div>
@@ -1754,7 +1754,7 @@ request2.send(null);
       console.log( '新横2番-' +  localStorage.getItem('shinyoko2a') +  localStorage.getItem('shinyoko2b'));
 
 var request = new XMLHttpRequest();
-request.open("GET", "https://tokyu-tid.s3.amazonaws.com/sotetsu.json", true);
+request.open("GET", "https://external-data.sotetsuapp.com/tid/trains.json", true);
 request.responseType = "text";
 
 request.onload = () => {
@@ -1789,6 +1789,8 @@ var data = JSON.parse(request.responseText);
       let hoshi02 = 0;
       let izu01 = 0;
       let izu02 = 0;
+      let seya01 = 0;
+      let seya02 = 0;
 
       len = JSON.stringify(data.trains.length) ;
 
@@ -1834,7 +1836,7 @@ if ( retsuban > 8199) {
 	}
 }
 
-if ( stid == '3029' ){
+if ( stid == '29' ){
 	choku = 1;
 }
 
@@ -1871,28 +1873,22 @@ if ( retsuban > 7399) {
 }
 
 //種別設定
-      kind= JSON.stringify(data.trains[n].kind); 
+      kind= JSON.stringify(data.trains[n].train_kind_id); 
 	switch (kind) {
-case '"普"':
+case '4':
 	kind = "各";
 	break;
-case '"快"':
-	kind = "快";
-	break;
-case '"急"':
-	kind = "急";
-	break;
-case '"特"':
-	kind = "特";
-	break;
-case '"通急"':
+case '6':
 	kind = "通急";
 	break;
-case '"通特"':
+case '8':
+	kind = "特";
+	break;
+case '5':
 	kind = "通";
 	break;
-case '"Ｆ"':
-	kind = "Ｆ";
+case '7':
+	kind = "快";
 	break;
 case '"回"':
 	kind = "回";
@@ -1903,136 +1899,130 @@ case 'null':
 }
 
 //行先設定
-      des= JSON.stringify(data.trains[n].destination_station_code) ;
+      des= JSON.stringify(data.trains[n].destination_station_id) ;
 	switch (des) {
-case '103':
-	des = "元";
-	break;
-case '108':
-	des = "新";
-	break;
-case '3001':
+case '1':
 	des = "横";
 	break;
-case '3003':
+case '3':
 	des = "ﾆﾖ";
 	break;
-case '3005':
+case '5':
 	des = "星";
 	break;
-case '3008':
+case '8':
 	des = "谷";
 	break;
-case '3010':
+case '10':
 	des = "二";
 	break;
-case '3013':
+case '13':
 	des = "瀬";
 	break;
-case '3014':
+case '14':
 	des = "大";
 	break;
-case '3017':
+case '17':
 	des = "か";
 	break;
-case '3019':
+case '19':
 	des = "海";
 	break;
-case '3024':
+case '24':
 	des = "い";
 	break;
-case '3027':
+case '27':
 	des = "湘";
 	break;
-case '3028':
+case '28':
 	des = "羽";
 	break;
-case '3029':
+case '29':
 	des = "新";
 	break;
-case '3042':
+case '42':
 	des = "宿";
 	break;
-case '3043':
+case '43':
 	des = "池";
 	break;
-case '3044':
+case '44':
 	des = "赤";
 	break;
-case '3045':
+case '45':
 	des = "浦";
 	break;
-case '3046':
+case '46':
 	des = "宮";
 	break;
-case '3047':
+case '47':
 	des = "指";
 	break;
-case '3048':
+case '48':
 	des = "川";
 	break;
-case '3074':
+case '74':
 	des = "渋";
 	break;
-case '3075':
+case '75':
 	des = "丁";
 	break;
-case '3076':
+case '76':
 	des = "袋";
 	break;
-case '3077':
+case '77':
 	des = "向";
 	break;
-case '3078':
+case '78':
 	des = "成";
 	break;
-case '3079':
+case '79':
 	des = "和";
 	break;
-case '3080':
+case '80':
 	des = "志";
 	break;
-case '3081':
+case '81':
 	des = "福";
 	break;
-case '3082':
+case '82':
 	des = "市";
 	break;
-case '3083':
+case '83':
 	des = "坂";
 	break;
-case '3084':
+case '84':
 	des = "高";
 	break;
-case '3085':
+case '85':
 	des = "森";
 	break;
-case '3098':
-	des = "←";
+case '98':
+	des = "↑";
 	break;
-case '3064':
-case '3114':
+case '64':
+case '114':
 	des = "武";
 	break;
-case '3118':
+case '118':
 	des = "奥";
 	break;
-case '3124':
+case '124':
 	des = "目";
 	break;
-case '3131':
+case '131':
 	des = "岩";
 	break;
-case '3132':
+case '132':
 	des = "鳩";
 	break;
-case '3133':
+case '133':
 	des = "美";
 	break;
-case '3140':
+case '140':
 	des = "高";
 	break;
-case '3141':
+case '141':
 	des = "西";
 	break;
 case '0':
@@ -2078,6 +2068,11 @@ unban = unban + "K" ;
 }
 if ( unban == 60 ){
 unban = unban + "K" ;
+}
+} else if(unban < 74){
+unban = unban + "G" ;
+if ( choku == 1 ){
+hensei = '=' + (retsuban % 1000 ) + 'M' ;
 }
 } else if(unban < 90){
 unban = unban  ;
@@ -2128,12 +2123,15 @@ unban = (unban - 900) + "G" ;
 unban = unban ;
 }
 
-
-      up = JSON.stringify(data.trains[n].up) ;
-      scid= JSON.stringify(data.trains[n].section_id) ;
+	if (  JSON.stringify(data.trains[n].direction) == '"up"' ) {
+		up = 'true'
+	} else {
+		up = 'false'
+	}
+      scid= JSON.stringify(data.trains[n].next_station_id) ;
       trid= JSON.stringify(data.trains[n].track_number) ;
-      delay= JSON.stringify(data.trains[n].delay_time) ;
-      cars= JSON.stringify(data.trains[n].num_of_cars) ;
+      delay= JSON.stringify(data.trains[n].delay) ;
+      cars= JSON.stringify(data.trains[n].train_length_id) ;
 
 //所属編成設定
       line = JSON.stringify(data.trains[n].train_line_id); 
@@ -2143,19 +2141,19 @@ unban = '&nbsp;' + unban ;
 }
 
 switch (cars) {
-	case '"6"' :
+	case '6' :
 	unban = '⑥' + unban ;
 	break;
-	case '"7"' :
+	case '7' :
 	unban = '⑦' + unban ;
 	break;
-	case '"8"' :
+	case '8' :
 if ( unban1 > 50 ) {
 	dai = 1 ;
 }
 	unban = '　' + unban ;
 	break;
-	case '"10"' :
+	case '10' :
 if ( unban1 < 50 ) {
 	dai = 1 ;
 }
@@ -2166,7 +2164,7 @@ if ( unban1 < 50 ) {
         break ;
 }
 
-if ( stid == 3029 ){
+if ( stid == 29 ){
 	dai = 0;
 }
 
@@ -2203,7 +2201,7 @@ if ( unban1 > 69 && unban1 < 90 && choku == 1 ){
 
 
 switch (stid){
-case ('3001'):
+case ('1'):
 	switch (kind){
 	case '各':
 	nameText = document.getElementById('so01-1a');
@@ -2255,7 +2253,7 @@ if ( nameText.value == "" ){
 
 	}
 	break ;
-case ('3002'):
+case ('2'):
 if ( up == "true" ){
 	nameText = document.getElementById('so02-2a');
 	target = document.getElementById('so02-2ad');
@@ -2276,7 +2274,7 @@ if ( kind != "各"){
 }
 	break ;
 
-case ('3003'):
+case ('3'):
 if ( up == "true" ){
 	nameText = document.getElementById('so03-2a');
 	target = document.getElementById('so03-2ad');
@@ -2296,7 +2294,7 @@ if ( kind != "各"){
 	break ;
 }
 
-case ('3004'):
+case ('4'):
 if ( up == "true" ){
 	nameText = document.getElementById('so04-2a');
 	target = document.getElementById('so04-2ad');
@@ -2319,7 +2317,7 @@ if ( kind != "各"){
 	break ;
 }
 
-case ('3005'):
+case ('5'):
 if ( up == "true" ){
 	if ( kind == '各' && sessionStorage.getItem("Hoshi2") == 0) {
 	nameText = document.getElementById('so05-4a');
@@ -2360,7 +2358,7 @@ if ( up == "true" ){
 	}
 }
 
-case ('3006'):
+case ('6'):
 if ( up == "true" ){
 	nameText = document.getElementById('so06-2a');
 	target = document.getElementById('so06-2ad');
@@ -2383,7 +2381,7 @@ if ( kind != "各"){
 	break ;
 }
 
-case ('3007'):
+case ('7'):
 if ( up == "true" ){
 	nameText = document.getElementById('so07-2a');
 	target = document.getElementById('so07-2ad');
@@ -2403,7 +2401,7 @@ if ( kind != "各"){
 	break ;
 }
 
-case ('3028'):
+case ('28'):
 if ( up == "true" ){
 	nameText = document.getElementById('so51-2a');
 	target = document.getElementById('so51-2ad');
@@ -2429,26 +2427,31 @@ if ( up == "true" ){
 	break ;
 }
 
-case ('3029'):
-	if ( localStorage.getItem('shinyoko1a') == unban1 && (des != '←') ) {
-	nameText = document.getElementById('so52-1a');
-	target = document.getElementById('so52-1ad');
-	hensei = localStorage.getItem( unban );
+case ('29'):
+	if ( localStorage.getItem('shinyoko1a') == unban1 && (des != '↑') ) {
+		nameText = document.getElementById('so52-1a');
+		target = document.getElementById('so52-1ad');
+		hensei = localStorage.getItem( unban );
+	if ( hensei != null ){
 	info =   '　　' + des + '<br/>' +  unban +　 '<br/>' +  hensei +　 '<br/>' +  '　　' ;
-	doc0= document.getElementById("so52-1b");  
+	}
+		doc0= document.getElementById("so52-1b");  
 	if ( localStorage.getItem('shinyoko1k') == '' ) {
-	doc2= document.getElementById("so52-1");  
+		doc2= document.getElementById("so52-1");  
 	}
 	doc1= document.getElementById("so52-1c"); 
 	break ; 
-	} else if ( localStorage.getItem('shinyoko2a') == unban1 && (des != '←') ){
-	nameText = document.getElementById('so52-2a');
-	target = document.getElementById('so52-2ad');
-	hensei = localStorage.getItem( unban );
+	
+	} else if ( localStorage.getItem('shinyoko2a') == unban1 && (des != '↑') ){
+		nameText = document.getElementById('so52-2a');
+		target = document.getElementById('so52-2ad');
+		hensei = localStorage.getItem( unban );
+	if ( hensei != null ){
 	info =   '　　' + des + '<br/>' +  unban +　 '<br/>' +  hensei +　 '<br/>' +  '　　' ;
-	doc0= document.getElementById("so52-2b");  
+	}
+		doc0= document.getElementById("so52-2b");  
 	if ( localStorage.getItem('shinyoko2k') == '' ) {
-	doc2= document.getElementById("so52-2");  
+		doc2= document.getElementById("so52-2");  
 	}
 	doc1= document.getElementById("so52-2c"); 
 	break ; 
@@ -2456,7 +2459,7 @@ case ('3029'):
 
 	break ; 
 	
-case ('3008'):
+case ('8'):
 if ( up == "true" ){
 	if ( choku == 0 ) {
 	nameText = document.getElementById('so08-3a');
@@ -2500,7 +2503,7 @@ if ( up == "true" ){
 	}
 }
 
-case ('3009'):
+case ('9'):
 if ( up == "true" ){
 	nameText = document.getElementById('so09-2a');
 	target = document.getElementById('so09-2ad');
@@ -2529,7 +2532,7 @@ if ( up == "true" ){
 }
 	break ;
 	
-case ('3010'):
+case ('10'):
 if ( up == "true" ){
 	if ( izu == 1 ) {
 		nameText = document.getElementById('so10-3a');
@@ -2609,7 +2612,7 @@ if ( up == "true" ){
 	}
 }
 
-case ('3011'):
+case ('11'):
 if ( up == "true" ){
 	nameText = document.getElementById('so11-2a');
 	target = document.getElementById('so11-2ad');
@@ -2622,7 +2625,10 @@ if ( up == "true" ){
 	target = document.getElementById('so11-1ad');
 	doc2= document.getElementById("so11-1");  
 	doc0= document.getElementById("so11-1b");  
-	doc1= document.getElementById("so11-1c");  
+	doc1= document.getElementById("so11-1c"); 
+	if ( kind == "特" ){
+	     seya01 = 1 ;
+	}       
 	if ( choku == 1 ) {
 	if ( unban + 'K' == localStorage.getItem( retsuban ) ){
 	unban = localStorage.getItem( retsuban ) ;
@@ -2638,7 +2644,7 @@ if ( up == "true" ){
 }
 	break ;
 
-case ('3012'):
+case ('12'):
 if ( up == "true" ){
 	nameText = document.getElementById('so12-2a');
 	target = document.getElementById('so12-2ad');
@@ -2652,6 +2658,9 @@ if ( up == "true" ){
 	doc2= document.getElementById("so12-1");  
 	doc0= document.getElementById("so12-1b");  
 	doc1= document.getElementById("so12-1c");  
+	if ( kind == "特" ){
+	     seya01 = 1 ;
+	}      
 	if ( choku == 1 ) {
 	if ( unban + 'K' == localStorage.getItem( retsuban ) ){
 	unban = localStorage.getItem( retsuban ) ;
@@ -2667,14 +2676,17 @@ if ( up == "true" ){
 }
 	break ;
 
-case ('3013'):
+case ('13'):
 if ( up == "true" ){
-	if ( kind == '特' ){
+	if ( kind == '特'  || sessionStorage.getItem("Seya2") == 1 ){ 
 	nameText = document.getElementById('so13-3a');
 	target = document.getElementById('so13-3ad');
 	doc2= document.getElementById("so13-3"); 
 	doc0= document.getElementById("so13-3b");  
-	doc1= document.getElementById("so13-3c");  
+	doc1= document.getElementById("so13-3c"); 
+	if ( kind == "特" ){
+	     seya02 = 1 ;
+	}      
 	} else {
 	nameText = document.getElementById('so13-4a');
 	target = document.getElementById('so13-4ad');
@@ -2684,12 +2696,15 @@ if ( up == "true" ){
 	}
 	break ;
 } else {
-	if ( kind == '特' ){
+	if ( kind == '特' || sessionStorage.getItem("Seya1") == 1 ){
 	nameText = document.getElementById('so13-2a');
 	target = document.getElementById('so13-2ad');
 	doc2= document.getElementById("so13-2");  
 	doc0= document.getElementById("so13-2b");  
 	doc1= document.getElementById("so13-2c");  
+	if ( kind == "特" ){
+	     seya01 = 1 ;
+	}      
 	} else {
 	nameText = document.getElementById('so13-1a');
 	target = document.getElementById('so13-1ad');
@@ -2712,13 +2727,16 @@ if ( up == "true" ){
 }
 	break ;
 
-case ('3014'):
+case ('14'):
 if ( up == "true" ){
 	nameText = document.getElementById('so14-2a');
 	target = document.getElementById('so14-2ad');
 	doc2= document.getElementById("so14-2"); 
 	doc0= document.getElementById("so14-2b");  
 	doc1= document.getElementById("so14-2c");  
+	if ( kind == "特" ){
+	     seya02 = 1 ;
+	}      
 	break ;
 } else {
 	nameText = document.getElementById('so14-1a');
@@ -2741,7 +2759,7 @@ if ( up == "true" ){
 }
 	break ;
 
-case ('3015'):
+case ('15'):
 if ( up == "true" ){
 	nameText = document.getElementById('so15-2a');
 	target = document.getElementById('so15-2ad');
@@ -2770,7 +2788,7 @@ if ( up == "true" ){
 }
 	break ;
 
-case ('3016'):
+case ('16'):
 if ( up == "true" ){
 	nameText = document.getElementById('so16-2a');
 	target = document.getElementById('so16-2ad');
@@ -2799,7 +2817,7 @@ if ( up == "true" ){
 }
 	break ;
 
-case ('3017'):
+case ('17'):
 if ( up == "true" ){
 //////////////////////↓かしわ台４番線設定///////////
 	nameText = document.getElementById('so17-3a');
@@ -2846,7 +2864,7 @@ if ( up == "true" ){
 }
 	break ;
 
-case ('3019'):
+case ('19'):
 	if ( kind == '特' || kind == '各'   ){
 	nameText = document.getElementById('so18-2a');
 	if ( nameText.value == "" ){
@@ -2891,7 +2909,7 @@ case ('3019'):
 
 	break ;
 
-case ('3021'):
+case ('21'):
 if ( up == "true" ){
 	nameText = document.getElementById('so31-2a');
 	target = document.getElementById('so31-2ad');
@@ -2920,7 +2938,7 @@ if ( up == "true" ){
 	}
 	break ;
 
-case ('3022'):
+case ('22'):
 if ( up == "true" ){
 	nameText = document.getElementById('so32-2a');
 	target = document.getElementById('so32-2ad');
@@ -2952,7 +2970,7 @@ if ( up == "true" ){
 	}
 	break ;
 
-case ('3023'):
+case ('23'):
 if ( up == "true" ){
 	nameText = document.getElementById('so33-2a');
 	target = document.getElementById('so33-2ad');
@@ -2986,7 +3004,7 @@ if ( up == "true" ){
 	}
 	break ;
 
-case ('3024'):
+case ('24'):
 if ( up == "true" ){
 	if ( kind == '特' || kind == '通'  || sessionStorage.getItem("Izu2") == 1 ){
 	nameText = document.getElementById('so34-3a');
@@ -3037,7 +3055,7 @@ if ( up == "true" ){
 	}
 	break ;
 
-case ('3025'):
+case ('25'):
 if ( up == "true" ){
 	nameText = document.getElementById('so35-2a');
 	target = document.getElementById('so35-2ad');
@@ -3072,7 +3090,7 @@ if ( up == "true" ){
 	}
 	break ;
 
-case ('3026'):
+case ('26'):
 if ( up == "true" ){
 	nameText = document.getElementById('so36-2a');
 	target = document.getElementById('so36-2ad');
@@ -3104,7 +3122,7 @@ if ( up == "true" ){
 	}
 	break ;
 
-case ('3027'):
+case ('27'):
 	if ( kind == '快' || kind == '通' ){
 	nameText = document.getElementById('so37-1a');
 	if ( nameText.value == "" ){
@@ -3163,7 +3181,7 @@ default:
 
 switch (scid){
 
-case ('3001'):
+case ('1'):
 	nameText = document.getElementById('so02-01');
 	target = document.getElementById('so02-01d');
 	doc2= document.getElementById("so02-1e");  
@@ -3171,7 +3189,7 @@ case ('3001'):
 	doc1= document.getElementById("so02-01c"); 
 	break ;
 
-case ('3002'):
+case ('2'):
 if ( up == "true" ){
 	nameText = document.getElementById('so03-02');
 	target = document.getElementById('so03-02d');
@@ -3190,7 +3208,7 @@ if ( up == "true" ){
 }
 	break ;
 
-case ('3003'):
+case ('3'):
 if ( up == "true" ){
 	nameText = document.getElementById('so04-03');
 	target = document.getElementById('so04-03d');
@@ -3211,7 +3229,7 @@ if ( kind != "各"){
 }
 	break ;
 
-case ('3004'):
+case ('4'):
 if ( up == "true" ){
 	nameText = document.getElementById('so05-04');
 	target = document.getElementById('so05-04d');
@@ -3234,7 +3252,7 @@ if ( kind != "各"){
 	break ;
 }
 
-case ('3005'):
+case ('5'):
 if ( up == "true" ){
 	nameText = document.getElementById('so06-05');
 	target = document.getElementById('so06-05d');
@@ -3257,7 +3275,7 @@ if ( kind != "各"){
 	break ;
 }
 
-case ('3006'):
+case ('6'):
 if ( up == "true" ){
 	nameText = document.getElementById('so07-06');
 	target = document.getElementById('so07-06d');
@@ -3280,7 +3298,7 @@ if ( kind != "各"){
 	break ;
 }
 
-case ('3007'):
+case ('7'):
 if ( up == "true" ){
 	nameText = document.getElementById('so08-07');
 	target = document.getElementById('so08-07d');
@@ -3299,7 +3317,7 @@ if ( kind != "各"){
 	doc1= document.getElementById("so06-07c"); 
 	break ;
 }
-case ('3028'):
+case ('28'):
 if ( up == "true" ){
 	nameText = document.getElementById('so08-51');
 	target = document.getElementById('so08-51d');
@@ -3319,14 +3337,14 @@ if ( up == "true" ){
 	} else {
 
 	if ( localStorage.getItem('shinyoko1a') == unban1 -(-600) ) {
-	unban = unban1 + 'G' ;
-	localStorage.setItem( retsuban , unban) ;
+		unban = unban1 + 'G' ;
+		localStorage.setItem( retsuban , unban) ;
 	} else if ( localStorage.getItem('shinyoko1a') == unban1 -(-200) ) {
-	unban = unban1 + 'K' ;
-	if (unban1 < 10) {
-	unban = '0' + unban;
-	}
-	localStorage.setItem( retsuban , unban) ;
+		unban = unban1 + 'K' ;
+		if (unban1 < 10) {
+			unban = '0' + unban;
+		}
+		localStorage.setItem( retsuban , unban) ;
 	}
 	nameText = document.getElementById('so52-51');
 	target = document.getElementById('so52-51d');
@@ -3341,7 +3359,7 @@ if ( up == "true" ){
 	}
 }
 
-case ('3029'):
+case ('29'):
 if ( up == "true" ){
 	nameText = document.getElementById('so51-52');
 	target = document.getElementById('so51-52d');
@@ -3355,7 +3373,7 @@ if ( up == "true" ){
 	break ;
 
 
-case ('3008'):
+case ('8'):
 if ( up == "true" ){
 	nameText = document.getElementById('so09-08');
 	target = document.getElementById('so09-08d');
@@ -3392,7 +3410,7 @@ if ( up == "true" ){
 	}
 }
 
-case ('3009'):
+case ('9'):
 if ( up == "true" ){
 	nameText = document.getElementById('so10-09');
 	if ( nameText.value == "" ){
@@ -3431,7 +3449,7 @@ if ( up == "true" ){
 	break ;
 }
 
-case ('3010'):
+case ('10'):
 if ( up == "true" ){
 	if ( izu == 1 ){
 	nameText = document.getElementById('so31-10');
@@ -3475,7 +3493,7 @@ if ( up == "true" ){
 	break ;
 }
 
-case ('3011'):
+case ('11'):
 if ( up == "true" ){
 	nameText = document.getElementById('so12-11');
 	target = document.getElementById('so12-11d');
@@ -3489,6 +3507,9 @@ if ( up == "true" ){
 	doc2= document.getElementById("so10-11e");  
 	doc0= document.getElementById("so10-11b");
 	doc1= document.getElementById("so10-11c"); 
+	if ( kind == "特" ){
+	     seya01 = 1 ;
+	}      
 	if ( choku == 1 ) {
 	if ( unban + 'K' == localStorage.getItem( retsuban ) ){
 	unban = localStorage.getItem( retsuban ) ;
@@ -3504,13 +3525,16 @@ if ( up == "true" ){
 	break ;
 	}
 
-case ('3012'):
+case ('12'):
 if ( up == "true" ){
 	nameText = document.getElementById('so13-12');
 	target = document.getElementById('so13-12d');
 	doc2= document.getElementById("so13-12e");  
 	doc0= document.getElementById("so13-12b");
 	doc1= document.getElementById("so13-12c"); 
+	if ( kind == "特" ){
+	     seya02 = 1 ;
+	}      
 	break ;
 } else {
 	nameText = document.getElementById('so11-12');
@@ -3518,6 +3542,9 @@ if ( up == "true" ){
 	doc2= document.getElementById("so11-12e");  
 	doc0= document.getElementById("so11-12b");
 	doc1= document.getElementById("so11-12c"); 
+	if ( kind == "特" ){
+	     seya01 = 1 ;
+	}      
 	if ( choku == 1 ) {
 	if ( unban + 'K' == localStorage.getItem( retsuban ) ){
 	unban = localStorage.getItem( retsuban ) ;
@@ -3533,13 +3560,16 @@ if ( up == "true" ){
 	break ;
 	}
 
-case ('3013'):
+case ('13'):
 if ( up == "true" ){
 	nameText = document.getElementById('so14-13');
 	target = document.getElementById('so14-13d');
 	doc2= document.getElementById("so14-13e");  
 	doc0= document.getElementById("so14-13b");
 	doc1= document.getElementById("so14-13c"); 
+	if ( kind == "特" ){
+	     seya02 = 1 ;
+	}      
 	break ;
 } else {
 	nameText = document.getElementById('so12-13');
@@ -3547,6 +3577,9 @@ if ( up == "true" ){
 	doc2= document.getElementById("so12-13e");  
 	doc0= document.getElementById("so12-13b");
 	doc1= document.getElementById("so12-13c"); 
+	if ( kind == "特" ){
+	     seya01 = 1 ;
+	}      
 	if ( choku == 1 ) {
 	if ( unban + 'K' == localStorage.getItem( retsuban ) ){
 	unban = localStorage.getItem( retsuban ) ;
@@ -3562,7 +3595,7 @@ if ( up == "true" ){
 	break ;
 	}
 
-case ('3014'):
+case ('14'):
 if ( up == "true" ){
 	nameText = document.getElementById('so15-14');
 	target = document.getElementById('so15-14d');
@@ -3576,6 +3609,9 @@ if ( up == "true" ){
 	doc2= document.getElementById("so13-14e");  
 	doc0= document.getElementById("so13-14b");
 	doc1= document.getElementById("so13-14c"); 
+	if ( kind == "特" ){
+	     seya01 = 1 ;
+	}      
 	if ( choku == 1 ) {
 	if ( unban + 'K' == localStorage.getItem( retsuban ) ){
 	unban = localStorage.getItem( retsuban ) ;
@@ -3591,7 +3627,7 @@ if ( up == "true" ){
 	break ;
 	}
 
-case ('3015'):
+case ('15'):
 if ( up == "true" ){
 	nameText = document.getElementById('so16-15');
 	target = document.getElementById('so16-15d');
@@ -3620,7 +3656,7 @@ if ( up == "true" ){
 	break ;
 	}
 
-case ('3016'):
+case ('16'):
 if ( up == "true" ){
 	nameText = document.getElementById('so17-16');
 	target = document.getElementById('so17-16d');
@@ -3649,7 +3685,7 @@ if ( up == "true" ){
 	break ;
 	}
 
-case ('3017'):
+case ('17'):
 if ( up == "true" ){
 	nameText = document.getElementById('so18-17');
 	target = document.getElementById('so18-17d');
@@ -3678,7 +3714,7 @@ if ( up == "true" ){
 	break ;
 	}
 
-case ('3019'):
+case ('19'):
 if ( up == "true" ){
 	break ;
 } else {
@@ -3702,7 +3738,7 @@ if ( up == "true" ){
 	break ;
 	}
 
-case ('3021'):
+case ('21'):
 if ( up == "true" ){
 	nameText = document.getElementById('so32-31');
 	target = document.getElementById('so32-31d');
@@ -3730,7 +3766,7 @@ if ( up == "true" ){
 	}
 	break ;
 
-case ('3022'):
+case ('22'):
 if ( up == "true" ){
 	nameText = document.getElementById('so33-32');
 	target = document.getElementById('so33-32d');
@@ -3761,7 +3797,7 @@ if ( up == "true" ){
 	}
 	break ;
 
-case ('3023'):
+case ('23'):
 if ( up == "true" ){
 	nameText = document.getElementById('so34-33');
 	target = document.getElementById('so34-33d');
@@ -3795,7 +3831,7 @@ if ( up == "true" ){
 	}
 	break ;
 
-case ('3024'):
+case ('24'):
 if ( up == "true" ){
 	nameText = document.getElementById('so35-34');
 	target = document.getElementById('so35-34d');
@@ -3830,7 +3866,7 @@ if ( up == "true" ){
 	}
 	break ;
 
-case ('3025'):
+case ('25'):
 if ( up == "true" ){
 	nameText = document.getElementById('so36-35');
 	target = document.getElementById('so36-35d');
@@ -3866,7 +3902,7 @@ if ( up == "true" ){
 	break ;
 
 
-case ('3026'):
+case ('26'):
 if ( up == "true" ){
 	nameText = document.getElementById('so37-36');
 	target = document.getElementById('so37-36d');
@@ -3898,7 +3934,7 @@ if ( up == "true" ){
 	break ;
 
 
-case ('3027'):
+case ('27'):
 	nameText = document.getElementById('so36-37');
 	target = document.getElementById('so36-37d');
 	doc2= document.getElementById("so36-37e");  
@@ -3986,12 +4022,12 @@ break ;
 
 
 switch (cars) {
-	case '"6"' :
+	case '6' :
 	doc0.style.textDecoration = "underline";
 	break;
-	case '"8"' :
+	case '8' :
 	break;
-	case '"10"' :
+	case '10' :
 	doc0.style.fontWeight = "bold";
 	break;
 }
@@ -4025,6 +4061,17 @@ if ( izu02 == 0){
       sessionStorage.setItem('Izu2',1) ;
 } else {
       sessionStorage.setItem('Izu2',0) ;
+}
+if ( seya01 == 0){
+      sessionStorage.setItem('Seya1',1) ;
+} else {
+      sessionStorage.setItem('Seya1',0) ;
+}
+
+if ( seya02 == 0){
+      sessionStorage.setItem('Seya2',1) ;
+} else {
+      sessionStorage.setItem('Seya2',0) ;
 }
 
 
