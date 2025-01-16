@@ -216,6 +216,11 @@ background-color: #ffffff;
 <div id="so08-7e" style="position: absolute; top: 1840px; left:930px; font-size:12pt; "></div>
 <div id="so08-07c" style="position: absolute; top: 1885px; left:920px; font-size:12pt; color:#FF0000; "></div>
 
+<div id="so07-08d2" style="position: absolute; top: -100px; left:-100px;"><input type="text"  id = "so07-082" disabled / name="address" size="14" value=""　></div>
+<div id="so07-08b2" style="position: absolute; top: 1850px; left:1040px; font-size:12pt; "></div>
+<div id="so07-8e2" style="position: absolute; top: 1850px; left:1050px; font-size:12pt; "></div>
+<div id="so07-08c2" style="position: absolute; top: 1895px; left:1040px; font-size:12pt; color:#FF0000; "></div>
+
 <div style="position: absolute; top: 670px; left:500px; font-size:16pt"><p>(大 崎)</p></div>
 <div id="so56d" style="position: absolute; top: -100px; left:-100px;"><input type="text"  id = "so56" disabled / name="address" size="14" value=""　></div>
 <div id="so56b" style="position: absolute; top: 680px; left:587px; font-size:12pt; "></div>
@@ -372,6 +377,11 @@ background-color: #ffffff;
 <div id="so09-8e" style="position: absolute; top: 2280px; left:550px; font-size:12pt; "></div>
 <div id="so09-08c" style="position: absolute; top: 2335px; left:540px; font-size:12pt; color:#FF0000; "></div>
 
+<div id="so09-08d2" style="position: absolute; top: -100px; left:-100px;"><input type="text"  id = "so09-082" disabled / name="address" size="14" value=""　></div>
+<div id="so09-08b2" style="position: absolute; top: 2280px; left:480px; font-size:12pt; "></div>
+<div id="so09-8e2" style="position: absolute; top: 2280px; left:490px; font-size:12pt"></div>
+<div id="so09-08c2" style="position: absolute; top: 2335px; left:480px; font-size:12pt; color:#FF0000;"></div>
+
 <div style="position: absolute; top: 2440px; left:410px; font-size:18pt"><p>鶴ヶ峰</p></div>
 <div id="so09-1ad" style="position: absolute; top: -100px; left:-100px;"><input type="text"  id = "so09-1a" disabled / name="address" size="14" value=""　></div>
 <div id="so09-1b" style="position: absolute; top: 2440px; left:660px; font-size:12pt; "></div>
@@ -393,7 +403,7 @@ background-color: #ffffff;
 <div id="so10-09c" style="position: absolute; top: 2655px; left:520px; font-size:12pt; color:#FF0000;"></div>
 
 <div id="so10-09d2" style="position: absolute; top: -100px; left:-100px;"><input type="text"  id = "so10-092" disabled / name="address" size="14" value=""　></div>
-<div id="so10-09be2" style="position: absolute; top: 2600px; left:460px; font-size:12pt; "></div>
+<div id="so10-09b2" style="position: absolute; top: 2600px; left:460px; font-size:12pt; "></div>
 <div id="so10-9e2" style="position: absolute; top: 2600px; left:470px; font-size:12pt"></div>
 <div id="so10-09c2" style="position: absolute; top: 2655px; left:460px; font-size:12pt; color:#FF0000;"></div>
 
@@ -725,6 +735,7 @@ background-color: #ffffff;
 <div id="so36-2b" style="position: absolute; top: 4410px; left:910px; font-size:12pt; "></div>
 <div id="so36-2" style="position: absolute; top: 4410px; left:920px; font-size:12pt"></div>
 <div id="so36-2c" style="position: absolute; top: 4465px; left:910px; font-size:12pt; color:#FF0000;"></div>
+
 <!ゆめが丘-湘南台>
 <div id="so36-37d" style="position: absolute; top: -100px; left:-100px;"><input type="text"  id = "so36-37" disabled / name="address" size="14" value=""　></div>
 <div id="so36-37b" style="position: absolute; top: 4540px; left:980px; font-size:12pt; "></div>
@@ -3376,19 +3387,36 @@ if ( up == "true" ){
 case ('8'):
 if ( up == "true" ){
 	nameText = document.getElementById('so09-08');
+	if ( nameText.value == "" ){
 	target = document.getElementById('so09-08d');
 	doc2= document.getElementById("so09-8e");  
 	doc0= document.getElementById("so09-08b");
 	doc1= document.getElementById("so09-08c"); 
-	break ;
+///予備窓
+	}else{ 
+	nameText = document.getElementById('so09-082');
+	target = document.getElementById('so09-08d2');
+	doc2= document.getElementById("so09-8e2");  
+	doc0= document.getElementById("so09-08b2");
+	doc1= document.getElementById("so09-08c2"); 
+	}
 	break ;
 } else {
 	if ( choku == 0 ) {
 	nameText = document.getElementById('so07-08');
+	if ( nameText.value == "" ){
 	target = document.getElementById('so07-08d');
 	doc2= document.getElementById("so07-8e");  
 	doc0= document.getElementById("so07-08b");
 	doc1= document.getElementById("so07-08c"); 
+///予備窓
+	}else{ 
+	nameText = document.getElementById('so07-082');
+	target = document.getElementById('so07-08d2');
+	doc2= document.getElementById("so07-8e2");  
+	doc0= document.getElementById("so07-08b2");
+	doc1= document.getElementById("so07-08c2"); 
+	}
 	break ;
 
 	} else {
