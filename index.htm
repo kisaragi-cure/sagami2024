@@ -47,7 +47,7 @@ background-color: #ffffff;
   <body>
 
 <nobr>
-<p>相鉄エリア　[自動更新：15秒]　　　　　　　　　　　◆編成情報は東急線走行時点で取得したもの　　　　(C)Cure_kisaragi 2024 / Ver.2.20 </p>
+<p>相鉄エリア　[自動更新：15秒]　　　　　　　　　　　◆編成情報は東急線走行時点で取得したもの　　　　(C)Cure_kisaragi 2024 / Ver.2.30 </p>
 <br>
 <br>
 <br>
@@ -56,8 +56,29 @@ background-color: #ffffff;
 
 <div id="time" style="position: absolute; top: 30px; left:10px; font-size:12pt; "></div>
 
-<div style="position: absolute; top: 90px; left:710px; font-size:18pt"><p>相鉄横浜</p></div>
-<div style="position: absolute; top: 130px; left:675px; font-size:10pt"><p>(実番線と異なります)</p></div>
+
+<div style="position: absolute; top: 130px; left:470px;  font-size:12pt"><p>相鉄横浜発車順序</p></div>
+<div style="position: absolute; top: 153px; left:470px;  Color:#ffffff; font-size:8pt"><p>のりば 種別　　行き先　　　発車時刻　　両数　運番</p></div>
+<div id="so01dep11" style="position: absolute; top: 190px; left:500px; color:#ffffff; font-size:12pt; "></div>
+<div id="so01dep12" style="position: absolute; top: 190px; left:540px; color:#ffffff; font-size:12pt; "></div>
+<div id="so01dep13" style="position: absolute; top: 190px; left:620px; color:#ffffff; font-size:12pt; "></div>
+<div id="so01dep14" style="position: absolute; top: 190px; left:680px; color:#ffffff; font-size:12pt; "></div>
+<div id="so01dep15" style="position: absolute; top: 190px; left:480px; color:#ffff00; font-size:12pt; "></div>
+
+<div id="so01dep21" style="position: absolute; top: 215px; left:500px; color:#ffffff; font-size:12pt; "></div>
+<div id="so01dep22" style="position: absolute; top: 215px; left:540px; color:#ffffff; font-size:12pt; "></div>
+<div id="so01dep23" style="position: absolute; top: 215px; left:620px; color:#ffffff; font-size:12pt; "></div>
+<div id="so01dep24" style="position: absolute; top: 215px; left:680px; color:#ffffff; font-size:12pt; "></div>
+<div id="so01dep25" style="position: absolute; top: 215px; left:480px; color:#ffff00; font-size:12pt; "></div>
+
+<div id="so01dep31" style="position: absolute; top: 240px; left:500px; color:#ffffff; font-size:12pt; "></div>
+<div id="so01dep32" style="position: absolute; top: 240px; left:540px; color:#ffffff; font-size:12pt; "></div>
+<div id="so01dep33" style="position: absolute; top: 240px; left:620px; color:#ffffff; font-size:12pt; "></div>
+<div id="so01dep34" style="position: absolute; top: 240px; left:680px; color:#ffffff; font-size:12pt; "></div>
+<div id="so01dep35" style="position: absolute; top: 240px; left:480px; color:#ffff00; font-size:12pt; "></div>
+
+<div style="position: absolute; top: 85px; left:700px; font-size:18pt"><p>相鉄横浜</p></div>
+<div style="position: absolute; top: 260px; left:420px; color:#ff0000; font-size:10pt"><p>※時刻表に掲載の番線で表示しています。</p></div>
 <div style="position: absolute; top: 30px; left:1010px; font-size:12pt"><p>各停</p></div>
 <div style="position: absolute; top: 30px; left:930px; font-size:12pt"><p>優等</p></div>
 <div style="position: absolute; top: 30px; left:850px; font-size:12pt"><p>優等</p></div>
@@ -767,7 +788,7 @@ background-color: #ffffff;
 <div id="so37-2" style="position: absolute; top: 4705px; left:920px; font-size:12pt"></div>
 <div id="so37-2c" style="position: absolute; top: 4760px; left:910px; font-size:12pt; color:#FF0000;"></div>
 
-<div style="position: absolute; top: 300px; left:200px; font-size:24pt"><input type="button" id = "tokyu" value="東横目黒エリア" class="sotetsubutton"></div>
+<div style="position: absolute; top: 350px; left:200px; font-size:24pt"><input type="button" id = "tokyu" value="東横目黒エリア" class="sotetsubutton"></div>
 <div style="position: absolute; top: 5500px; left:1120px; font-size:18pt"><p>　</p></div>
 
 </nobr>
@@ -785,7 +806,7 @@ request3.onload = () => {
   if (request3.readyState === request3.DONE) {
     if (request3.status === 200) {
 var data3 = JSON.parse(request3.responseText);
-      console.log(data3);
+
 
 //在線情報の処理
       let info = '';
@@ -1782,7 +1803,90 @@ request.onload = () => {
   if (request.readyState === request.DONE) {
     if (request.status === 200) {
 var data = JSON.parse(request.responseText);
-      console.log(data);
+
+var request5 = new XMLHttpRequest();
+request5.open("GET", "https://api.sotetsuapp.com/api/v1/stations/1", true);
+request5.responseType = "text";
+
+//横浜駅発車標
+request5.onload = () => {
+  if (request5.readyState === request5.DONE) {
+    if (request5.status === 200) {
+var data5 = JSON.parse(request5.responseText);
+
+switch (JSON.stringify(data5.timetables[0].trains[0].kind_name_ja).replaceAll('"','')) {
+	case "各停" :
+	document.getElementById("so01dep11").style.backgroundColor = '#606060'
+	break;
+	case "通勤特急" :
+	document.getElementById("so01dep11").style.backgroundColor = '#ff3e00'
+	break;
+	case "快速" :
+	document.getElementById("so01dep11").style.backgroundColor = '#38acff'
+	break;
+	case "急行" :
+	document.getElementById("so01dep11").style.backgroundColor = '#ff0000'
+	break;
+	case "特急" :
+	document.getElementById("so01dep11").style.backgroundColor = '#ff3e00'
+	break;
+	}
+
+switch (JSON.stringify(data5.timetables[0].trains[1].kind_name_ja).replaceAll('"','')) {
+	case "各停" :
+	document.getElementById("so01dep21").style.backgroundColor = '#606060'
+	break;
+	case "通勤特急" :
+	document.getElementById("so01dep21").style.backgroundColor = '#ff3e00'
+	break;
+	case "快速" :
+	document.getElementById("so01dep21").style.backgroundColor = '#38acff'
+	break;
+	case "急行" :
+	document.getElementById("so01dep21").style.backgroundColor = '#ff0000'
+	break;
+	case "特急" :
+	document.getElementById("so01dep21").style.backgroundColor = '#ff3e00'
+	break;
+	}
+
+switch (JSON.stringify(data5.timetables[0].trains[2].kind_name_ja).replaceAll('"','')) {
+	case "各停" :
+	document.getElementById("so01dep31").style.backgroundColor = '#606060'
+	break;
+	case "通勤特急" :
+	document.getElementById("so01dep31").style.backgroundColor = '#ff3e00'
+	break;
+	case "快速" :
+	document.getElementById("so01dep31").style.backgroundColor = '#38acff'
+	break;
+	case "急行" :
+	document.getElementById("so01dep31").style.backgroundColor = '#ff0000'
+	break;
+	case "特急" :
+	document.getElementById("so01dep31").style.backgroundColor = '#ff3e00'
+	break;
+	}
+ var date1 = new Date(JSON.stringify(data5.timetables[0].trains[0].time) * 1000);
+ var date2 = new Date(JSON.stringify(data5.timetables[0].trains[1].time) * 1000);
+ var date3 = new Date(JSON.stringify(data5.timetables[0].trains[2].time) * 1000);
+
+	document.getElementById("so01dep11").innerHTML= JSON.stringify(data5.timetables[0].trains[0].kind_name_ja).replaceAll('"','') ;
+	document.getElementById("so01dep12").innerHTML= JSON.stringify(data5.timetables[0].trains[0].destination_station_name_ja).replaceAll('"','') ;
+	document.getElementById("so01dep13").innerHTML= date1.toLocaleTimeString().substr(0, 5);
+	document.getElementById("so01dep15").innerHTML= JSON.stringify(data5.timetables[0].trains[0].platform) ;
+
+	document.getElementById("so01dep21").innerHTML= JSON.stringify(data5.timetables[0].trains[1].kind_name_ja).replaceAll('"','') ;
+	document.getElementById("so01dep22").innerHTML= JSON.stringify(data5.timetables[0].trains[1].destination_station_name_ja).replaceAll('"','') ;
+	document.getElementById("so01dep23").innerHTML= date2.toLocaleTimeString().substr(0, 5);
+	document.getElementById("so01dep24").innerHTML= JSON.stringify(data5.timetables[0].trains[2].train_length) ;
+	document.getElementById("so01dep25").innerHTML= JSON.stringify(data5.timetables[0].trains[1].platform) ;
+
+	document.getElementById("so01dep31").innerHTML= JSON.stringify(data5.timetables[0].trains[2].kind_name_ja).replaceAll('"','') ;
+	document.getElementById("so01dep32").innerHTML= JSON.stringify(data5.timetables[0].trains[2].destination_station_name_ja).replaceAll('"','') ;
+	document.getElementById("so01dep33").innerHTML= date3.toLocaleTimeString().substr(0, 5);
+	document.getElementById("so01dep34").innerHTML= JSON.stringify(data5.timetables[0].trains[2].train_length) ;
+	document.getElementById("so01dep35").innerHTML= JSON.stringify(data5.timetables[0].trains[2].platform) ;
 
 
 //在線情報の処理
@@ -2223,6 +2327,79 @@ if ( unban1 > 69 && unban1 < 90 && choku == 1 ){
 
 switch (stid){
 case ('1'):
+if ( retsuban == JSON.stringify(data5.timetables[0].trains[0].train_no).replaceAll('"','')){
+	document.getElementById("so01dep14").innerHTML= cars + unban.replace('⑩',' ') ;
+	if ( JSON.stringify(data5.timetables[0].trains[0].platform) == 1 ){
+	nameText = document.getElementById('so01-1a');
+	target = document.getElementById('so01-1ad');
+	doc2= document.getElementById("so01-1");  
+	doc0= document.getElementById("so01-1b");  
+	doc1= document.getElementById("so01-1c");  
+	break ;
+	} else if ( JSON.stringify(data5.timetables[0].trains[0].platform) == 2 ){
+	nameText = document.getElementById('so01-2a');
+	target = document.getElementById('so01-2ad');
+	doc2= document.getElementById("so01-2");  
+	doc0= document.getElementById("so01-2b");  
+	doc1= document.getElementById("so01-2c");  
+	break ;
+	} else if ( JSON.stringify(data5.timetables[0].trains[0].platform) == 3 ){
+	nameText = document.getElementById('so01-3a');
+	target = document.getElementById('so01-3ad');
+	doc2= document.getElementById("so01-3");  
+	doc0= document.getElementById("so01-3b");  
+	doc1= document.getElementById("so01-3c");  
+	break ;
+	}
+} else if (retsuban == JSON.stringify(data5.timetables[0].trains[1].train_no).replaceAll('"','')){
+	document.getElementById("so01dep24").innerHTML= cars  + unban.replace('⑩',' ') ;
+	if ( JSON.stringify(data5.timetables[0].trains[1].platform) == 1 ){
+	nameText = document.getElementById('so01-1a');
+	target = document.getElementById('so01-1ad');
+	doc2= document.getElementById("so01-1");  
+	doc0= document.getElementById("so01-1b");  
+	doc1= document.getElementById("so01-1c");  
+	break ;
+	} else if ( JSON.stringify(data5.timetables[0].trains[1].platform) == 2 ){
+	nameText = document.getElementById('so01-2a');
+	target = document.getElementById('so01-2ad');
+	doc2= document.getElementById("so01-2");  
+	doc0= document.getElementById("so01-2b");  
+	doc1= document.getElementById("so01-2c");  
+	break ;
+	} else if ( JSON.stringify(data5.timetables[0].trains[1].platform) == 3 ){
+	nameText = document.getElementById('so01-3a');
+	target = document.getElementById('so01-3ad');
+	doc2= document.getElementById("so01-3");  
+	doc0= document.getElementById("so01-3b");  
+	doc1= document.getElementById("so01-3c");  
+	break ;
+	}
+} else if (retsuban == JSON.stringify(data5.timetables[0].trains[2].train_no).replaceAll('"','')){
+	document.getElementById("so01dep34").innerHTML= cars + unban.replace('⑩',' ') ;
+	if ( JSON.stringify(data5.timetables[0].trains[2].platform) == 1 ){
+	nameText = document.getElementById('so01-1a');
+	target = document.getElementById('so01-1ad');
+	doc2= document.getElementById("so01-1");  
+	doc0= document.getElementById("so01-1b");  
+	doc1= document.getElementById("so01-1c");  
+	break ;
+	} else if ( JSON.stringify(data5.timetables[0].trains[2].platform) == 2 ){
+	nameText = document.getElementById('so01-2a');
+	target = document.getElementById('so01-2ad');
+	doc2= document.getElementById("so01-2");  
+	doc0= document.getElementById("so01-2b");  
+	doc1= document.getElementById("so01-2c");  
+	break ;
+	} else if ( JSON.stringify(data5.timetables[0].trains[2].platform) == 3 ){
+	nameText = document.getElementById('so01-3a');
+	target = document.getElementById('so01-3ad');
+	doc2= document.getElementById("so01-3");  
+	doc0= document.getElementById("so01-3b");  
+	doc1= document.getElementById("so01-3c");  
+	break ;
+	}
+} else {
 	switch (kind){
 	case '各':
 	nameText = document.getElementById('so01-1a');
@@ -2274,6 +2451,8 @@ if ( nameText.value == "" ){
 
 	}
 	break ;
+}
+
 case ('2'):
 if ( up == "true" ){
 	nameText = document.getElementById('so02-2a');
@@ -4150,6 +4329,11 @@ sleepSetInterval(2000, () =>{
 , 7)
 
 
+    }
+  }
+};
+
+request5.send(null);
 
     }
   }
