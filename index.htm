@@ -1871,12 +1871,13 @@ switch (JSON.stringify(data5.timetables[0].trains[2].kind_name_ja).replaceAll('"
 	document.getElementById("so01dep11").innerHTML= JSON.stringify(data5.timetables[0].trains[0].kind_name_ja).replaceAll('"','') ;
 	document.getElementById("so01dep12").innerHTML= JSON.stringify(data5.timetables[0].trains[0].destination_station_name_ja).replaceAll('"','') ;
 	document.getElementById("so01dep13").innerHTML= date1.toLocaleTimeString().replace(':00','');
+	document.getElementById("so01dep14").innerHTML= JSON.stringify(data5.timetables[0].trains[0].train_length) ;
 	document.getElementById("so01dep15").innerHTML= JSON.stringify(data5.timetables[0].trains[0].platform) ;
 
 	document.getElementById("so01dep21").innerHTML= JSON.stringify(data5.timetables[0].trains[1].kind_name_ja).replaceAll('"','') ;
 	document.getElementById("so01dep22").innerHTML= JSON.stringify(data5.timetables[0].trains[1].destination_station_name_ja).replaceAll('"','') ;
 	document.getElementById("so01dep23").innerHTML= date2.toLocaleTimeString().replace(':00','');
-	document.getElementById("so01dep24").innerHTML= JSON.stringify(data5.timetables[0].trains[2].train_length) ;
+	document.getElementById("so01dep24").innerHTML= JSON.stringify(data5.timetables[0].trains[1].train_length) ;
 	document.getElementById("so01dep25").innerHTML= JSON.stringify(data5.timetables[0].trains[1].platform) ;
 
 	document.getElementById("so01dep31").innerHTML= JSON.stringify(data5.timetables[0].trains[2].kind_name_ja).replaceAll('"','') ;
