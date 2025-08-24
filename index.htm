@@ -47,7 +47,7 @@ background-color: #ffffff;
   <body>
 
 <nobr>
-<p>相鉄エリア　[自動更新：15秒]　　　　　　　　　　　◆編成情報は東急線走行時点で取得したもの　　　　(C)Cure_kisaragi 2024 / Ver.2.40 </p>
+<p>相鉄エリア　[自動更新：15秒]　　　　◆編成情報は東急線走行時点で取得したもの　　　　　　　(C)Cure_kisaragi 2024-2025 / Ver.2.50 08/24 </p>
 <br>
 <br>
 <br>
@@ -256,6 +256,12 @@ background-color: #ffffff;
 <div id="so56-55e" style="position: absolute; top: 780px; left:597px; font-size:12pt; "></div>
 <div id="so56-55c" style="position: absolute; top: 835px; left:587px; font-size:12pt; color:#FF0000; "></div>
 
+<!大崎-西大井・予備窓>
+<div id="so56-55d1" style="position: absolute; top: -100px; left:-100px;"><input type="text"  id = "so56-551" disabled / name="address" size="14" value=""　></div>
+<div id="so56-55b1" style="position: absolute; top: 780px; left:667px; font-size:12pt; "></div>
+<div id="so56-55e1" style="position: absolute; top: 780px; left:677px; font-size:12pt; "></div>
+<div id="so56-55c1" style="position: absolute; top: 835px; left:667px; font-size:12pt; color:#FF0000; "></div>
+
 <div style="position: absolute; top: 870px; left:490px; font-size:16pt"><p>(西大井)</p></div>
 <div id="so55d" style="position: absolute; top: -100px; left:-100px;"><input type="text"  id = "so55" disabled / name="address" size="14" value=""　></div>
 <div id="so55b" style="position: absolute; top: 880px; left:587px; font-size:12pt; "></div>
@@ -267,6 +273,12 @@ background-color: #ffffff;
 <div id="so55-54b" style="position: absolute; top: 980px; left:587px; font-size:12pt; "></div>
 <div id="so55-54e" style="position: absolute; top: 980px; left:597px; font-size:12pt; "></div>
 <div id="so55-54c" style="position: absolute; top: 1035px; left:587px; font-size:12pt; color:#FF0000; "></div>
+
+<!西大井-武蔵小杉・予備窓>
+<div id="so55-54d1" style="position: absolute; top: -100px; left:-100px;"><input type="text"  id = "so55-541" disabled / name="address" size="14" value=""　></div>
+<div id="so55-54b1" style="position: absolute; top: 980px; left:667px; font-size:12pt; "></div>
+<div id="so55-54e1" style="position: absolute; top: 980px; left:677px; font-size:12pt; "></div>
+<div id="so55-54c1" style="position: absolute; top: 1035px; left:667px; font-size:12pt; color:#FF0000; "></div>
 
 <div style="position: absolute; top: 1070px; left:450px; font-size:16pt"><p>(JR武蔵小杉)</p></div>
 <div id="so54d" style="position: absolute; top: -100px; left:-100px;"><input type="text"  id = "so54" disabled / name="address" size="14" value=""　></div>
@@ -790,6 +802,585 @@ background-color: #ffffff;
 
 </nobr>
 </font>
+
+<script type="module" >
+
+/////////////////////////////////////ここからJR湘南
+
+
+var request5 = new XMLHttpRequest();
+request5.open("GET", "https://api-challenge.odpt.org/api/v4/odpt:Train?odpt:railway=odpt.Railway:JR-East.ShonanShinjuku&acl:consumerKey=l839g98l6b5ua7gxknup87hv4o4jrj3ru61qzr9yw25dg5x8k4ucfuu6p9nqugci", true);
+request5.responseType = "text";
+
+request5.onload = () => {
+  if (request5.readyState === request5.DONE) {
+    if (request5.status === 200) {
+var data5 = JSON.parse(request5.responseText.replaceAll("odpt:","odpt"));
+
+
+
+//在線情報の処理
+      //在線情報の処理
+      let info = '';
+      let len = '';
+
+      let kind = '';
+      let kind2 = '';
+      let kind3 = '';
+      let unban = '';
+      let unban1 = '';
+      let des = '';
+      let des2 = '';
+      let stid = '';
+      let scid = '';
+      let trid = '';
+      let sha = '';
+      let hensei = '';
+      let delay = '';
+      let line = '';
+      let cars = '';
+      let dai = 0;
+      let n = 0;
+      let q = 0;
+      let n1 = 0;
+      let p = 5;
+      let p1 = 250;
+
+
+let now = Math.floor(Date.now() / 60000) ;
+	var F  = {};
+
+      len = JSON.stringify(data5.length) ;
+      let nameText = document.getElementById('ty01-3a');
+
+ty99.value = "表示試験" ;
+
+var requesta = {};
+var dataa = {};
+
+for ( n = len - 1 ; n > -1; n--) {
+
+dai = 0;
+
+
+//種別設定
+      kind= JSON.stringify(data5[n].odpttrainType); 
+	switch (kind) {
+case '"odpt.TrainType:JR-East.Local"':
+	kind = "普";
+	kind3 = "普";
+	break;
+case '"odpt.TrainType:JR-East.LimitedExpress"':
+	kind = "特";
+	kind3 = "特";
+	break;
+case '"odpt.TrainType:JR-East.Rapid"':
+	kind = "快";
+	kind3 = "快";
+	break;
+
+case 'null':
+	kind = "　";
+	kind3 = "　";
+	break;
+}
+
+      unban1 = JSON.stringify(data5[n].odpttrainNumber).replaceAll('"','') ;
+　　　unban = unban1 ;
+
+
+//行先設定
+      des= JSON.stringify(data5[n].odptdestinationStation) ;
+	switch (des) {
+case '["odpt.Station:JR-East.NaritaAirportBranch.NaritaAirportTerminal1"]':
+	des = "空";	
+	break;
+case '["odpt.Station:JR-East.ShonanShinjuku.Ofuna"]':
+	des = "船";
+	break;
+case '["odpt.Station:JR-East.Yokosuka.Zushi"]':
+	des = "逗";
+	break;
+case '["odpt.Station:JR-East.Yokosuka.Yokosuka"]':
+	des = "須";
+	break;
+case '["odpt.Station:JR-East.Yokosuka.Kurihama"]':
+	des = "久";
+	break;
+case '["odpt.Station:JR-East.ShonanShinjuku.Ikebukuro"]':
+	des = "池";
+	break;
+case '["odpt.Station:JR-East.Tokaido.Kozu"]':
+	des = "国";
+	break;
+case '["odpt.Station:JR-East.Tokaido.Hiratsuka"]':
+	des = "平";
+	break;
+case '0':
+	des = "―";
+	break;
+}
+      stid= JSON.stringify(data5[n].odptfromStation) ;
+      scid= JSON.stringify(data5[n].odpttoStation) ;
+      trid= JSON.stringify(data5[n].odptrailDirection) ;
+      delay= JSON.stringify(data5[n].odptdelay) ;
+	delay = delay / 60 ;
+      cars= "8" ;
+
+if ( unban.length < 5 ){
+	unban = '　' + unban ;
+} else {
+	unban = '&nbsp;' + unban ;
+}
+
+
+//遅れ
+if ( delay == "0"){
+ delay = "" ;
+} else if ( delay < 10 ) {
+ delay = "　 " + delay + "　" ;
+} else {
+ delay = "　" + delay　+ "　";
+}
+
+      info =   '　　' + des + '<br/>' +  unban +　 '<br/>' +  '<br/>' +  '　　' ;
+
+	nameText = 0;
+
+
+console.log(kind + info);
+
+
+	var target;
+	var doc0= document.getElementById("ty99");  
+	var doc1= document.getElementById("ty99");
+	var doc2= document.getElementById("ty99");
+
+switch (stid){
+
+case ( '"odpt.Station:JR-East.Yokosuka.Shinagawa"' ):
+	switch ( scid) {
+	case ( 'null' ):
+	if ( trid == '"odpt.RailDirection:Outbound"' ) {
+
+	} else {
+
+	}
+        break ;
+
+	case ( '"odpt.Station:JR-East.ShonanShinjuku.NishiOi"' ):
+		nameText = document.getElementById('so56-55');
+	if ( nameText.value == "" ){
+		target = document.getElementById('so56-55d');
+		doc2= document.getElementById("so56-55e"); 
+		doc0= document.getElementById("so56-55b");  
+		doc1= document.getElementById("so56-55c"); 
+	} else {
+		nameText = document.getElementById('so56-551');
+		target = document.getElementById('so56-55d1');
+		doc2= document.getElementById("so56-55e1"); 
+		doc0= document.getElementById("so56-55b1");  
+		doc1= document.getElementById("so56-55c1"); 
+	}
+        break ;
+
+	default:
+	nameText = 0;
+        break ;
+	}
+        break ;
+
+case ( '"odpt.Station:JR-East.ShonanShinjuku.NishiOi"' ):
+	switch ( scid) {
+	case ( 'null' ):
+	if ( trid == '"odpt.RailDirection:Outbound"' ) {
+		nameText = document.getElementById('so55');
+		target = document.getElementById('so55d');
+		doc2= document.getElementById("so55e"); 
+		doc0= document.getElementById("so55b");  
+		doc1= document.getElementById("so55c"); 
+
+	} else {
+
+	}
+        break ;
+
+	case ( '"odpt.Station:JR-East.ShonanShinjuku.MusashiKosugi"' ):
+		nameText = document.getElementById('so55-54');
+	if ( nameText.value == "" ){
+		target = document.getElementById('so55-54d');
+		doc2= document.getElementById("so55-54e");  
+		doc0= document.getElementById("so55-54b");
+		doc1= document.getElementById("so55-54c");
+	} else {
+		nameText = document.getElementById('so55-541');
+		target = document.getElementById('so55-54d1');
+		doc2= document.getElementById("so55-54e1");  
+		doc0= document.getElementById("so55-54b1");
+		doc1= document.getElementById("so55-54c1");
+	}
+        break ;
+
+	default:
+	nameText = 0;
+        break ;
+	}
+        break ;
+
+case ( '"odpt.Station:JR-East.ShonanShinjuku.MusashiKosugi"' ):
+	switch ( scid) {
+	case ( 'null' ):
+	if ( trid == '"odpt.RailDirection:Outbound"' ) {
+		nameText = document.getElementById('so54');
+		target = document.getElementById('so54d');
+		doc2= document.getElementById("so54e"); 
+		doc0= document.getElementById("so54b");  
+		doc1= document.getElementById("so54c"); 
+
+	} else {
+
+	}
+        break ;
+
+
+	default:
+	nameText = 0;
+        break ;
+	}
+        break ;
+}
+doc2.innerHTML= kind + "";
+	doc0.innerHTML= info.replace("―999","留置")+ " ";
+	doc1.innerHTML= delay;
+
+doc0.style.backgroundColor = '#ffffff'; //背景
+doc1.style.backgroundColor = '#ffffff'; //背景
+doc2.style.backgroundColor = '#ffffff'; //背景
+
+
+if ( nameText == 0 ){
+} else {
+
+nameText.value = "　";
+if ( dai == 1){
+doc0.style.backgroundColor = '#98fb98'; //背景
+}
+
+
+switch (kind) {
+case '普' :
+case '快' :
+doc2.style.color = '#0000ff'; //文字
+break;
+case '特' :
+doc2.style.color = '#ff0000'; //文字
+break;
+
+default:
+break ;
+}
+}
+
+
+}
+
+
+
+    }
+  }
+};
+
+
+
+request5.send(null);
+
+</script>
+
+<script type="module" >
+
+/////////////////////////////////////ここからJR横須賀
+
+
+var request5 = new XMLHttpRequest();
+request5.open("GET", "https://api-challenge.odpt.org/api/v4/odpt:Train?odpt:railway=odpt.Railway:JR-East.Yokosuka&acl:consumerKey=l839g98l6b5ua7gxknup87hv4o4jrj3ru61qzr9yw25dg5x8k4ucfuu6p9nqugci", true);
+request5.responseType = "text";
+
+request5.onload = () => {
+  if (request5.readyState === request5.DONE) {
+    if (request5.status === 200) {
+var data5 = JSON.parse(request5.responseText.replaceAll("odpt:","odpt"));
+
+
+
+//在線情報の処理
+      //在線情報の処理
+      let info = '';
+      let len = '';
+
+      let kind = '';
+      let kind2 = '';
+      let kind3 = '';
+      let unban = '';
+      let unban1 = '';
+      let des = '';
+      let des2 = '';
+      let stid = '';
+      let scid = '';
+      let trid = '';
+      let sha = '';
+      let hensei = '';
+      let delay = '';
+      let line = '';
+      let cars = '';
+      let dai = 0;
+      let n = 0;
+      let q = 0;
+      let n1 = 0;
+      let p = 5;
+      let p1 = 250;
+
+
+let now = Math.floor(Date.now() / 60000) ;
+	var F  = {};
+
+      len = JSON.stringify(data5.length) ;
+      let nameText = document.getElementById('ty01-3a');
+
+ty99.value = "表示試験" ;
+
+var requesta = {};
+var dataa = {};
+
+for ( n = len - 1 ; n > -1; n--) {
+
+dai = 0;
+
+
+//種別設定
+      kind= JSON.stringify(data5[n].odpttrainType); 
+	switch (kind) {
+case '"odpt.TrainType:JR-East.Local"':
+	kind = "普";
+	kind3 = "普";
+	break;
+case '"odpt.TrainType:JR-East.LimitedExpress"':
+	kind = "特";
+	kind3 = "特";
+	break;
+
+case 'null':
+	kind = "　";
+	kind3 = "　";
+	break;
+}
+
+      unban1 = JSON.stringify(data5[n].odpttrainNumber).replaceAll('"','') ;
+　　　unban = unban1 ;
+
+
+//行先設定
+      des= JSON.stringify(data5[n].odptdestinationStation) ;
+	switch (des) {
+case '["odpt.Station:JR-East.NaritaAirportBranch.NaritaAirportTerminal1"]':
+	des = "空";	
+	break;
+case '["odpt.Station:JR-East.Yokosuka.Ofuna"]':
+	des = "船";
+	break;
+case '["odpt.Station:JR-East.Yokosuka.Zushi"]':
+	des = "逗";
+	break;
+case '["odpt.Station:JR-East.Yokosuka.Yokosuka"]':
+	des = "須";
+	break;
+case '["odpt.Station:JR-East.Yokosuka.Kurihama"]':
+	des = "久";
+	break;
+case '["odpt.Station:JR-East.ShonanShinjuku.Ikebukuro"]':
+	des = "池";
+	break;
+case '["odpt.Station:JR-East.Uchibo.Kimitsu"]':
+	des = "君";
+	break;
+case '["odpt.Station:JR-East.Sotobo.KazusaIchinomiya"]':
+	des = "総";
+	break;
+case '0':
+	des = "―";
+	break;
+}
+      stid= JSON.stringify(data5[n].odptfromStation) ;
+      scid= JSON.stringify(data5[n].odpttoStation) ;
+      trid= JSON.stringify(data5[n].odptrailDirection) ;
+      delay= JSON.stringify(data5[n].odptdelay) ;
+	delay = delay / 60 ;
+      cars= "8" ;
+
+if ( unban.length < 5 ){
+	unban = '　' + unban ;
+} else {
+	unban = '&nbsp;' + unban ;
+}
+
+
+//遅れ
+if ( delay == "0"){
+ delay = "" ;
+} else if ( delay < 10 ) {
+ delay = "　 " + delay + "　" ;
+} else {
+ delay = "　" + delay　+ "　";
+}
+
+      info =   '　　' + des + '<br/>' +  unban +　 '<br/>' +  '<br/>' +  '　　' ;
+
+	nameText = 0;
+
+
+	var target;
+	var doc0= document.getElementById("ty99");  
+	var doc1= document.getElementById("ty99");
+	var doc2= document.getElementById("ty99");
+
+switch (stid){
+
+case ( '"odpt.Station:JR-East.Yokosuka.Shinagawa"' ):
+	switch ( scid) {
+	case ( 'null' ):
+	if ( trid == '"odpt.RailDirection:Outbound"' ) {
+
+	} else {
+
+	}
+        break ;
+
+	case ( '"odpt.Station:JR-East.Yokosuka.NishiOi"' ):
+		nameText = document.getElementById('so56-55');
+	if ( nameText.value == "" ){
+		target = document.getElementById('so56-55d');
+		doc2= document.getElementById("so56-55e"); 
+		doc0= document.getElementById("so56-55b");  
+		doc1= document.getElementById("so56-55c"); 
+	} else {
+		nameText = document.getElementById('so56-551');
+		target = document.getElementById('so56-55d1');
+		doc2= document.getElementById("so56-55e1"); 
+		doc0= document.getElementById("so56-55b1");  
+		doc1= document.getElementById("so56-55c1"); 
+	}
+        break ;
+
+	default:
+	nameText = 0;
+        break ;
+	}
+        break ;
+
+case ( '"odpt.Station:JR-East.Yokosuka.NishiOi"' ):
+	switch ( scid) {
+	case ( 'null' ):
+	if ( trid == '"odpt.RailDirection:Outbound"' ) {
+		nameText = document.getElementById('so55');
+		target = document.getElementById('so55d');
+		doc2= document.getElementById("so55e"); 
+		doc0= document.getElementById("so55b");  
+		doc1= document.getElementById("so55c"); 
+
+	} else {
+
+	}
+        break ;
+
+	case ( '"odpt.Station:JR-East.Yokosuka.MusashiKosugi"' ):
+		nameText = document.getElementById('so55-54');
+	if ( nameText.value == "" ){
+		target = document.getElementById('so55-54d');
+		doc2= document.getElementById("so55-54e");  
+		doc0= document.getElementById("so55-54b");
+		doc1= document.getElementById("so55-54c");
+	} else {
+		nameText = document.getElementById('so55-541');
+		target = document.getElementById('so55-54d1');
+		doc2= document.getElementById("so55-54e1");  
+		doc0= document.getElementById("so55-54b1");
+		doc1= document.getElementById("so55-54c1");
+	}
+        break ;
+
+	default:
+	nameText = 0;
+        break ;
+	}
+        break ;
+
+case ( '"odpt.Station:JR-East.Yokosuka.MusashiKosugi"' ):
+	switch ( scid) {
+	case ( 'null' ):
+	if ( trid == '"odpt.RailDirection:Outbound"' ) {
+		nameText = document.getElementById('so54');
+		target = document.getElementById('so54d');
+		doc2= document.getElementById("so54e"); 
+		doc0= document.getElementById("so54b");  
+		doc1= document.getElementById("so54c"); 
+
+	} else {
+
+	}
+        break ;
+
+
+	default:
+	nameText = 0;
+        break ;
+	}
+        break ;
+}
+doc2.innerHTML= kind + "";
+	doc0.innerHTML= info.replace("―999","留置")+ " ";
+	doc1.innerHTML= delay;
+
+doc0.style.backgroundColor = '#ffffff'; //背景
+doc1.style.backgroundColor = '#ffffff'; //背景
+doc2.style.backgroundColor = '#ffffff'; //背景
+
+
+if ( nameText == 0 ){
+} else {
+
+nameText.value = "　";
+if ( dai == 1){
+doc0.style.backgroundColor = '#98fb98'; //背景
+}
+
+
+switch (kind) {
+case '普' :
+doc2.style.color = '#0000ff'; //文字
+break;
+case '特' :
+doc2.style.color = '#ff0000'; //文字
+break;
+
+default:
+break ;
+}
+}
+
+
+}
+
+
+
+    }
+  }
+};
+
+
+
+request5.send(null);
+
+</script>
+
 <script type="module" >
 
 /////////////////////////////////////ここからJR
@@ -1029,12 +1620,19 @@ switch (stid){
 case ('"0000000000308"'):
 
 if (scid == '"0000000001101"'){
-
 		nameText = document.getElementById('so56-55');
+	if ( nameText.value == "" ){
 		target = document.getElementById('so56-55d');
-		doc2= document.getElementById("so56-55e");  
-		doc0= document.getElementById("so56-55b");
-		doc1= document.getElementById("so56-55c");
+		doc2= document.getElementById("so56-55e"); 
+		doc0= document.getElementById("so56-55b");  
+		doc1= document.getElementById("so56-55c"); 
+	} else {
+		nameText = document.getElementById('so56-551');
+		target = document.getElementById('so56-55d1');
+		doc2= document.getElementById("so56-55e1"); 
+		doc0= document.getElementById("so56-55b1");  
+		doc1= document.getElementById("so56-55c1"); 
+	}
 doc2.style.backgroundColor = '#696969'; //背景
 doc2.style.color = '#ffffff'; //文字
 doc0.style.fontWeight = "bold";
@@ -1057,10 +1655,18 @@ case ('"0000000001101"'):
 if (scid == '"0000000001464"'){
 
 		nameText = document.getElementById('so55-54');
+	if ( nameText.value == "" ){
 		target = document.getElementById('so55-54d');
 		doc2= document.getElementById("so55-54e");  
 		doc0= document.getElementById("so55-54b");
 		doc1= document.getElementById("so55-54c");
+	} else {
+		nameText = document.getElementById('so55-541');
+		target = document.getElementById('so55-54d1');
+		doc2= document.getElementById("so55-54e1");  
+		doc0= document.getElementById("so55-54b1");
+		doc1= document.getElementById("so55-54c1");
+	}
 doc2.style.backgroundColor = '#696969'; //背景
 doc2.style.color = '#ffffff'; //文字
 doc0.style.fontWeight = "bold";
