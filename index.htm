@@ -47,7 +47,7 @@ background-color: #ffffff;
   <body>
 
 <nobr>
-<p>相鉄エリア　[自動更新：15秒]　　　　◆編成情報は東急線走行時点で取得したもの　　　　　　　(C)Cure_kisaragi 2024-2025 / Ver.2.50 08/24 </p>
+<p>相鉄エリア　[自動更新：15秒]　　　　◆編成情報は東急線走行時点で取得したもの　　　　　　　(C)Cure_kisaragi 2024-2025 / Ver.2.50 09/22 </p>
 <br>
 <br>
 <br>
@@ -1467,6 +1467,10 @@ case '"0000000000338"':
 	break;
 case '"0000000000506"':
 	des = "川";
+case '"0000000001789"':
+	des = "羽";
+
+
 	break;
 case '0':
 	des = "―";
@@ -1802,7 +1806,7 @@ document.getElementById("tokyu").addEventListener("click", function () {
 /////////////////////////////////////ここから東急
 
 var request2 = new XMLHttpRequest();
-request2.open("GET", "https://tokyu-tid.s3.amazonaws.com/shinyokohama.json", true);
+request2.open("GET", "https://external-data.sotetsuapp.com/tid/tokyu/shinyokohama.json", true);
 request2.responseType = "text";
 
 request2.onload = () => {
@@ -1839,6 +1843,8 @@ var data2 = JSON.parse(request2.responseText);
 
 
 
+	let now = Math.floor(Date.now() / 60000) ;
+
 for ( n = 0; n < len; n++) {
 
 
@@ -1872,17 +1878,38 @@ case 'null':
 }
 
 //行先設定
+      unban1 = JSON.stringify(data2.trains[n].operation_number) ;
+if ( localStorage.getItem( unban1 + 'ty' + 'time' ) != null ){
+	 if( localStorage.getItem( unban1 + 'ty' + 'time' ) -(- 60) <= now ){
+		
+		localStorage.removeItem( unban1 + 'ty' );
+		localStorage.removeItem( unban1 + 'ty' + 'time' );
+	} 
+	}
       des= JSON.stringify(data2.trains[n].destination_station_code) ;
 	switch (des) {
 case '33':
 	des = "副";
+if ( localStorage.getItem( unban1 + 'ty') == null ){
+} else {
+des = localStorage.getItem( unban1 + 'ty') ;
+}
 	break;
 case '67':
 	des = "南";
+if ( localStorage.getItem( unban1  + 'ty') == null ){
+} else {
+des = localStorage.getItem( unban1  + 'ty') ;
+}
 	break;
 case '54':
 	des = "三";
+if ( localStorage.getItem( unban1  + 'ty') == null ){
+} else {
+des = localStorage.getItem( unban1  + 'ty') ;
+}
 	break;
+
 case '42':
 	des = "比";
 	break;
@@ -2205,8 +2232,6 @@ hensei = '3--)'
 	var doc1= document.getElementById("ty99");
 	var doc2= document.getElementById("ty99");
 
-
-	let now = Math.floor(Date.now() / 60000) ;
 	let date = new Date()  ;
 	date = ('0' + (date.getMonth() + 1)).slice(-2) + '月' +('0' + date.getDate()).slice(-2) + '日 ' +  ('0' + date.getHours()).slice(-2) + '時' + ('0' + date.getMinutes()).slice(-2) + '分' + ('0' + date.getSeconds()).slice(-2) + '秒現在';
 	
