@@ -1928,7 +1928,7 @@ request6.onload = () => {
   if (request6.readyState === request6.DONE) {
     if (request6.status === 200) {
 if ( sessionStorage.getItem("Shinyokohama") == null ){
-var data6 = JSON.parse(request5.responseText);
+var data6 = JSON.parse(request6.responseText);
 sessionStorage.setItem("Shinyokohama", request6.responseText ) ;
 } else {
 var data6 = JSON.parse(sessionStorage.getItem("Shinyokohama"));
@@ -4569,3 +4569,4 @@ request.send(null);
 
   </body>
 </html>
+
