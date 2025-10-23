@@ -98,7 +98,7 @@ background-color: #ffffff;
 <div id="so52dep25" style="position: absolute; top: 880px; left:162px; color:#ffffff; font-size:12pt; "></div>
 
 <div style="position: absolute; top: 900px; left:157px;  Color:#000000; font-size:7pt"><p>のりば 種別　両数　行　先　　　　発車時分　　運番</p></div>
-<div style="position: absolute; top: 900px; left:40522:29 2025/10/23px;  Color:#ffffff; font-size:10pt"><p>東急方面</p></div>
+<div style="position: absolute; top: 900px; left:405px;  Color:#ffffff; font-size:10pt"><p>東急方面</p></div>
 <div id="so52dep31a" style="position: absolute; top: 925px; left:177px; color:#ffffff; font-size:12pt; height: 24px; width: 38px; "></div>
 <div id="so52dep31" style="position: absolute; top: 930px; left:179px; color:#ffffff; font-size:12pt; "></div>
 <div id="so52dep32" style="position: absolute; top: 930px; left:240px; color:#ffffff; font-size:12pt; "></div>
@@ -1962,6 +1962,10 @@ var date11 = new Date(JSON.stringify(data6.timetables[1].trains[0].time) * 1000)
 
 	document.getElementById("so52dep11").innerHTML= JSON.stringify(data6.timetables[1].trains[0].kind_name_ja).replaceAll('"','') ;
 	document.getElementById("so52dep12").innerHTML= JSON.stringify(data6.timetables[1].trains[0].destination_station_name_ja).replaceAll('"','') ;
+	if ( JSON.stringify(data6.timetables[1].trains[0].destination_station_name_ja).replaceAll('"','').length == 2 ){
+	document.getElementById("so52dep12").innerHTML= JSON.stringify(data6.timetables[1].trains[0].destination_station_name_ja).replaceAll('"','').substr(0,1) + '　' + JSON.stringify(data6.timetables[1].trains[0].destination_station_name_ja).replaceAll('"','').substr(1,1);
+
+	}
 	document.getElementById("so52dep13").innerHTML= date11.toLocaleTimeString().replace(':00','');
 	document.getElementById("so52dep14").innerHTML= JSON.stringify(data6.timetables[1].trains[0].train_length) ;
 	if ( JSON.stringify(data6.timetables[1].trains[0].train_length) == 8 ){
@@ -1971,6 +1975,9 @@ var date11 = new Date(JSON.stringify(data6.timetables[1].trains[0].time) * 1000)
 
 	document.getElementById("so52dep21").innerHTML= JSON.stringify(data6.timetables[1].trains[1].kind_name_ja).replaceAll('"','') ;
 	document.getElementById("so52dep22").innerHTML= JSON.stringify(data6.timetables[1].trains[1].destination_station_name_ja).replaceAll('"','') ;
+	if ( JSON.stringify(data6.timetables[1].trains[1].destination_station_name_ja).replaceAll('"','').length == 2 ){
+	document.getElementById("so52dep22").innerHTML= JSON.stringify(data6.timetables[1].trains[1].destination_station_name_ja).replaceAll('"','').substr(0,1) + '　' + JSON.stringify(data6.timetables[1].trains[1].destination_station_name_ja).replaceAll('"','').substr(1,1);
+	}
 	document.getElementById("so52dep23").innerHTML= date12.toLocaleTimeString().replace(':00','');
 	document.getElementById("so52dep24").innerHTML= JSON.stringify(data6.timetables[1].trains[1].train_length) ;
 	if ( JSON.stringify(data6.timetables[1].trains[1].train_length) == 8 ){
@@ -2087,6 +2094,11 @@ var date13 = new Date(JSON.stringify(data6.timetables[0].trains[0].time) * 1000)
 	document.getElementById("so52dep32").innerHTML= '新宿三丁'
 	}
 
+	if ( JSON.stringify(data6.timetables[0].trains[0].destination_station_name_ja).replaceAll('"','').length == 2 ){
+	document.getElementById("so52dep32").innerHTML= JSON.stringify(data6.timetables[0].trains[0].destination_station_name_ja).replaceAll('"','').substr(0,1) + '　' + JSON.stringify(data6.timetables[0].trains[0].destination_station_name_ja).replaceAll('"','').substr(1,1);
+
+	}
+
 	document.getElementById("so52dep33").innerHTML= date13.toLocaleTimeString().replace(':00','') + '　' + unban13;
 	document.getElementById("so52dep34").innerHTML= JSON.stringify(data6.timetables[0].trains[0].train_length) ;
 	if ( JSON.stringify(data6.timetables[0].trains[0].train_length) == 8 ){
@@ -2110,7 +2122,12 @@ var date13 = new Date(JSON.stringify(data6.timetables[0].trains[0].time) * 1000)
 
 
 	if ( JSON.stringify(data6.timetables[0].trains[1].destination_station_name_ja).replaceAll('"','') == '新宿三丁目' ){
-	document.getElementById("so52dep32").innerHTML= '新宿三丁'
+	document.getElementById("so52dep42").innerHTML= '新宿三丁'
+	}
+
+	if ( JSON.stringify(data6.timetables[0].trains[1].destination_station_name_ja).replaceAll('"','').length == 2 ){
+	document.getElementById("so52dep42").innerHTML= JSON.stringify(data6.timetables[0].trains[1].destination_station_name_ja).replaceAll('"','').substr(0,1) + '　' + JSON.stringify(data6.timetables[0].trains[1].destination_station_name_ja).replaceAll('"','').substr(1,1);
+
 	}
 
 	document.getElementById("so52dep43").innerHTML= date14.toLocaleTimeString().replace(':00','') + '　' + unban14;
