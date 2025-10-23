@@ -2897,11 +2897,20 @@ if ( up == "true" ){
 case ('29'):
 if ( up == "true" ){
 	nameText = document.getElementById('so52-2a');
+	if ( nameText.value == "" ){
 	target = document.getElementById('so52-2ad');
 	doc2= document.getElementById("so52-2"); 
 	doc0= document.getElementById("so52-2b");  
 	doc1= document.getElementById("so52-2c");  
+	} else {
+	nameText = document.getElementById('so52-3a');
+	target = document.getElementById('so52-3ad');
+	doc2= document.getElementById("so52-3"); 
+	doc0= document.getElementById("so52-3b");  
+	doc1= document.getElementById("so52-3c"); 
+	}
 	break ;
+
 } else {
 	nameText = document.getElementById('so52-1a');
 	target = document.getElementById('so52-1ad');
