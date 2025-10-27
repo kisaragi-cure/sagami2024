@@ -1220,6 +1220,9 @@ case '["odpt.Station:JR-East.Uchibo.Kimitsu"]':
 case '["odpt.Station:JR-East.Sotobo.KazusaIchinomiya"]':
 	des = "総";
 	break;
+case '["odpt.Station:JR-East.Tokaido.Odawara"]':
+	des = "小";
+	break;
 case '0':
 	des = "―";
 	break;
@@ -1466,7 +1469,7 @@ case '"0000000000034"':
 	des = "赤";
 	break;
 case '"0000000001462"':
-	des = "武";
+	des = "浦";
 	break;
 
 case '"0000000000338"':
@@ -1940,7 +1943,7 @@ sessionStorage.setItem("Shinyokohama1", request6.responseText ) ;
 
 switch (JSON.stringify(data6.timetables[1].trains[0].kind_name_ja).replaceAll('"','')) {
 	case "各停" :
-	document.getElementById("so52dep11a").style.backgroundColor = '#0000ff'
+	document.getElementById("so52dep11a").style.backgroundColor = '#000000'
 	break;
 	case "特急" :
 	document.getElementById("so52dep11a").style.backgroundColor = '#ff7019'
@@ -1949,7 +1952,7 @@ switch (JSON.stringify(data6.timetables[1].trains[0].kind_name_ja).replaceAll('"
 
 switch (JSON.stringify(data6.timetables[1].trains[1].kind_name_ja).replaceAll('"','')) {
 	case "各停" :
-	document.getElementById("so52dep21a").style.backgroundColor = '#0000ff'
+	document.getElementById("so52dep21a").style.backgroundColor = '#000000'
 	break;
 	case "特急" :
 	document.getElementById("so52dep21a").style.backgroundColor = '#ff7019'
