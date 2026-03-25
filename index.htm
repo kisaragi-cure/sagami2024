@@ -39,6 +39,15 @@ background-color: #ffffff;
     font-size: 18pt;
 }
 
+
+.joho{
+    width: 250px;
+    height: 2em;
+    padding: 5px;
+    font-size: 14pt;
+}
+
+
 </style>
 
   </head>
@@ -46,17 +55,21 @@ background-color: #ffffff;
 
   <body>
 
+<!バージョン情報>
+<! 2026/03/22 5.00 運行情報機能付加>
+<! 2026/03/25 5.01 直通運転中止表示付加、直切り時に新横浜発のSJ列車がSJ線路に表示される事象を改善>
+
 <nobr>
-<p>相鉄エリア　[自動更新：15秒]　　　　　　　　　　　　　　　　　　　　　　　　　(C)Cure_kisaragi 2024-2026 / Ver.5.00 03/22 </p>
+<p>相鉄エリア　[自動更新：15秒]　　　　　　　　　　　　　　　　　　　　　　　　　　　(C)Cure_kisaragi 2024-2026 / Ver.5.01 03/25 </p>
 <br>
 <br>
 <br>
 <br>
 <br>
-<div style="position: absolute; top: 5px; left:320px; font-size:30pt"><input type="button" id = "joho" value="　　運行情報なし　　　　　　　" ></div>
+<div style="position: absolute; top: 45px; left:20px; font-size:10pt"><input type="button" id = "joho" value="　　運行情報なし　　　　　　　" class="joho"></div>
 
 <div id="time" style="position: absolute; top: 30px; left:10px; font-size:12pt; "></div>
-<div id="koshin-G" style="position: absolute; top: 60px; left:10px; color:#000000; font-size:12pt; ">相鉄更新：ー</div>
+<div id="koshin-G" style="position: absolute; top: 8px; left:300px; color:#000000; font-size:12pt; ">相鉄更新：ー</div>
 
 <div style="position: absolute; top: 130px; left:470px;  font-size:12pt"><p>相鉄横浜発車順序</p></div>
 <div style="position: absolute; top: 153px; left:470px;  Color:#ffffff; font-size:8pt"><p>のりば 種別　　行き先　　　発車時刻　　両数　運番</p></div>
@@ -386,6 +399,10 @@ background-color: #ffffff;
 <div id="so51-2b" style="position: absolute; top: 1620px; left:250px; font-size:12pt; "></div>
 <div id="so51-2" style="position: absolute; top: 1620px; left:260px; font-size:12pt; "></div>
 <div id="so51-2c" style="position: absolute; top: 1675px; left:250px; font-size:12pt; color:#FF0000; "></div>
+
+<!直通実施>
+<div id="SJ" style="position: absolute; top: 1650px; left:410px; font-size:16pt; color:#FF0000; "></div>
+
 
 <!羽沢国大-西谷>
 <div id="so51-08d" style="position: absolute; top: -100px; left:-100px;"><input type="text"  id = "so51-08" disabled / name="address" size="14" value=""　></div>
@@ -892,13 +909,30 @@ if ( info.indexOf('埼京線') != -1 ){
 document.getElementById('joho').value = '◆ＪＲ埼京線運行情報あり◆　　'
 document.getElementById('joho').style.color = '#FF803F';
 }
-if ( info.indexOf('東急') != -1 ){
+if ( info.indexOf('東急新横浜') != -1 ){
+document.getElementById('joho').value = '◆東急線運行情報あり◆　　　　'
+document.getElementById('joho').style.color = '#FF803F';
+}
+if ( info.indexOf('東急東横') != -1 ){
+document.getElementById('joho').value = '◆東急線運行情報あり◆　　　　'
+document.getElementById('joho').style.color = '#FF803F';
+}
+if ( info.indexOf('東急目黒') != -1 ){
 document.getElementById('joho').value = '◆東急線運行情報あり◆　　　　'
 document.getElementById('joho').style.color = '#FF803F';
 }
 if ( info.indexOf('相鉄') != -1 ){
 document.getElementById('joho').value = '◆相鉄線運行情報あり◆　　　　'
 document.getElementById('joho').style.color = '#ff0000';
+}
+
+if ( info.indexOf('JR線直通運転中止') != -1 ){
+SJ.innerHTML = 'ＪＲ線直通運転中止'
+document.getElementById('SJ').style.color = '#ff0000';
+}
+if ( info.indexOf('JR線直通運転再開') != -1 ){
+SJ.innerHTML = 'ＪＲ線直通運転再開'
+document.getElementById('SJ').style.color = '#0000ff';
 }
 
 
@@ -1959,7 +1993,7 @@ switch (JSON.stringify(data5.timetables[0].trains[0].kind_name_ja).replaceAll('"
 	document.getElementById("so01dep11").style.backgroundColor = '#ff3e00'
 	break;
 	case "快速" :
-	document.getElementById("so01dep11").style.backgroundColor = '#004DA1'
+	document.getElementById("so01dep11").style.backgroundColor = '#005EB5'
 	break;
 	case "急行" :
 	document.getElementById("so01dep11").style.backgroundColor = '#ff0000'
@@ -1977,7 +2011,7 @@ switch (JSON.stringify(data5.timetables[0].trains[1].kind_name_ja).replaceAll('"
 	document.getElementById("so01dep21").style.backgroundColor = '#ff3e00'
 	break;
 	case "快速" :
-	document.getElementById("so01dep21").style.backgroundColor = '#004DA1'
+	document.getElementById("so01dep21").style.backgroundColor = '#005EB5'
 	break;
 	case "急行" :
 	document.getElementById("so01dep21").style.backgroundColor = '#ff0000'
@@ -1995,7 +2029,7 @@ switch (JSON.stringify(data5.timetables[0].trains[2].kind_name_ja).replaceAll('"
 	document.getElementById("so01dep31").style.backgroundColor = '#ff3e00'
 	break;
 	case "快速" :
-	document.getElementById("so01dep31").style.backgroundColor = '#004DA1'
+	document.getElementById("so01dep31").style.backgroundColor = '#005EB5'
 	break;
 	case "急行" :
 	document.getElementById("so01dep31").style.backgroundColor = '#ff0000'
@@ -2640,7 +2674,7 @@ unban = unban ;
       cars= JSON.stringify(data.trains[n].train_length_id) ;
 
 //所属編成設定
-      line = JSON.stringify(data.trains[n].train_line_id); 
+      line = JSON.stringify(data.trains[n].line_id); 
 
 if ( unban.length == 2 ){
 unban = '&nbsp;' + unban ;
@@ -3907,7 +3941,7 @@ if ( up == "true" ){
 	doc1= document.getElementById("so08-51c"); 
 	break ;
 } else {
-	if (unban1 > 69 && unban1 < 90) {
+	if (line == "4") {
 		nameText = document.getElementById('so53-51');
 		target = document.getElementById('so53-51d');
 		doc2= document.getElementById("so53-51e");  
@@ -3972,7 +4006,7 @@ if ( up == "true" ){
 	}
 	break ;
 } else {
-	if ( choku == 0 ) {
+	if ( line == "1" ) {
 	nameText = document.getElementById('so07-08');
 	if ( nameText.value == "" ){
 	target = document.getElementById('so07-08d');
@@ -4601,7 +4635,7 @@ doc2.style.color = '#ffffff'; //文字
 }
 break;
 case '快' :
-doc2.style.color = '#004DA1'; //文字
+doc2.style.color = '#005EB5'; //文字
 break;
 case '急' :
 doc2.innerHTML= '急';
