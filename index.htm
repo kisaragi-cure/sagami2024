@@ -893,8 +893,10 @@ request6.onload = () => {
 var info = request6.responseText;
 
 document.getElementById("joho").addEventListener("click", function () {
-  location.href ="https://external-data.sotetsuapp.com/incidents/TrainInfo.html";
+const url = 'https://external-data.sotetsuapp.com/incidents/TrainInfo.html'
+window.open(url, '_blank')
 }, false);
+
 
 
 if ( info.indexOf('副都心') != -1 ){
