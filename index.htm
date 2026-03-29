@@ -58,9 +58,11 @@ background-color: #ffffff;
 <!バージョン情報>
 <! 2026/03/22 5.00 運行情報機能付加>
 <! 2026/03/25 5.01 直通運転中止表示付加、直切り時に新横浜発のSJ列車がSJ線路に表示される事象を改善>
+<! 2026/03/29 5.02 新横浜駅運番照査機能付加>
+
 
 <nobr>
-<p>相鉄エリア　[自動更新：15秒]　　　　　　　　　　　　　　　　　　　　　　　　　　　(C)Cure_kisaragi 2024-2026 / Ver.5.01 03/25 </p>
+<p>相鉄エリア　[自動更新：15秒]　　　　　　　　　　　　　　　　　　　　　　　　　　　(C)Cure_kisaragi 2024-2026 / Ver.5.02 03/29 </p>
 <br>
 <br>
 <br>
@@ -2110,10 +2112,16 @@ var date11 = new Date(JSON.stringify(data6.timetables[1].trains[0].time) * 1000)
 
 	}
 	document.getElementById("so52dep13").innerHTML= date11.toLocaleTimeString().replace(':00','');
-	document.getElementById("so52dep14").innerHTML= JSON.stringify(data6.timetables[1].trains[0].train_length) ;
-	if ( JSON.stringify(data6.timetables[1].trains[0].train_length) == 8 ){
+
+	if ( JSON.stringify(data6.timetables[1].trains[0].train_length) == 10 ){
+	document.getElementById("so52dep14").innerHTML= '10'
+	} else if ( JSON.stringify(data6.timetables[1].trains[0].train_length) == 8 ){
 	document.getElementById("so52dep14").innerHTML= '８'
+	} else {
+	document.getElementById("so52dep14").innerHTML= '０'
 	}
+
+	
 	document.getElementById("so52dep15").innerHTML= JSON.stringify(data6.timetables[1].trains[0].platform) ;
 
 	document.getElementById("so52dep21").innerHTML= JSON.stringify(data6.timetables[1].trains[1].kind_name_ja).replaceAll('"','') ;
@@ -2122,9 +2130,13 @@ var date11 = new Date(JSON.stringify(data6.timetables[1].trains[0].time) * 1000)
 	document.getElementById("so52dep22").innerHTML= JSON.stringify(data6.timetables[1].trains[1].destination_station_name_ja).replaceAll('"','').substr(0,1) + '　' + JSON.stringify(data6.timetables[1].trains[1].destination_station_name_ja).replaceAll('"','').substr(1,1);
 	}
 	document.getElementById("so52dep23").innerHTML= date12.toLocaleTimeString().replace(':00','');
-	document.getElementById("so52dep24").innerHTML= JSON.stringify(data6.timetables[1].trains[1].train_length) ;
-	if ( JSON.stringify(data6.timetables[1].trains[1].train_length) == 8 ){
+
+	if ( JSON.stringify(data6.timetables[1].trains[1].train_length) == 10 ){
+	document.getElementById("so52dep24").innerHTML= '10'
+	} else if ( JSON.stringify(data6.timetables[1].trains[1].train_length) == 8 ){
 	document.getElementById("so52dep24").innerHTML= '８'
+	} else {
+	document.getElementById("so52dep24").innerHTML= '０'
 	}
 	document.getElementById("so52dep25").innerHTML= JSON.stringify(data6.timetables[1].trains[1].platform) ;
 
@@ -2243,15 +2255,14 @@ var date13 = new Date(JSON.stringify(data6.timetables[0].trains[0].time) * 1000)
 	}
 
 	document.getElementById("so52dep33").innerHTML= date13.toLocaleTimeString().replace(':00','') + '　' + unban13;
-	document.getElementById("so52dep34").innerHTML= JSON.stringify(data6.timetables[0].trains[0].train_length) ;
-	if ( JSON.stringify(data6.timetables[0].trains[0].train_length) == 8 ){
+	if ( JSON.stringify(data6.timetables[0].trains[0].train_length) == 10 ){
+	document.getElementById("so52dep34").innerHTML= '10'
+	} else if ( JSON.stringify(data6.timetables[0].trains[0].train_length) == 8 ){
 	document.getElementById("so52dep34").innerHTML= '８'
-	}
-	if ( JSON.stringify(data6.timetables[0].trains[0].train_length) == 6 ){
+	} else if ( JSON.stringify(data6.timetables[0].trains[0].train_length) == 6 ){
 	document.getElementById("so52dep34").innerHTML= '６'
-	}
-	if ( JSON.stringify(data6.timetables[0].trains[0].train_length) == null ){
-	document.getElementById("so52dep34").innerHTML= '✕'
+	} else {
+	document.getElementById("so52dep34").innerHTML= '０'
 	}
 
 	document.getElementById("so52dep35").innerHTML= JSON.stringify(data6.timetables[0].trains[0].platform) - (-1) ;	
@@ -2274,16 +2285,14 @@ var date13 = new Date(JSON.stringify(data6.timetables[0].trains[0].time) * 1000)
 	}
 
 	document.getElementById("so52dep43").innerHTML= date14.toLocaleTimeString().replace(':00','') + '　' + unban14;
-	document.getElementById("so52dep44").innerHTML= JSON.stringify(data6.timetables[0].trains[1].train_length) ;
-	if ( JSON.stringify(data6.timetables[0].trains[1].train_length) == 8 ){
+	if ( JSON.stringify(data6.timetables[0].trains[1].train_length) == 10 ){
+	document.getElementById("so52dep44").innerHTML= '10'
+	} else if ( JSON.stringify(data6.timetables[0].trains[1].train_length) == 8 ){
 	document.getElementById("so52dep44").innerHTML= '８'
-	}
-	if ( JSON.stringify(data6.timetables[0].trains[1].train_length) == 6 ){
+	} else if ( JSON.stringify(data6.timetables[0].trains[1].train_length) == 6 ){
 	document.getElementById("so52dep44").innerHTML= '６'
-	}
-
-	if ( JSON.stringify(data6.timetables[0].trains[1].train_length) == null ){
-	document.getElementById("so52dep34").innerHTML= '✕'
+	} else {
+	document.getElementById("so52dep44").innerHTML= '０'
 	}
 
 	document.getElementById("so52dep45").innerHTML= JSON.stringify(data6.timetables[0].trains[1].platform) - (-1) ;
@@ -2322,10 +2331,18 @@ var date13 = new Date(JSON.stringify(data6.timetables[0].trains[0].time) * 1000)
       let izu02 = 0;
       let seya01 = 0;
       let seya02 = 0;
+      let q2 = 0;
+
+var k = 0 ;
+var m = 0 ;
 
       len = JSON.stringify(data.trains.length) ;
+	var N  = {};
 
 	let nameText = document.getElementById('so01-3a');
+
+var requesta = {};
+var dataa = {};
 
 ty99.value = "表示試験" ;
 
@@ -2575,11 +2592,8 @@ case '0':
       unban1 = JSON.stringify(data.trains[n].operation_number) ;
 
 //運番設定
-	if (unban < 10){
-unban = "0" + unban ;
-if ( choku == 1 ){
+	if (unban < 11){
 unban = unban + "K" ;
-}
 } else if(unban < 16){
 unban = unban  ;
 if ( choku == 1 ){
@@ -2587,15 +2601,17 @@ unban = unban + "K" ;
 }
 } else if(unban < 30){
 unban = unban + "K" ;
-} else if(unban == 35){
+} else if(unban == 34){
 unban = unban + "G" ;
+} else if(unban == 35){
+unban = unban + "K" ;
 } else if(unban == 37){
 unban = unban + "G" ;
 } else if(unban == 39){
-unban = unban + "G" ;
+unban = unban + "G" 
+} else if(unban == 40){
+unban = unban + "K" ;
 } else if(unban == 41){
-unban = unban + "G" ;
-} else if(unban == 42){
 unban = unban + "G" ;
 } else if(unban == 44){
 unban = unban + "G" ;
@@ -3953,16 +3969,7 @@ if ( up == "true" ){
 		break ;
 	} else {
 
-	if ( localStorage.getItem('shinyoko1a') == unban1 -(-600) ) {
-		unban = unban1 + 'G' ;
-		localStorage.setItem( retsuban , unban) ;
-	} else if ( localStorage.getItem('shinyoko1a') == unban1 -(-200) ) {
-		unban = unban1 + 'K' ;
-		if (unban1 < 10) {
-			unban = '0' + unban;
-		}
-		localStorage.setItem( retsuban , unban) ;
-	}
+	
 	nameText = document.getElementById('so52-51');
 	target = document.getElementById('so52-51d');
 	doc2= document.getElementById("so52-51e");  
@@ -4608,6 +4615,15 @@ case ('27'):
 }
 
 
+//新横浜運番処理まえ処理
+if ( stid == '29' ){
+N[q2] = n;
+q2 ++ ;
+console.log( q2 + "-" + n );
+}
+//
+
+
 if ( nameText.value == "" ){
 	doc2.innerHTML= kind ;
 }
@@ -4726,6 +4742,8 @@ if ( seya02 == 0){
 }
 
 
+
+
 var YY = sessionStorage.getItem('Y');
 window.scrollTo(0, YY );
 
@@ -4738,6 +4756,75 @@ function sleepSetInterval(ms, callback, count) {
       clearInterval(interval);
     }
   }, ms);
+}
+
+//新横浜処理
+if (q2 > 0) {
+var unban2 = 0;
+
+
+function demo2() {
+sleepSetInterval(500, () => {
+
+k = N[m] ;
+unban2 = JSON.stringify(data.trains[k].operation_number) ;
+
+requesta[m] = new XMLHttpRequest();
+
+requesta[m].open("GET", "https://api.sotetsuapp.com/api/v1/shinyokohama_train_info?operation_number=" + unban2 , true);
+
+requesta[m].responseType = "text";
+requesta[m].onload = () => {
+  if (requesta[m].readyState === requesta[m].DONE) {
+    if (requesta[m].status === 200) {
+dataa[m] = JSON.parse(requesta[m].responseText);
+
+if ( JSON.stringify(dataa[m].train) == "null" ) {
+} else {
+      dataa[m] = JSON.stringify(dataa[m].train.train_number) ;
+      dataa[m] = dataa[m].replaceAll('"','') ;
+      console.log( dataa[m] );
+//運番振分	
+if ( unban2.substring(0,1) == 2 ){
+	localStorage.setItem( dataa[m] , unban2.substring(1) + 'K') ;
+	if ( dataa[m] == JSON.stringify(data6.timetables[1].trains[0].train_no).replaceAll('"','') ){
+	document.getElementById("so52dep13").innerHTML= date11.toLocaleTimeString().replace(':00','') + "　"　+ unban2.substring(1) + 'K' ;
+	}
+}
+	
+if ( unban2.substring(0,1) == 6 ){
+	localStorage.setItem( dataa[m] , unban2.substring(1) + 'G') ;
+	if ( dataa[m] == JSON.stringify(data6.timetables[1].trains[0].train_no).replaceAll('"','') ){
+	document.getElementById("so52dep13").innerHTML= date11.toLocaleTimeString().replace(':00','') + "　"　+ unban2.substring(1) + 'G' ;
+	}
+}
+
+if ( unban2.substring(0,1) == 9 ){
+
+	if ( dataa[m] == JSON.stringify(data6.timetables[1].trains[0].train_no).replaceAll('"','') ){
+	document.getElementById("so52dep13").innerHTML= date11.toLocaleTimeString().replace(':00','') + "　"　+ unban2.substring(1) + 'G' ;
+	}
+}
+
+
+}
+}
+
+
+
+m++ ;
+console.log( m );
+    }
+  
+};
+
+requesta[m].send(null);
+
+ }
+, q2);
+}
+
+demo2();
 }
 
 sleepSetInterval(2000, () =>{
