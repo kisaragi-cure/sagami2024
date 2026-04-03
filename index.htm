@@ -41,9 +41,9 @@ background-color: #ffffff;
 
 
 .joho{
-    width: 250px;
+    width: 290px;
     height: 2em;
-    padding: 5px;
+    padding: 3px;
     font-size: 14pt;
 }
 
@@ -59,10 +59,11 @@ background-color: #ffffff;
 <! 2026/03/22 5.00 運行情報機能付加>
 <! 2026/03/25 5.01 直通運転中止表示付加、直切り時に新横浜発のSJ列車がSJ線路に表示される事象を改善>
 <! 2026/03/29 5.02 新横浜駅運番照査機能付加>
+<! 2026/04/03 5.03 直通運転中止表示(東急)付加>
 
 
 <nobr>
-<p>相鉄エリア　[自動更新：15秒]　　　　　　　　　　　　　　　　　　　　　　　　　　　(C)Cure_kisaragi 2024-2026 / Ver.5.02 03/29 </p>
+<p>相鉄エリア　[自動更新：15秒]　　　　　　　　　　　　　　　　　　　　　　　　　　　(C)Cure_kisaragi 2024-2026 / Ver.5.03 04/03 </p>
 <br>
 <br>
 <br>
@@ -404,6 +405,8 @@ background-color: #ffffff;
 
 <!直通実施>
 <div id="SJ" style="position: absolute; top: 1650px; left:410px; font-size:16pt; color:#FF0000; "></div>
+<div id="ST" style="position: absolute; top: 750px; left:170px; font-size:16pt; color:#FF0000; "></div>
+
 
 
 <!羽沢国大-西谷>
@@ -938,6 +941,24 @@ if ( info.indexOf('JR線直通運転再開') != -1 ){
 SJ.innerHTML = 'ＪＲ線直通運転再開'
 document.getElementById('SJ').style.color = '#0000ff';
 }
+if ( info.indexOf('東急東横線直通運転中止') != -1 ){
+ST.innerHTML = '東急東横線直通運転中止'
+document.getElementById('ST').style.color = '#ff0000';
+}
+if ( info.indexOf('東急東横線直通運転再開') != -1 ){
+ST.innerHTML = '東急東横線直通運転再開'
+document.getElementById('ST').style.color = '#0000ff';
+}
+if ( info.indexOf('東急目黒線直通運転中止') != -1 ){
+ST.innerHTML = '東急目黒線直通運転中止'
+document.getElementById('ST').style.color = '#ff0000';
+}
+if ( info.indexOf('東急目黒線直通運転再開') != -1 ){
+ST.innerHTML = '東急目黒線直通運転再開'
+document.getElementById('ST').style.color = '#0000ff';
+}
+
+
 
 
 
@@ -2265,7 +2286,14 @@ var date13 = new Date(JSON.stringify(data6.timetables[0].trains[0].time) * 1000)
 	document.getElementById("so52dep34").innerHTML= '０'
 	}
 
-	document.getElementById("so52dep35").innerHTML= JSON.stringify(data6.timetables[0].trains[0].platform) - (-1) ;	
+	if ( JSON.stringify(data6.timetables[0].trains[0].platform) == '2'){
+	document.getElementById("so52dep35").innerHTML= '3' ;	
+	} else if ( JSON.stringify(data6.timetables[0].trains[0].platform) == '3'){
+	document.getElementById("so52dep35").innerHTML= '4' ;	
+	} else if ( JSON.stringify(data6.timetables[0].trains[0].platform) == '1'){
+	document.getElementById("so52dep35").innerHTML= '1' ;	
+	}
+
 
 	if ( JSON.stringify(data6.timetables[0].trains[0].platform) == 1 ){
 	document.getElementById("so52dep35").innerHTML= '1'
@@ -2295,7 +2323,14 @@ var date13 = new Date(JSON.stringify(data6.timetables[0].trains[0].time) * 1000)
 	document.getElementById("so52dep44").innerHTML= '０'
 	}
 
-	document.getElementById("so52dep45").innerHTML= JSON.stringify(data6.timetables[0].trains[1].platform) - (-1) ;
+	if ( JSON.stringify(data6.timetables[0].trains[1].platform) == '2'){
+	document.getElementById("so52dep45").innerHTML= '3' ;	
+	} else if ( JSON.stringify(data6.timetables[0].trains[1].platform) == '3'){
+	document.getElementById("so52dep45").innerHTML= '4' ;	
+	} else if ( JSON.stringify(data6.timetables[0].trains[1].platform) == '1'){
+	document.getElementById("so52dep45").innerHTML= '1' ;	
+	}
+
 
 	if ( JSON.stringify(data6.timetables[0].trains[1].platform) == 1 ){
 	document.getElementById("so52dep45").innerHTML= '1'
