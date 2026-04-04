@@ -958,6 +958,11 @@ ST.innerHTML = '東急目黒線直通運転再開'
 document.getElementById('ST').style.color = '#0000ff';
 }
 
+if ( localStorage.getItem( 'bajon' ) >= 201 ){
+} else {
+localStorage.clear();
+localStorage.setItem( 'bajon', 201 );
+}
 
 
 
@@ -2627,18 +2632,20 @@ case '0':
       unban1 = JSON.stringify(data.trains[n].operation_number) ;
 
 //運番設定
-	if (unban < 11){
+	if (unban < 10){
+unban = "0" + unban + "K" ;
+} else if (unban < 11){
 unban = unban + "K" ;
 } else if(unban < 16){
 unban = unban  ;
 if ( choku == 1 ){
 unban = unban + "K" ;
 }
-} else if(unban < 30){
+} else if(unban < 31){
 unban = unban + "K" ;
 } else if(unban == 34){
 unban = unban + "G" ;
-} else if(unban == 35){
+} else if(unban == 36){
 unban = unban + "K" ;
 } else if(unban == 37){
 unban = unban + "G" ;
@@ -2715,6 +2722,16 @@ unban = (unban - 900) + "G" ;
 } else {
 unban = unban ;
 }
+
+
+if (localStorage.getItem(retsuban) == null){
+}else{
+if (localStorage.getItem(retsuban).substr(0,2) == unban.substr(0,2) ){
+	unban = localStorage.getItem( retsuban ) ;
+}
+}
+
+
 
 	if (  JSON.stringify(data.trains[n].direction) == '"up"' ) {
 		up = 'true'
@@ -3158,15 +3175,7 @@ if ( up == "true" ){
 	doc2= document.getElementById("so08-1");  
 	doc0= document.getElementById("so08-1b");  
 	doc1= document.getElementById("so08-1c");  
-	if ( unban + 'K' == localStorage.getItem( retsuban ) ){
-	unban = localStorage.getItem( retsuban ) ;
-	} else if ( unban + 'G' == localStorage.getItem( retsuban ) ){
-	unban = localStorage.getItem( retsuban ) ;
-	}
-	hensei = localStorage.getItem( unban );
-	if ( hensei != null ){
-	info =   '　　' + des + '<br/>' +  unban +　 '<br/>' +  hensei +　 '<br/>' +  '　　' ;
-	}
+	
 	break ;
 	}
 }
@@ -4820,6 +4829,13 @@ if ( JSON.stringify(dataa[m].train) == "null" ) {
       dataa[m] = dataa[m].replaceAll('"','') ;
       console.log( dataa[m] );
 //運番振分	
+if ( unban2.substring(0,1) == 5 ){
+	localStorage.setItem( dataa[m] , unban2.substring(0) + 'K') ;
+	if ( dataa[m] == JSON.stringify(data6.timetables[1].trains[0].train_no).replaceAll('"','') ){
+	document.getElementById("so52dep13").innerHTML= date11.toLocaleTimeString().replace(':00','') + "　"　+ unban2.substring(1) + 'K' ;
+	}
+}
+	
 if ( unban2.substring(0,1) == 2 ){
 	localStorage.setItem( dataa[m] , unban2.substring(1) + 'K') ;
 	if ( dataa[m] == JSON.stringify(data6.timetables[1].trains[0].train_no).replaceAll('"','') ){
